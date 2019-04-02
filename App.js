@@ -1,21 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Home from './Containers/Home/Home';
+import Header from './Containers/Header/Header';
+import Footer from './Containers/Footer/Footer';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      currentPage:'Home'
+    }
+  }
+
   render() {
+    const { currentPage } = this.state;
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Header />
+        {
+          currentPage === 'Home' ? <Home /> : null
+        }
+        <Footer />
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    height: '100%',
+  }
 });
+
