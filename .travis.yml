@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- node
+notifications:
+  email: false
+before_script:
+- npm run test
+deploy:
+  provider: heroku,
+  api_key:
+    secure: 3MVVqm11wlWzPpO1fo/PN233OQWKwAmXl0x168ZNYtm00B4fntBv2QzvXA7xend00QJ6VzXCSic+BaRCpeAPmlHDz9BGLrEh7j9EtpHqcGHrdFTxGmH4Cxrw6hP11+cs/vA2PeBmp7LuaU3YaHDkHoNlC65e+FIenBbmxdpp0HekqPBYQ6Ivy9o0mffb+KxSxwQKl3mz9zJNXrps08BMGfZjKXoM2hQbXYlwF3bxOWyp0FxF7G0wMPGjjAN9i4CULpgMWW1E958lG3KLajRMTQzza7LaHf+2VN70zPkJkDRrcnMOQhCSoT/xsjN0NZ3/KnXidSa6n8qYb6xC7ANekNug2gti/7iE/MapuZ2K6RPKZ4ahXFQ2tTBNAh1u8hCQzHuH34Uu2kiwg3QzAwajzTySzDIY7gjQyXELwh8WsaYMlfSwgNodq7DzFPiDFkMeeK2WvvkIlaHaq1GLfNd+yBabpg31beXhWv/5kA6NR4TzmyY2SPtAc3fljwEs5j5ug/iTNgwYOOJo6qsw4gh6itdjasRqDl7A3PS9bCtw6Pig/uaIYgoTJEMdzNqvyu9RV8JnTRj1Jg9VZQ2FFL5M9WZUNvHPCZg56CjceXsepLe47JGwtf2uL5YFie3IctU7xh6/WDAnkPDvKVnWDjvarKQo7ZBGl7F3JErEsRU4ZnA=
+    app: pic-your-landmark
+    skip_cleanup: true
