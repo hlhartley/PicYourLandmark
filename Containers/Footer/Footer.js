@@ -17,7 +17,7 @@ export default class Footer extends Component {
           <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')}>
             <Icon color="#3c4859" name="camera" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Collected landmarks')}>
             <Icon color="#3c4859" name="image" type="font-awesome" size={30} />
           </TouchableOpacity>
           <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Login')}>

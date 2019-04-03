@@ -3,6 +3,7 @@ import Home from './Containers/Home/Home';
 import Header from './Containers/Header/Header';
 import Footer from './Containers/Footer/Footer';
 import Login from './Containers/Login/Login';
+import CollectedLandMarks from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends Component {
@@ -65,6 +66,7 @@ export default class App extends Component {
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} /> 
             : currentPage === 'Login' ? <Login /> 
+            : currentPage === 'Collected landmarks' ? <CollectedLandMarks />
             : null
         }
         <Footer changeCurrentPage={this.changeCurrentPage}/>
