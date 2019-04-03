@@ -32,6 +32,9 @@ export default class App extends Component {
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchId);
   };
+  changeCurrentPage = (page) => {
+    this.setState({ currentPage: page })
+  }
 
   render() {
     const { currentPage, currentLatitude, currentLongitude } = this.state;
@@ -43,7 +46,7 @@ export default class App extends Component {
             : currentPage === 'Login' ? <Login /> 
             : null
         }
-        <Footer />
+        <Footer changeCurrentPage={this.changeCurrentPage}/>
       </View>
     );
   };
