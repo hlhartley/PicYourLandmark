@@ -29,6 +29,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
+    backgroundColor: '#aec8e4'
   }
 });
 
