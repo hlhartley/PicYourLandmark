@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-
+import { Button, ButtonGroup, Icon } from 'react-native-elements';
 
 export default class Home extends Component {
   constructor() {
@@ -33,6 +33,10 @@ export default class Home extends Component {
     const { currentLatitude, currentLongitude } = this.props;
     return (
       <View style={styles.container}>
+        <View style={[styles.announcement, { borderRadius: 15, backgroundColor: '#a3c7f0', paddingTop: 20 }]}>
+          <Icon name="bullhorn" type="font-awesome" size={21} color='#0d67af'/>
+          <Text style={[{color:'#3c4859', paddingRight: 10, paddingLeft: 8}]}>Earn points by taking and uploading pics of you at various locations</Text>
+        </View>
         <MapView
           provider={"google"}
           style={styles.map}
@@ -66,11 +70,23 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     left: '5%',
-    height: '60%',
-    width: '90%',
+    height: '70%',
+    width: '92%',
+    padding: 8,
+    top: 20
+  },
+  announcement: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    fontSize: 18,
+    height: '18%',
+    padding: 5,
+    color: 'green'
   },
   map: {
     width: '100%',
-    height: '100%'
+    height: '80%',
+    top: 30,
   },
 });

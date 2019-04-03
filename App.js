@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Home from './Containers/Home/Home';
 import Header from './Containers/Header/Header';
 import Footer from './Containers/Footer/Footer';
-import { StyleSheet, View } from 'react-native';
+import Login from './Containers/Login/Login';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends Component {
   constructor() {
@@ -38,7 +39,9 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header />
         {
-          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} /> : null
+          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} /> 
+            : currentPage === 'Login' ? <Login /> 
+            : null
         }
         <Footer />
       </View>
@@ -49,5 +52,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
+    backgroundColor: '#f6f6f6'
   }
 });

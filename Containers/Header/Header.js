@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Button, ButtonGroup, Icon } from 'react-native-elements';
 
 export default class Header extends Component {
   constructor() {
     super()
     this.state = {
-      titleText: 'Pic Your Landmark'
+      titleText: 'PIC YOUR LANDMARK'
     }
   }
 
@@ -13,6 +14,7 @@ export default class Header extends Component {
     const {titleText} = this.state
     return (
       <View style={styles.container}>
+        <Icon style={styles.icon} name="map-marker" type="font-awesome" size={33} color='tomato'/>
         <Text style={styles.titleText}>
           {titleText}
         </Text>
@@ -23,12 +25,23 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 100,
+    backgroundColor: '#e9e9e9',
+    // borderBottomColor: '#3c4859',
+    // borderBottomWidth: 1,
+    paddingTop: 30,
+    paddingBottom: 10,
+    flex: .25,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   titleText: {
-    fontSize: 30,
+    left: 10,
+    top: 3,
+    fontFamily: 'AppleSDGothicNeo-Bold',
+    fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingTop: 30
+    color: '#3c4859'
   }
 });
