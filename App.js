@@ -25,7 +25,7 @@ export default class App extends Component {
         });
       },
       error => console.log(error),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 0, distanceFilter: 1 }
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 0, distanceFilter: 1 }
     );
   };
 
