@@ -29,8 +29,9 @@ export default class Home extends Component {
   }
 
   render() {
-    const { currentLatDelta, currentLonDelta, locations } = this.state.currentLocation;
+    const { currentLatDelta, currentLonDelta } = this.state.currentLocation;
     const { currentLatitude, currentLongitude } = this.props;
+    const { locations } = this.state;
     return (
       <View style={styles.container}>
         <View style={[styles.announcement, { borderRadius: 15, backgroundColor: '#a3c7f0', paddingTop: 20 }]}>

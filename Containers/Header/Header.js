@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
   titleText: {
     left: 10,
     top: 3,
-    fontFamily: 'AppleSDGothicNeo-Bold',
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
