@@ -8,16 +8,19 @@ export default class Landmark extends Component {
         this.state = {
             collectedLandmarks: [
                 {
+                    id: 1,
                     name: 'Coors Field',
                     pointVal: 10,
                     visited: '4/1/2019'
                 },
                 {
+                    id: 2,
                     name: 'Statue of Liberty',
                     pointVal: 10,
                     visited: '3/12/2019'
                 },
                 {
+                    id: 3,
                     name: 'Grand Canyon',
                     pointVal: 10,
                     visited: '12/9/2018'
@@ -31,7 +34,7 @@ export default class Landmark extends Component {
                 {
                     this.state.collectedLandmarks.map((landmark => {
                         return(
-                            <View>
+                            <View key={landmark.id}>
                                 <Text>Landmark name: {landmark.name}</Text>
                                 <Text>Point value: {landmark.pointVal}</Text>
                                 <Text>Date visited: {landmark.visited}</Text>
