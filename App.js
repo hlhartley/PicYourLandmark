@@ -16,15 +16,17 @@ export default class App extends Component {
     }
   }
 
-  async componentDidMount() {
-    // const { Location, Permissions } = Expo;
-    // const { status } = await Permissions.askAsync(Permissions.LOCATION);
-    // if (status === 'granted') {
-    //   return Location.getCurrentPositionAsync({ enableHighAccuracy: true });
-    // } else {
-    //   throw new Error('Location permission not granted');
-    // }
+  getStartLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        this.setState({ currentLatitude: position.coords.latitude, currentLongitude: position.coords.longitude });
+      },
+      error => console.log(error),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
+  }
 
+  startLocationTracking = () => {
     this.watchID = navigator.geolocation.watchPosition(
       position => {
         const { latitude: currentLatitude, longitude: currentLongitude } = position.coords;
@@ -36,6 +38,17 @@ export default class App extends Component {
       error => console.log(error),
       { enableHighAccuracy: false, timeout: 20000, maximumAge: 0, distanceFilter: 1 }
     );
+  }
+
+  componentDidMount = async () => {
+    const { Permissions } = Expo;
+    const { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status === 'granted') {
+      this.getStartLocation();
+      this.startLocationTracking();
+    } else {
+      throw new Error('Location permission not granted');
+    }
   };
 
   componentWillUnmount() {
