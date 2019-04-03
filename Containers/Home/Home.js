@@ -8,32 +8,29 @@ export default class Home extends Component {
     super()
     this.state = {
       currentLocation: {
-        currentLat: 37.78825,
-        currentLon: -122.4324,
         currentLatDelta: 0.015,
         currentLonDelta: 0.0121
       },
       locations: [
         {
           id: 1,
-          lat: 37.78825,
-          lon: -122.4324,
+          lat: 39.75302,
+          lon: -104.9965,
           visited: false
         },
         {
           id: 2,
-          lat: 37.78828,
-          lon: -122.4334,
+          lat: 39.75023,
+          lon: -104.9965,
           visited: true
         }
       ]
     }
   }
 
-
   render() {
-    const { currentLat, currentLon, currentLatDelta, currentLonDelta } = this.state.currentLocation;
-    const { locations } = this.state;
+    const { currentLatDelta, currentLonDelta, locations } = this.state.currentLocation;
+    const { currentLatitude, currentLongitude } = this.props;
     return (
       <View style={styles.container}>
         <View style={[styles.announcement, { borderRadius: 15, backgroundColor: '#a3c7f0', paddingTop: 20 }]}>
@@ -44,8 +41,8 @@ export default class Home extends Component {
           provider={"google"}
           style={styles.map}
           region={{
-            latitude: currentLat,
-            longitude: currentLon,
+            latitude: currentLatitude,
+            longitude: currentLongitude,
             latitudeDelta: currentLatDelta,
             longitudeDelta: currentLonDelta,
           }}
