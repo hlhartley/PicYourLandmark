@@ -25,7 +25,7 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f6f6f6',
+    backgroundColor: '#e9e9e9',
     borderBottomColor: '#3c4859',
     borderBottomWidth: 1,
     height: 100,

@@ -8,20 +8,20 @@ export default class Footer extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
             <Icon color="#3c4859" name="home" type="font-awesome" size={30}/>
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
             <Icon color="#3c4859" name="map-marker" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
             <Icon color="#3c4859" name="camera" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
             <Icon color="#3c4859" name="image" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
-            <Icon color="#3c4859" name="user-circle" type="font-awesome" size={30} />
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
+            <Icon color="#3c4859" name="user" type="font-awesome" size={30} />
           </TouchableOpacity>
         </View>
       </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     height: 60,
     width: '100%',
-    backgroundColor: '#f6f6f6',
+    backgroundColor: '#e9e9e9',
     borderTopColor: '#3c4859',
     borderTopWidth: 1,
   },
