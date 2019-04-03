@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     height: 60,
     width: '100%',
     backgroundColor: '#e9e9e9',
-    borderTopColor: '#3c4859',
-    borderTopWidth: 1,
+    // borderTopColor: '#3c4859',
+    // borderTopWidth: 1,
   },
   buttonContainer: {
     flex: 1,

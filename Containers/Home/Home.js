@@ -36,9 +36,9 @@ export default class Home extends Component {
     const { locations } = this.state;
     return (
       <View style={styles.container}>
-        <View style={styles.announcement}>
-          <Icon name="bullhorn" type="font-awesome" size={25} right={10} color='#0d67af'/>
-          <Text style={{color:'#3c4859'}}>Earn points by taking and uploading pics of you at various locations</Text>
+        <View style={[styles.announcement, { borderRadius: 15, backgroundColor: '#a3c7f0', paddingTop: 20 }]}>
+          <Icon name="bullhorn" type="font-awesome" size={21} color='#0d67af'/>
+          <Text style={[{color:'#3c4859', paddingRight: 10, paddingLeft: 8}]}>Earn points by taking and uploading pics of you at various locations</Text>
         </View>
         <MapView
           provider={"google"}
@@ -73,21 +73,23 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     left: '5%',
-    height: '60%',
+    height: '70%',
     width: '92%',
-    padding: 8
+    padding: 8,
+    top: 10
   },
   announcement: {
-    flex: 3,
+    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    top: 20,
-    width: '93%',
-    fontSize: 18
+    width: '100%',
+    fontSize: 18,
+    height: '18%',
+    padding: 5,
+    color: 'green'
   },
   map: {
     width: '100%',
-    height: '90%',
-    top: 90,
+    height: '80%',
+    top: 30,
   },
 });
