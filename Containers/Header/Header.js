@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#e9e9e9',
     // borderBottomColor: '#3c4859',
     // borderBottomWidth: 1,
-    height: 120,
-    paddingTop: 10,
-    flex: .4,
+    paddingTop: 30,
+    paddingBottom: 10,
+    flex: .25,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'

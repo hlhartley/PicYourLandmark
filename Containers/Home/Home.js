@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     height: '70%',
     width: '92%',
     padding: 8,
-    top: 10
+    top: 20
   },
   announcement: {
     display: 'flex',
