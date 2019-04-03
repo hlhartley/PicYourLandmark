@@ -8,19 +8,19 @@ export default class Footer extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
-            <Icon color="#3c4859" name="home" type="font-awesome" size={30}/>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')} >
+            <Icon color="#3c4859" name="home" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')}>
             <Icon color="#3c4859" name="map-marker" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')}>
             <Icon color="#3c4859" name="camera" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')}>
             <Icon color="#3c4859" name="image" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Login')}>
             <Icon color="#3c4859" name="user" type="font-awesome" size={30} />
           </TouchableOpacity>
         </View>
