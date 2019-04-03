@@ -19,7 +19,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header />
         {
-          currentPage === 'Home' ? <Home /> : <Login />
+          currentPage === 'Home' ? <Home /> : currentPage === 'Login' ? <Login /> : null
         }
         <Footer />
       </View>
