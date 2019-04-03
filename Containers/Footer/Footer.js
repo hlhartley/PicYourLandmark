@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Button, ButtonGroup, Icon } from 'react-native-elements';
 
 export default class Footer extends Component {
@@ -8,11 +8,21 @@ export default class Footer extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
-            <Button icon={<Icon color="white" name="home" type="font-awesome" size={35} />}/>
-            <Button icon={<Icon color="white" name="map-marker" type="font-awesome" size={35} />}/>
-            <Button icon={<Icon color="white" name="camera" type="font-awesome" size={35} />}/>
-            <Button icon={<Icon color="white" name="image" type="font-awesome" size={35} />}/>
-            <Button icon={<Icon color="white" name="user-circle" type="font-awesome" size={35} />}/>
+          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+            <Icon color="#3c4859" name="home" type="font-awesome" size={30}/>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+            <Icon color="#3c4859" name="map-marker" type="font-awesome" size={30} />
+          </TouchableOpacity>
+          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+            <Icon color="#3c4859" name="camera" type="font-awesome" size={30} />
+          </TouchableOpacity>
+          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+            <Icon color="#3c4859" name="image" type="font-awesome" size={30} />
+          </TouchableOpacity>
+          <TouchableOpacity style={{ backgroundColor: '#f6f6f6' }}>
+            <Icon color="#3c4859" name="user-circle" type="font-awesome" size={30} />
+          </TouchableOpacity>
         </View>
       </View>
     )
@@ -23,9 +33,11 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: 0,
-    height: 100,
+    height: 60,
     width: '100%',
-    backgroundColor: 'red'
+    backgroundColor: '#f6f6f6',
+    borderTopColor: '#3c4859',
+    borderTopWidth: 1,
   },
   buttonContainer: {
     flex: 1,
