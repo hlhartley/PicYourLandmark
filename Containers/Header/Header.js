@@ -14,7 +14,7 @@ export default class Header extends Component {
     const {titleText} = this.state
     return (
       <View style={styles.container}>
-        <Icon style={styles.icon} name="map-marker" type="font-awesome" size={33} color='#0d67af'/>
+        <Icon style={styles.icon} name="map-marker" type="font-awesome" size={33} color='tomato'/>
         <Text style={styles.titleText}>
           {titleText}
         </Text>
@@ -25,11 +25,11 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f6f6f6',
-    borderBottomColor: '#3c4859',
-    borderBottomWidth: 1,
-    height: 100,
-    paddingTop: 10,
+    backgroundColor: '#e9e9e9',
+    // borderBottomColor: '#3c4859',
+    // borderBottomWidth: 1,
+    paddingTop: 30,
+    paddingBottom: 10,
     flex: .25,
     flexDirection: 'row',
     alignItems: 'center',

@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import Home from './Containers/Home/Home';
 import Header from './Containers/Header/Header';
 import Footer from './Containers/Footer/Footer';
+import Login from './Containers/Login/Login';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      currentPage:'Home'
+      currentPage: 'Login'
     }
   }
 
@@ -18,7 +19,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header />
         {
-          currentPage === 'Home' ? <Home /> : null
+          currentPage === 'Home' ? <Home /> : currentPage === 'Login' ? <Login /> : null
         }
         <Footer />
       </View>
@@ -29,7 +30,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    backgroundColor: '#aec8e4'
+    backgroundColor: '#f6f6f6'
   }
 });
 
