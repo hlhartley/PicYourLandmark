@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Button, ButtonGroup, Icon } from 'react-native-elements';
+import { StyleSheet, Text, View } from 'react-native';
 import Landmark from '../Landmark/Landmark';
 
 export default class CollectedLandmarksContainer extends Component {
