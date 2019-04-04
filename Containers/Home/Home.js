@@ -39,9 +39,9 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-        <View style={[styles.overlay, { height: '62%'}]} />
+        <View style={styles.overlay} />
         <Icon color="white" name="camera-retro" type="font-awesome" size={40} top={-55}/>
-          <Text style={[styles.bannerText, {top: -40}]}>Earn points by taking and uploading pics of you at various locations</Text>
+          <Text style={styles.bannerText}>Earn points by taking and uploading pics of you at various locations</Text>
         </ImageBackground>
         <MapView
           provider={"google"}
@@ -113,13 +113,13 @@ const styles = StyleSheet.create({
     left: 0,
     backgroundColor: 'black',
     opacity: 0.4,
-    height: '70%',
+    height: '62%',
   },
   bannerText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
-    top: 0,
+    top: -40,
     padding: 10
   }
 });

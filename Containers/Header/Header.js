@@ -14,7 +14,7 @@ export default class Header extends Component {
     const {titleText} = this.state
     return (
       <View style={styles.container}>
-        <Icon style={styles.icon} name="map-marker" type="font-awesome" size={22} color='tomato' position='absolute' top={5} left={-106}/>
+        <Icon name="map-marker" type="font-awesome" size={22} color='tomato' position='absolute' top={5} left={-106}/>
         <Text style={styles.titleText}>
           {titleText}
         </Text>
