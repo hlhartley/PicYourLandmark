@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
-import { Button, ButtonGroup, Icon } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 
 export default class Login extends Component {
     render() {
