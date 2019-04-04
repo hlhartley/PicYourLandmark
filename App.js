@@ -11,7 +11,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null
     }
