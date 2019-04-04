@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { Button, ButtonGroup, Icon } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 
 export default class Footer extends Component {
 
@@ -14,7 +14,7 @@ export default class Footer extends Component {
           <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Login')}>
             <Icon color="#3c4859" name="map-marker" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Home')}>
+          <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Camera')}>
             <Icon color="#3c4859" name="camera" type="font-awesome" size={30} />
           </TouchableOpacity>
           <TouchableOpacity style={{ backgroundColor: '#e9e9e9' }} onPress={() => this.props.changeCurrentPage('Collected landmarks')}>
