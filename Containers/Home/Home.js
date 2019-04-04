@@ -38,15 +38,11 @@ export default class Home extends Component {
     const { locations } = this.state;
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{width: '100%', height: '55%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-        <View style={[styles.overlay, { height: '55%'}]} />
-        <Icon color="white" name="camera-retro" type="font-awesome" size={40} />
-          <Text style={styles.bannerText}>WELCOME TO</Text>
+        <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={[styles.overlay, { height: '62%'}]} />
+        <Icon color="white" name="camera-retro" type="font-awesome" size={40} top={-55}/>
+          <Text style={[styles.bannerText, {top: -40}]}>Earn points by taking and uploading pics of you at various locations</Text>
         </ImageBackground>
-        {/* <View style={[styles.announcement, { borderRadius: 15, backgroundColor: '#a3c7f0', paddingTop: 20 }]}>
-          <Icon name="bullhorn" type="font-awesome" size={21} color='#0d67af'/>
-          <Text style={[{color:'#3c4859', paddingRight: 10, paddingLeft: 8}]}>Earn points by taking and uploading pics of you at various locations</Text>
-        </View> */}
         <MapView
           provider={"google"}
           style={styles.map}
@@ -94,16 +90,6 @@ const styles = StyleSheet.create({
     height: '70%',
     width: '100%',
   },
-  announcement: {
-    left: '5%',
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-    fontSize: 18,
-    height: '18%',
-    padding: 5,
-    color: 'green'
-  },
   map: {
     left: '5%',
     width: '90%',
@@ -126,12 +112,14 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     backgroundColor: 'black',
-    opacity: 0.3,
+    opacity: 0.4,
     height: '70%',
   },
   bannerText: {
     color: 'white',
-    fontSize: 22,
-    fontWeight: '600'
+    fontSize: 16,
+    fontWeight: '600',
+    top: 0,
+    padding: 10
   }
 });

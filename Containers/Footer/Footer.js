@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: 0,
-    height: '10%',
+    height: '8%',
     width: '100%',
     backgroundColor: '#e9e9e9',
     // borderTopColor: '#3c4859',

@@ -9,8 +9,7 @@ export default class Login extends Component {
                 <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
                 <View style={[styles.overlay, { height: '100%'}]} />
                 <View>
-                    {/* <Text style={styles.loginText}>LOGIN</Text> */}
-                    <Icon color="white" name="user-circle" type="font-awesome" size={75} padding={15}/>
+                    <Icon color="white" name="user-circle" type="font-awesome" size={90} padding={15} top={30}/>
                 </View>
                 <View>
                     <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, padding: 10, borderRadius: 15, bottom: 10 }}>
@@ -43,14 +42,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         backgroundColor: 'black',
-        opacity: 0.3,
+        opacity: 0.4,
         height: '70%',
-    },
-    // loginText: {
-    //     color: 'white',
-    //     fontSize: 25,
-    //     fontWeight: '600',
-    //     textAlign: 'center',
-    //     paddingBottom: 10,
-    // }
+    }
 });
