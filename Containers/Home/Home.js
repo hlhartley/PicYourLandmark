@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground } from 'react-native';
 import MapView, { Marker, Callout, MyCustomMarkerView, MyCustomCalloutView } from 'react-native-maps';
 import { Button, ButtonGroup, Icon } from 'react-native-elements';
 
@@ -38,10 +38,11 @@ export default class Home extends Component {
     const { locations } = this.state;
     return (
       <View style={styles.container}>
-        <View style={[styles.announcement, { borderRadius: 15, backgroundColor: '#a3c7f0', paddingTop: 20 }]}>
-          <Icon name="bullhorn" type="font-awesome" size={21} color='#0d67af'/>
-          <Text style={[{color:'#3c4859', paddingRight: 10, paddingLeft: 8}]}>Earn points by taking and uploading pics of you at various locations</Text>
-        </View>
+        <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={[styles.overlay, { height: '62%'}]} />
+        <Icon color="white" name="camera-retro" type="font-awesome" size={40} top={-55}/>
+          <Text style={[styles.bannerText, {top: -40}]}>Earn points by taking and uploading pics of you at various locations</Text>
+        </ImageBackground>
         <MapView
           provider={"google"}
           style={styles.map}
@@ -86,25 +87,14 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    left: '5%',
     height: '70%',
-    width: '92%',
-    padding: 8,
-    top: 20
-  },
-  announcement: {
-    display: 'flex',
-    flexDirection: 'row',
     width: '100%',
-    fontSize: 18,
-    height: '18%',
-    padding: 5,
-    color: 'green'
   },
   map: {
-    width: '100%',
-    height: '80%',
-    top: 30,
+    left: '5%',
+    width: '90%',
+    height: '70%',
+    top: -100,
   },
   landmarkInfo: {
     display: 'flex',
@@ -113,6 +103,23 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     opacity: .8,
     borderRadius: 15,
+    padding: 10
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'black',
+    opacity: 0.4,
+    height: '70%',
+  },
+  bannerText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+    top: 0,
     padding: 10
   }
 });
