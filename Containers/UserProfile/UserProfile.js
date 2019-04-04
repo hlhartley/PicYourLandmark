@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Button, ButtonGroup, Icon } from 'react-native-elements';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 export default class UserProfile extends Component {
     constructor() {
@@ -13,9 +13,23 @@ export default class UserProfile extends Component {
         }
     }
     render() {
+        const { profilePic } = this.props;
         return (
-            <View style={styles.container}>
-                <Icon color="#3c4859" name="portrait" type="badge" size={150} />
+            <View style={styles.viewContainer}>
+                {
+                    profilePic.length ?
+                        <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.props.takeProfilePic()}>
+                            <View style={styles.pictureContainer} >
+                                <Image
+                                    style={styles.profilePicture}
+                                    source={{ uri: profilePic }}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                        : <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.props.takeProfilePic()}>
+                            <Icon color="#3c4859" name="portrait" type="badge" size={150} />
+                        </TouchableOpacity>
+                }
                 <View style={styles.userInfo}>
                     <Text style={{ fontSize: 19 }}>Username: {this.state.username}</Text>
                     <Text style={{ fontSize: 19 }}>Total points: {this.state.points}</Text>
@@ -28,7 +42,7 @@ export default class UserProfile extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    viewContainer: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
@@ -38,10 +52,25 @@ const styles = StyleSheet.create({
         padding: 8,
         top: 20
     },
-    userInfo : {
+    userInfo: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
         height: '40%'
+    },
+    profilePictureContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        height: '40%',
+        backgroundColor: '#e9e9e9'
+    },
+    pictureContainer: {
+        width: '40%'
+    },
+    profilePicture: {
+        width: '100%',
+        height: '100%'
     }
 });
