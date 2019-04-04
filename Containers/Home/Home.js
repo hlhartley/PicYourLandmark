@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ImageBackground } from 'react-native';
-import MapView, { Marker, Callout, MyCustomMarkerView, MyCustomCalloutView } from 'react-native-maps';
-import { Button, ButtonGroup, Icon } from 'react-native-elements';
+import MapView, { Marker } from 'react-native-maps';
+import { Icon } from 'react-native-elements';
 
 export default class Home extends Component {
   constructor() {
