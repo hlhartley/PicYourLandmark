@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Camera, Permissions, FileSystem } from 'expo';
 
-export default class CameraExample extends Component {
+export class CameraWindow extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,6 +17,7 @@ export default class CameraExample extends Component {
   };
 
   takePicture = () => {
+    this.props.setCameraLoading()
     if (this.camera) {
       this.camera.takePictureAsync({ onPictureSaved: this.onPictureSaved });
     }
@@ -42,8 +43,7 @@ export default class CameraExample extends Component {
       return (
         <View style={styles.container}>
           <Camera style={{ flex: 1 }} type={this.state.type} ref={ref => { this.camera = ref; }}>
-            <View
-              style={styles.container}>
+            <View style={styles.container}>
               <TouchableOpacity
                 style={{
                   flex: 0.1,
@@ -84,24 +84,12 @@ export default class CameraExample extends Component {
   }
 }
 
+export default CameraWindow;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'transparent',
     flexDirection: 'row',
-  },
-  announcement: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-    fontSize: 18,
-    height: '18%',
-    padding: 5,
-    color: 'green'
-  },
-  map: {
-    width: '100%',
-    height: '80%',
-    top: 30,
-  },
+  }
 });
