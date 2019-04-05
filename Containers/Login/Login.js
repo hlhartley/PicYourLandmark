@@ -6,7 +6,7 @@ export default class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
+                <ImageBackground source={require('../../assets/goldengate.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
                 <View style={styles.overlay} />
                 <View>
                     <Icon color="white" name="user-circle" type="font-awesome" size={90} padding={15} top={30}/>
