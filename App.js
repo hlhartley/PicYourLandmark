@@ -7,8 +7,9 @@ import CameraPage from './Containers/Camera/Camera';
 import UserProfile from './Containers/UserProfile/UserProfile';
 import CollectedLandMarks from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
 import { StyleSheet, View } from 'react-native';
+import { Image } from 'react-native-elements';
 
-export default class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,7 +18,8 @@ export default class App extends Component {
       currentLongitude: null,
       pics: [],
       profilePic: '',
-      takingProfilePic: false
+      takingProfilePic: false,
+      cameraLoading: false
     }
   };
 
@@ -69,20 +71,27 @@ export default class App extends Component {
   };
 
   savePicture = (newPic) => {
-    this.setState({ profilePic: newPic });
+    this.setState({ profilePic: newPic, cameraLoading: false, currentPage: 'User profile' });
   };
 
+  setCameraLoading = () => {
+    this.setState({ cameraLoading: true })
+  }
+
   render() {
-    const { currentPage, currentLatitude, currentLongitude, pics, profilePic } = this.state;
+    const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading } = this.state;
     return (
       <View style={styles.container}>
+        {
+          cameraLoading && <View style={styles.loading}><Image style={styles.loadingGif} source={require('./assets/loading.gif')} /></View>
+        }
         <Header />
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} />
             : currentPage === 'Login' ? <Login />
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
-                  : currentPage === 'Camera' ? <CameraPage savePicture={this.savePicture} />
+                  : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
                     : <View />
         }
         <Footer changeCurrentPage={this.changeCurrentPage} />
@@ -94,6 +103,25 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    backgroundColor: '#f6f6f6'
+    backgroundColor: '#f6f6f6',
+    position: 'relative'
+  },
+  loading: {
+    position: 'absolute',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1,
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'rgba(0,0,0,.5)'
+  },
+  loadingGif: {
+    position: 'relative',
+    zIndex: 3,
   }
 });
+
+export default App;

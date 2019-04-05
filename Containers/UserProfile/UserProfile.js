@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-export default class UserProfile extends Component {
+export class UserProfile extends Component {
     constructor() {
         super()
         this.state = {
@@ -74,3 +74,5 @@ const styles = StyleSheet.create({
         height: '100%'
     }
 });
+
+export default UserProfile;
