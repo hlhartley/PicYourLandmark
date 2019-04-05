@@ -12,7 +12,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Login',
+      currentPage: 'User profile',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],

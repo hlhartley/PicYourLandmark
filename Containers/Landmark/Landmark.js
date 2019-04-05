@@ -34,7 +34,7 @@ export default class Landmark extends Component {
                 {
                     this.state.collectedLandmarks.map((landmark => {
                         return(
-                            <View key={landmark.id}>
+                            <View key={landmark.id} style={styles.landmarkContainer}>
                                 <Text>Landmark name: {landmark.name}</Text>
                                 <Text>Point value: {landmark.pointVal}</Text>
                                 <Text>Date visited: {landmark.visited}</Text>
@@ -51,11 +51,12 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around',
         left: '5%',
-        height: '70%',
         width: '92%',
         padding: 8,
-        top: 20
+    },
+    landmarkContainer: {
+        padding: 10,
+        top: -60
     }
 });

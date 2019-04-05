@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 export default class UserProfile extends Component {
@@ -16,6 +16,11 @@ export default class UserProfile extends Component {
         const { profilePic } = this.props;
         return (
             <View style={styles.viewContainer}>
+                <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={{width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <View style={styles.overlay} />
+                <Text style={styles.bannerText}>WELCOME, {this.state.username.toUpperCase()}!</Text>
+                <Icon color="white" name="id-card" type="font-awesome" size={40} top={-34}/>
+                </ImageBackground>
                 {
                     profilePic.length ?
                         <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.props.takeProfilePic()}>
@@ -31,10 +36,9 @@ export default class UserProfile extends Component {
                         </TouchableOpacity>
                 }
                 <View style={styles.userInfo}>
-                    <Text style={{ fontSize: 19 }}>Username: {this.state.username}</Text>
-                    <Text style={{ fontSize: 19 }}>Total points: {this.state.points}</Text>
-                    <Text style={{ fontSize: 19 }}># Landmarks visited: {this.state.numLandmarksVisited}</Text>
-                    <Text style={{ fontSize: 19 }}>Most recent landmark visited: {this.state.recentLandmark}</Text>
+                    <Text style={{ fontSize: 17 }}>- Total points: {this.state.points}</Text>
+                    <Text style={{ fontSize: 17 }}>- # Landmarks visited: {this.state.numLandmarksVisited}</Text>
+                    <Text style={{ fontSize: 17 }}>- Most recent landmark: {this.state.recentLandmark}</Text>
                 </View>
             </View>
         )
@@ -43,28 +47,23 @@ export default class UserProfile extends Component {
 
 const styles = StyleSheet.create({
     viewContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        left: '5%',
         height: '70%',
-        width: '92%',
-        padding: 8,
-        top: 20
+        width: '100%'
     },
     userInfo: {
+        top: -110,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around',
-        height: '40%'
+        height: '40%',
+        paddingLeft: 25
     },
     profilePictureContainer: {
+        top: -110,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
         height: '40%',
-        backgroundColor: '#e9e9e9'
     },
     pictureContainer: {
         width: '40%'
@@ -72,5 +71,22 @@ const styles = StyleSheet.create({
     profilePicture: {
         width: '100%',
         height: '100%'
+    },
+    overlay: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        backgroundColor: 'black',
+        opacity: 0.4,
+        height: '62%',
+    },
+    bannerText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: '600',
+        top: -49,
+        padding: 10
     }
 });
