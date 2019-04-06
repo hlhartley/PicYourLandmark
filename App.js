@@ -13,7 +13,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'User profile',
+      currentPage: 'Home',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -87,7 +87,7 @@ export class App extends Component {
         }
         <Header />
         {
-          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} />
+          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
             : currentPage === 'Login' ? <Login />
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
