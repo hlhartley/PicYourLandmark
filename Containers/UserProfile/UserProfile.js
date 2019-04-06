@@ -36,7 +36,7 @@ export class UserProfile extends Component {
                         </TouchableOpacity>
                 }
                 <View style={styles.userInfo}>
-                    <Text style={{ fontSize: 17 }}>- Total points: {this.state.points}</Text>
+                    <Text style={{ fontSize: 17 }}>- Total gems: {this.state.points}</Text>
                     <Text style={{ fontSize: 17 }}>- # Landmarks visited: {this.state.numLandmarksVisited}</Text>
                     <Text style={{ fontSize: 17 }}>- Most recent landmark: {this.state.recentLandmark}</Text>
                 </View>
