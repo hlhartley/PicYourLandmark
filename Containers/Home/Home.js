@@ -64,11 +64,19 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         {
-          clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <View style={styles.overlay} >
-            <Text style={styles.headerText}>{selectedName}</Text>
-            <Text style={styles.pointsText}>Points: {selectedPoints}</Text>
-              <Text style={styles.pointsText}>Distance away: {calculatedDistance}</Text>
+          clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <View style={[styles.overlay, { opacity: 0.6}]} />
+              <View style={{ display: 'flex', flexDirection: 'row' }}>
+                <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row'}}>
+                <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} paddingLeft={25}/>
+                <Text style={[styles.pointsText, {color: 'white'}]}>{selectedPoints} gems</Text>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row'}}>
+                <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} paddingLeft={25}/>
+                <Text style={[styles.pointsText, {color: 'white'}]}>{calculatedDistance} mi. away </Text>
+              </View>
               {
                 calculatedDistance < 1 &&
                 <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
@@ -76,14 +84,21 @@ export default class Home extends Component {
                   <Icon color="white" name="camera" type="font-awesome" size={30} />
                 </TouchableOpacity>
               }
-            </View>
           </ImageBackground>
             : clickedLocation ?
-              <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                <View style={styles.overlay} >
-                  <Text style={styles.headerText}>{selectedName}</Text>
-                  <Text style={styles.pointsText}>Points: {selectedPoints}</Text>
-                  <Text style={styles.pointsText}>Distance away: {calculatedDistance}</Text>
+            <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                <View style={[styles.overlay, { opacity: 0.6}]} />
+                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+                  </View>
+                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} paddingLeft={25}/>
+                    <Text style={[styles.pointsText, {color: "white"}]}>{selectedPoints} gems</Text>
+                  </View>
+                  <View style={{ display: 'flex', flexDirection: 'row'}}>
+                    <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} paddingLeft={25}/>
+                    <Text style={[styles.pointsText, {color: "white"}]}>{calculatedDistance} mi. away</Text>
+                  </View>
                   {
                     calculatedDistance < 1 ?
                     <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
@@ -91,15 +106,16 @@ export default class Home extends Component {
                       <Icon color="white" name="camera" type="font-awesome" size={30} />
                     </TouchableOpacity>
                     :
-                      <Text style={styles.pointsText}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
+                      <View>
+                        <Text style={[styles.pointsText, {top: -50, fontSize: 13}]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
+                      </View>
                   }
-                </View>
               </ImageBackground>
               :
               <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <View style={styles.overlay} />
                 <Icon color="white" name="camera-retro" type="font-awesome" size={40} top={-55} />
-                <Text style={styles.bannerText}>Earn points by taking and uploading pics of you at various locations</Text>
+                <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
               </ImageBackground>
         }
         <MapView
@@ -186,21 +202,22 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
-    top: -40,
+    top: -50,
     padding: 10
   },
   headerText: {
     color: 'white',
-    fontSize: 26,
+    fontSize: 22,
     fontWeight: '600',
-    padding: 10
+    padding: 10,
+    top: -65
   },
   pointsText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
-    top: -5,
-    paddingLeft: 10
+    top: -60,
+    paddingLeft: 10,
   },
   locationCamera: {
     position: 'absolute',
