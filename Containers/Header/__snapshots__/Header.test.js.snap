@@ -15,7 +15,7 @@ exports[`Header renders correctly 1`] = `
 >
   <View>
     <View
-      left={-106}
+      left="-28%"
       position="absolute"
       style={
         Object {

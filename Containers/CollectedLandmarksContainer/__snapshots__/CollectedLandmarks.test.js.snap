@@ -12,7 +12,7 @@ exports[`CollectedLandmarksContainer renders correctly 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "bottom": 0,

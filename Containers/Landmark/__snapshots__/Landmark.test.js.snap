@@ -52,7 +52,7 @@ exports[`Landmark renders correctly 1`] = `
     >
       <View>
         <View
-          left={-140}
+          left="-45%"
           style={
             Object {
               "alignItems": "center",
@@ -155,7 +155,7 @@ exports[`Landmark renders correctly 1`] = `
     >
       <View>
         <View
-          left={-140}
+          left="-45%"
           style={
             Object {
               "alignItems": "center",
@@ -258,7 +258,7 @@ exports[`Landmark renders correctly 1`] = `
     >
       <View>
         <View
-          left={-140}
+          left="-45%"
           style={
             Object {
               "alignItems": "center",
