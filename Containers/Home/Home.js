@@ -73,7 +73,7 @@ export class Home extends Component {
       <View style={styles.container}>
         {
           clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
-            <View style={[styles.overlay, { opacity: 0.6}]} />
+            <View style={styles.overlay} />
               <View style={styles.flexRow}>
                 <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
               </View>
@@ -97,7 +97,7 @@ export class Home extends Component {
           </ImageBackground>
             : clickedLocation ?
             <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
-                <View style={[styles.overlay, { opacity: 0.6}]} />
+                <View style={styles.overlay} />
                   <View style={styles.flexRow}>
                     <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
                   </View>
@@ -190,7 +190,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'white',
-    opacity: .8,
     borderRadius: 15,
     padding: 10,
     fontSize: 14
@@ -202,7 +201,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     backgroundColor: 'black',
-    opacity: 0.4,
+    opacity: 0.5,
     height: '62%',
   },
   imageBackground: {
