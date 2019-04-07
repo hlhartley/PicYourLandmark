@@ -7,12 +7,12 @@ export class CollectedLandmarksContainer extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <View style={[{ flex: 1 }, StyleSheet.absoluteFill]}>
+                <View style={[{ flexGrow: 1 }, StyleSheet.absoluteFill]}>
                     <ScrollView style={styles.scrollView}>
                         <ImageBackground source={require('../../assets/greatwallofchina.jpg')} style={styles.imageBackground}>
                         <View style={styles.overlay} />
                         <Text style={styles.bannerText}>COLLECTED LANDMARKS</Text>
-                        <Icon color="white" name="university" type="font-awesome" size={40} top={-100}/>
+                        <Icon color="white" name="university" type="font-awesome" size={40} top={-110}/>
                         </ImageBackground>
                         <Landmark />
                     </ScrollView>
@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
         left: 0,
         backgroundColor: 'black',
         opacity: 0.4,
-        height: '45%',
+        height: '44%',
     },
     imageBackground: {
         width: '100%', 
-        height: '45%', 
+        height: '44%', 
         display: 'flex', 
         flexDirection: 'column', 
         justifyContent: 'center', 
@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         top: -120,
         padding: 10
+    },
+    scrollView: {
+        height: '300%'
     }
 });
 
