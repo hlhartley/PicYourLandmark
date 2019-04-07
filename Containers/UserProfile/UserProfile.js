@@ -16,10 +16,10 @@ export class UserProfile extends Component {
         const { profilePic } = this.props;
         return (
             <View style={styles.viewContainer}>
-                <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={{width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                <View style={styles.overlay} />
-                <Text style={styles.bannerText}>WELCOME, {this.state.username.toUpperCase()}!</Text>
-                <Icon color="white" name="id-card" type="font-awesome" size={40} top={-34}/>
+                <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={styles.overlay} />
+                    <Text style={styles.bannerText}>WELCOME, {this.state.username.toUpperCase()}!</Text>
+                    <Icon color="white" name="id-card" type="font-awesome" size={40} top={-34} />
                 </ImageBackground>
                 {
                     profilePic.length ?
