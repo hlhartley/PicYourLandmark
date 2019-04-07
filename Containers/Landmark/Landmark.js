@@ -57,10 +57,11 @@ const styles = StyleSheet.create({
         left: '5%',
         width: '92%',
         padding: 8,
+        flex: 1
     },
     landmarkContainer: {
         padding: 10,
-        top: -80,
+        top: -200,
     }
 });
 
