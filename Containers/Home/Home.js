@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, Callout } from 'react-native-maps';
 import { Icon } from 'react-native-elements';
 
-export default class Home extends Component {
+export class Home extends Component {
   constructor() {
     super()
     this.state = {
@@ -149,7 +149,7 @@ export default class Home extends Component {
                     })
                   }}
                 >
-                  <MapView.Callout tooltip={true} >
+                  <Callout tooltip={true} >
                     <View style={styles.landmarkInfo}>
                       <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{location.name}</Text>
                       <Text style={{ fontSize: 14, fontStyle: 'italic' }}>{location.description}</Text>
@@ -157,7 +157,7 @@ export default class Home extends Component {
                       <Text style={{ fontSize: 14 }}>Visited: no</Text>
                       <Text style={{ fontSize: 14 }}>Link - takes to camera</Text>
                     </View>
-                  </MapView.Callout>
+                  </Callout>
                 </Marker>
               )
             })
@@ -226,3 +226,5 @@ const styles = StyleSheet.create({
     zIndex: 3,
   }
 });
+
+export default Home;
