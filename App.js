@@ -13,7 +13,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Collected landmarks',
+      currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -79,6 +79,10 @@ export class App extends Component {
     this.setState({ cameraLoading: true })
   }
 
+  setLoginStatus = () => {
+    this.setState({ isLoggedIn: !this.state.isLoggedIn })
+  }
+
   render() {
     const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading } = this.state;
     return (
@@ -89,7 +93,7 @@ export class App extends Component {
         <Header />
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-            : currentPage === 'Login' ? <Login isLoggedIn={this.state.isLoggedIn}/>
+            : currentPage === 'Login' ? <Login isLoggedIn={this.state.isLoggedIn} setLoginStatus={this.setLoginStatus}/>
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
