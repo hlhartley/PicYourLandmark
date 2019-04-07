@@ -15,13 +15,13 @@ export class Login extends Component {
         if (this.props.isLoggedIn) {
             return ( 
                 <View style={styles.container}>
-                <ImageBackground source={require('../../assets/goldengate.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
+                <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
                     <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50}/>
                         <View>
                         <TextInput
                             placeholder='Username'
-                            style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center', top: -30}}
+                            style={styles.inputBox}
                             onChangeText={(username) => this.setState({username})}
                             value={this.state.username}
                         />
@@ -29,14 +29,14 @@ export class Login extends Component {
                             placeholder='Password'
                             secureTextEntry={true} 
                             password={true}
-                            style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, top: -20, textAlign: 'center'}}
+                            style={[styles.inputBox, {top: -20}]}
                             onChangeText={(password) => this.setState({password})}
                             value={this.state.password}
                         />
-                        <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, padding: 10, borderRadius: 15, top: -10 }}>
+                        <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]}>
                             <Text style={{textAlign: 'center'}}>Log in</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: 200, padding: 10, borderRadius: 15 }} onPress={() => this.props.setLoginStatus(false)}>
+                        <TouchableOpacity style={styles.button} onPress={() => this.props.setLoginStatus(false)}>
                             <Text style={[styles.buttonText, {color: 'white'}]}>Click here to create an account</Text>
                         </TouchableOpacity>
                     </View> 
@@ -46,13 +46,13 @@ export class Login extends Component {
             } else {
                 return (
                     <View style={styles.container}>
-                    <ImageBackground source={require('../../assets/goldengate.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
+                    <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
                     <View style={styles.overlay} />
                         <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={40}/>
                             <View>
                             <TextInput
                                 placeholder='Username'
-                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center', top: -30}}
+                                style={styles.inputBox}
                                 onChangeText={(username) => this.setState({username})}
                                 value={this.state.username}
                             />
@@ -60,7 +60,7 @@ export class Login extends Component {
                                 placeholder='Password'
                                 secureTextEntry={true} 
                                 password={true}
-                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, top: -20, padding: 5, textAlign: 'center'}}
+                                style={[styles.inputBox, {top: -20}]}
                                 onChangeText={(password) => this.setState({password})}
                                 value={this.state.password}
                             />
@@ -68,15 +68,15 @@ export class Login extends Component {
                                 placeholder='Confirm Password'
                                 secureTextEntry={true} 
                                 password={true}
-                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, top: -10, padding: 5, textAlign: 'center'}}
+                                style={[styles.inputBox, {top: -10}]}
                                 onChangeText={(confirmPassword) => this.setState({confirmPassword})}
                                 value={this.state.confirmPassword}
                             />
-                        <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, top: 5, padding: 10, borderRadius: 15 }}>
+                        <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: 5 }]}>
                             <Text style={styles.buttonText}>Create account</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: 200, padding: 10, borderRadius: 15, top: 10 }} onPress={() => this.props.setLoginStatus(true)}>
-                            <Text style={[styles.buttonText, {color: 'white'}]}>Already a member? Click here to log in</Text>
+                        <TouchableOpacity style={styles.button} onPress={() => this.props.setLoginStatus(true)}>
+                            <Text style={[styles.buttonText, {color: 'white', top: 5}]}>Already a member? Click here to log in</Text>
                         </TouchableOpacity>
                     </View> 
                     </ImageBackground>
@@ -103,6 +103,31 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: 0.4,
         height: '100%',
+    },
+    imageBackground: {
+        width: '100%', 
+        height: '100%', 
+        display: 'flex', 
+        flex: 1, 
+        flexDirection: 'column', 
+        justifyContent: 'space-evenly', 
+        alignItems: 'center'
+    },
+    inputBox: {
+        height: 40, 
+        width: 200, 
+        borderColor: 'gray', 
+        borderWidth: 2, 
+        backgroundColor: 'white', 
+        opacity: 0.7, 
+        padding: 5, 
+        textAlign: 'center', 
+        top: -30
+    },
+    button: {
+        width: 200, 
+        padding: 10, 
+        borderRadius: 15,
     },
     buttonText: {
         textAlign: 'center'

@@ -9,7 +9,7 @@ export class CollectedLandmarksContainer extends Component {
             <View style={{ flex: 1 }}>
                 <View style={[{ flex: 1 }, StyleSheet.absoluteFill]}>
                     <ScrollView style={styles.scrollView}>
-                        <ImageBackground source={require('../../assets/greatwallofchina.jpg')} style={{width: '100%', height: '45%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                        <ImageBackground source={require('../../assets/greatwallofchina.jpg')} style={styles.imageBackground}>
                         <View style={styles.overlay} />
                         <Text style={styles.bannerText}>COLLECTED LANDMARKS</Text>
                         <Icon color="white" name="university" type="font-awesome" size={40} top={-100}/>
@@ -32,6 +32,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: 0.4,
         height: '45%',
+    },
+    imageBackground: {
+        width: '100%', 
+        height: '45%', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center'
     },
     bannerText: {
         color: 'white',

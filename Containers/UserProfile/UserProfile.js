@@ -16,7 +16,7 @@ export class UserProfile extends Component {
         const { profilePic } = this.props;
         return (
             <View style={styles.viewContainer}>
-                <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={styles.imageBackground}>
                     <View style={styles.overlay} />
                     <Text style={styles.bannerText}>WELCOME, {this.state.username.toUpperCase()}!</Text>
                     <Icon color="white" name="id-card" type="font-awesome" size={40} top={-34} />
@@ -38,15 +38,15 @@ export class UserProfile extends Component {
                 <View style={styles.userInfo}>
                     <View>
                         <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
-                        <Text style={{ fontSize: 16, paddingTop: 3 }}>{this.state.points} gems</Text>
+                        <Text style={styles.userInfoText}>{this.state.points} gems</Text>
                     </View>
                     <View>
                         <Icon color="#009688" name="university" type="font-awesome" size={20} top={13}/>
-                        <Text style={{ fontSize: 16, top: 15, paddingTop: 3 }}>{this.state.numLandmarksVisited} landmarks visited</Text>
+                        <Text style={[styles.userInfoText, {top: 15}]}>{this.state.numLandmarksVisited} landmarks visited</Text>
                     </View>
                     <View>
                         <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} top={25}/>
-                        <Text style={{ fontSize: 16, top: 25, paddingTop: 3 }}>Recent landmark: {this.state.recentLandmark}</Text>
+                        <Text style={[styles.userInfoText, {top: 25}]}>Recent landmark: {this.state.recentLandmark}</Text>
                     </View>
                 </View>
             </View>
@@ -59,12 +59,24 @@ const styles = StyleSheet.create({
         height: '70%',
         width: '100%'
     },
+    imageBackground: {
+        width: '100%', 
+        height: '62%', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
     userInfo: {
         top: -123,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    userInfoText: {
+        fontSize: 16, 
+        paddingTop: 3
     },
     profilePictureContainer: {
         top: -110,
