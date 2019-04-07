@@ -177,10 +177,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   map: {
-    left: '5%',
-    width: '90%',
-    height: '70%',
-    top: -100,
+    width: '100%',
+    height: '77%',
+    top: -110,
   },
   landmarkInfo: {
     display: 'flex',
