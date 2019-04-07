@@ -140,17 +140,22 @@ exports[`Login renders correctly 1`] = `
         placeholder="Password"
         secureTextEntry={true}
         style={
-          Object {
-            "backgroundColor": "white",
-            "borderColor": "gray",
-            "borderWidth": 2,
-            "height": 40,
-            "opacity": 0.7,
-            "padding": 5,
-            "textAlign": "center",
-            "top": -20,
-            "width": 200,
-          }
+          Array [
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "gray",
+              "borderWidth": 2,
+              "height": 40,
+              "opacity": 0.7,
+              "padding": 5,
+              "textAlign": "center",
+              "top": -30,
+              "width": 200,
+            },
+            Object {
+              "top": -20,
+            },
+          ]
         }
         underlineColorAndroid="transparent"
         value=""
@@ -162,17 +167,22 @@ exports[`Login renders correctly 1`] = `
         placeholder="Confirm Password"
         secureTextEntry={true}
         style={
-          Object {
-            "backgroundColor": "white",
-            "borderColor": "gray",
-            "borderWidth": 2,
-            "height": 40,
-            "opacity": 0.7,
-            "padding": 5,
-            "textAlign": "center",
-            "top": -10,
-            "width": 200,
-          }
+          Array [
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "gray",
+              "borderWidth": 2,
+              "height": 40,
+              "opacity": 0.7,
+              "padding": 5,
+              "textAlign": "center",
+              "top": -30,
+              "width": 200,
+            },
+            Object {
+              "top": -10,
+            },
+          ]
         }
         underlineColorAndroid="transparent"
         value=""
@@ -221,7 +231,6 @@ exports[`Login renders correctly 1`] = `
             "borderRadius": 15,
             "opacity": 1,
             "padding": 10,
-            "top": 10,
             "width": 200,
           }
         }
@@ -234,6 +243,7 @@ exports[`Login renders correctly 1`] = `
               },
               Object {
                 "color": "white",
+                "top": 5,
               },
             ]
           }
