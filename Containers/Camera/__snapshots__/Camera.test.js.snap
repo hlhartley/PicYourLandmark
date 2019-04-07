@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CameraWindow renders correctly 1`] = `<View />`;
+exports[`CameraWindow renders correctly 1`] = `
+<Text>
+  Request to access camera has not been made
+</Text>
+`;

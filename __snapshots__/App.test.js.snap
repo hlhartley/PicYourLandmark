@@ -90,39 +90,20 @@ exports[`App renders correctly 1`] = `
       PIC YOUR LANDMARK
     </Text>
   </View>
+  <View />
   <View
     style={
-      Object {
-        "flex": 1,
-      }
-    }
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "flex": 1,
-          },
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-        ]
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "backgroundColor": "#e9e9e9",
-        "bottom": 0,
-        "height": "8%",
-        "position": "absolute",
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "#e9e9e9",
+          "bottom": 0,
+          "position": "absolute",
+          "width": "100%",
+        },
+        Object {
+          "height": "8%",
+        },
+      ]
     }
   >
     <View
@@ -146,7 +127,6 @@ exports[`App renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#e9e9e9",
             "opacity": 1,
           }
         }
@@ -214,7 +194,6 @@ exports[`App renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#e9e9e9",
             "opacity": 1,
           }
         }
@@ -282,7 +261,6 @@ exports[`App renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#e9e9e9",
             "opacity": 1,
           }
         }
@@ -350,7 +328,6 @@ exports[`App renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#e9e9e9",
             "opacity": 1,
           }
         }
@@ -418,7 +395,6 @@ exports[`App renders correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#e9e9e9",
             "opacity": 1,
           }
         }
