@@ -122,8 +122,7 @@ exports[`Home renders correctly 1`] = `
     </Text>
   </View>
   <MapView
-    provider="google"
-    region={
+    initialRegion={
       Object {
         "latitude": undefined,
         "latitudeDelta": 0.015,
@@ -131,6 +130,7 @@ exports[`Home renders correctly 1`] = `
         "longitudeDelta": 0.0121,
       }
     }
+    provider="google"
     showsUserLocation={true}
     style={
       Object {
@@ -194,9 +194,7 @@ exports[`Home renders correctly 1`] = `
               }
             }
           >
-            Distance away: 
-            0
-             mi
+            Distance away: mi
           </Text>
           <Text
             style={
@@ -272,9 +270,7 @@ exports[`Home renders correctly 1`] = `
               }
             }
           >
-            Distance away: 
-            0
-             mi
+            Distance away: mi
           </Text>
           <Text
             style={
@@ -350,9 +346,7 @@ exports[`Home renders correctly 1`] = `
               }
             }
           >
-            Distance away: 
-            0
-             mi
+            Distance away: mi
           </Text>
           <Text
             style={
