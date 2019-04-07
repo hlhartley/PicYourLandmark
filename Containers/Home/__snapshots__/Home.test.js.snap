@@ -134,10 +134,9 @@ exports[`Home renders correctly 1`] = `
     showsUserLocation={true}
     style={
       Object {
-        "height": "70%",
-        "left": "5%",
-        "top": -100,
-        "width": "90%",
+        "height": "77%",
+        "top": -110,
+        "width": "100%",
       }
     }
   >
