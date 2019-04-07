@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, CameraRoll } from 'react-native';
-import { Camera, Permissions, FileSystem } from 'expo';
+import { Camera, Permissions } from 'expo';
 
 export class CameraWindow extends Component {
   constructor() {
@@ -12,9 +12,7 @@ export class CameraWindow extends Component {
   };
 
   componentWillMount = async () => {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA);
-    // const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-    // console.log(status)
+    const { status } = await Permissions.getAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL)
     this.setState({ hasCameraPermission: status === 'granted' });
   };
 
