@@ -72,7 +72,7 @@ export class Home extends Component {
     return (
       <View style={styles.container}>
         {
-          clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
             <View style={[styles.overlay, { opacity: 0.6}]} />
               <View style={styles.flexRow}>
                 <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
@@ -87,10 +87,12 @@ export class Home extends Component {
               </View>
               {
                 calculatedDistance < 1 &&
-                <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
-                  <Text style={styles.pointsText}>Retake Photo</Text>
-                  <Icon color="white" name="camera" type="font-awesome" size={30} />
-                </TouchableOpacity>
+                <View style={styles.flexRow}>
+                  <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
+                    <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={31} top={3}/>
+                    <Text style={[styles.pointsText, {top: -17, left: 100}]}>Retake Photo</Text>
+                  </TouchableOpacity>
+                </View>
               }
           </ImageBackground>
             : clickedLocation ?
@@ -109,10 +111,12 @@ export class Home extends Component {
                   </View>
                   {
                     calculatedDistance < 1 ?
-                    <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
-                      <Text style={styles.pointsText}>Take Photo!</Text>
-                      <Icon color="white" name="camera" type="font-awesome" size={30} />
-                    </TouchableOpacity>
+                    <View style={styles.flexRow}>
+                      <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
+                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={31} top={3}/>
+                        <Text style={[styles.pointsText, {top: -17, left: 93}]}>Take Photo!</Text>
+                      </TouchableOpacity>
+                    </View>
                     :
                       <View>
                         <Text style={[styles.pointsText, {top: -50, fontSize: 13}]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
