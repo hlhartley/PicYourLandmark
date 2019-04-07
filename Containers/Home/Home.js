@@ -74,14 +74,14 @@ export class Home extends Component {
         {
           clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <View style={[styles.overlay, { opacity: 0.6}]} />
-              <View style={{ display: 'flex', flexDirection: 'row' }}>
+              <View style={styles.flexRow}>
                 <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
               </View>
-              <View style={{ display: 'flex', flexDirection: 'row'}}>
+              <View style={styles.flexRow}>
                 <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} paddingLeft={25}/>
                 <Text style={[styles.pointsText, {color: 'white'}]}>{selectedPoints} gems</Text>
               </View>
-              <View style={{ display: 'flex', flexDirection: 'row'}}>
+              <View style={styles.flexRow}>
                 <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} paddingLeft={25}/>
                 <Text style={[styles.pointsText, {color: 'white'}]}>{calculatedDistance} mi. away </Text>
               </View>
@@ -94,18 +94,18 @@ export class Home extends Component {
               }
           </ImageBackground>
             : clickedLocation ?
-            <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={[styles.overlay, { opacity: 0.6}]} />
-                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                  <View style={styles.flexRow}>
                     <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
                   </View>
-                  <View style={{ display: 'flex', flexDirection: 'row' }}>
+                  <View style={styles.flexRow}>
                     <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} paddingLeft={25}/>
                     <Text style={[styles.pointsText, {color: "white"}]}>{selectedPoints} gems</Text>
                   </View>
-                  <View style={{ display: 'flex', flexDirection: 'row'}}>
+                  <View style={styles.flexRow}>
                     <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} paddingLeft={25}/>
-                    <Text style={[styles.pointsText, {color: "white"}]}>{calculatedDistance} mi. away</Text>
+                    <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
                   </View>
                   {
                     calculatedDistance < 1 ?
@@ -120,7 +120,7 @@ export class Home extends Component {
                   }
               </ImageBackground>
               :
-              <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={{ width: '100%', height: '62%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+              <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
                 <Icon color="white" name="camera-retro" type="font-awesome" size={40} top={-55} />
                 <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
@@ -154,11 +154,11 @@ export class Home extends Component {
                 >
                   <Callout tooltip={true} >
                     <View style={styles.landmarkInfo}>
-                      <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{location.name}</Text>
-                      <Text style={{ fontSize: 14, fontStyle: 'italic' }}>{location.description}</Text>
-                      <Text style={{ fontSize: 14 }}>Distance away: mi</Text>
-                      <Text style={{ fontSize: 14 }}>Visited: no</Text>
-                      <Text style={{ fontSize: 14 }}>Link - takes to camera</Text>
+                      <Text style={{fontWeight: 'bold'}}>{location.name}</Text>
+                      <Text style={{fontStyle: 'italic'}}>{location.description}</Text>
+                      <Text>Distance away: mi</Text>
+                      <Text>Visited: no</Text>
+                      <Text>Link - takes to camera</Text>
                     </View>
                   </Callout>
                 </Marker> 
@@ -177,10 +177,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   map: {
-    left: '5%',
-    width: '90%',
-    height: '70%',
-    top: -100,
+    width: '100%',
+    height: '77%',
+    top: '-24%',
   },
   landmarkInfo: {
     display: 'flex',
@@ -189,7 +188,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     opacity: .8,
     borderRadius: 15,
-    padding: 10
+    padding: 10,
+    fontSize: 14
   },
   overlay: {
     position: 'absolute',
@@ -200,6 +200,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     opacity: 0.4,
     height: '62%',
+  },
+  imageBackground: {
+    width: '100%', 
+    height: '62%', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'center', 
+    alignItems: 'center'
   },
   bannerText: {
     color: 'white',
@@ -227,6 +235,10 @@ const styles = StyleSheet.create({
     right: 20,
     bottom: 20,
     zIndex: 3,
+  },
+  flexRow: {
+    display: 'flex', 
+    flexDirection: 'row'
   }
 });
 

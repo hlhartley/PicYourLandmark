@@ -296,11 +296,15 @@ exports[`UserProfile renders correctly 1`] = `
       </View>
       <Text
         style={
-          Object {
-            "fontSize": 16,
-            "paddingTop": 3,
-            "top": 15,
-          }
+          Array [
+            Object {
+              "fontSize": 16,
+              "paddingTop": 3,
+            },
+            Object {
+              "top": 15,
+            },
+          ]
         }
       >
         3
@@ -362,11 +366,15 @@ exports[`UserProfile renders correctly 1`] = `
       </View>
       <Text
         style={
-          Object {
-            "fontSize": 16,
-            "paddingTop": 3,
-            "top": 25,
-          }
+          Array [
+            Object {
+              "fontSize": 16,
+              "paddingTop": 3,
+            },
+            Object {
+              "top": 25,
+            },
+          ]
         }
       >
         Recent landmark: 

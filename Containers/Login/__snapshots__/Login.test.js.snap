@@ -106,7 +106,7 @@ exports[`Login renders correctly 1`] = `
             },
           }
         }
-        top={50}
+        top={40}
         underlayColor="white"
       >
         <Text />
@@ -126,7 +126,7 @@ exports[`Login renders correctly 1`] = `
             "opacity": 0.7,
             "padding": 5,
             "textAlign": "center",
-            "top": -20,
+            "top": -30,
             "width": 200,
           }
         }
@@ -140,17 +140,22 @@ exports[`Login renders correctly 1`] = `
         placeholder="Password"
         secureTextEntry={true}
         style={
-          Object {
-            "backgroundColor": "white",
-            "borderColor": "gray",
-            "borderWidth": 2,
-            "height": 40,
-            "opacity": 0.7,
-            "padding": 5,
-            "textAlign": "center",
-            "top": -10,
-            "width": 200,
-          }
+          Array [
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "gray",
+              "borderWidth": 2,
+              "height": 40,
+              "opacity": 0.7,
+              "padding": 5,
+              "textAlign": "center",
+              "top": -30,
+              "width": 200,
+            },
+            Object {
+              "top": -20,
+            },
+          ]
         }
         underlineColorAndroid="transparent"
         value=""
@@ -162,16 +167,22 @@ exports[`Login renders correctly 1`] = `
         placeholder="Confirm Password"
         secureTextEntry={true}
         style={
-          Object {
-            "backgroundColor": "white",
-            "borderColor": "gray",
-            "borderWidth": 2,
-            "height": 40,
-            "opacity": 0.7,
-            "padding": 5,
-            "textAlign": "center",
-            "width": 200,
-          }
+          Array [
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "gray",
+              "borderWidth": 2,
+              "height": 40,
+              "opacity": 0.7,
+              "padding": 5,
+              "textAlign": "center",
+              "top": -30,
+              "width": 200,
+            },
+            Object {
+              "top": -10,
+            },
+          ]
         }
         underlineColorAndroid="transparent"
         value=""
@@ -191,13 +202,53 @@ exports[`Login renders correctly 1`] = `
             "borderRadius": 15,
             "opacity": 1,
             "padding": 10,
-            "top": 10,
+            "top": 5,
             "width": 200,
           }
         }
       >
-        <Text>
+        <Text
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
           Create account
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "borderRadius": 15,
+            "opacity": 1,
+            "padding": 10,
+            "width": 200,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "textAlign": "center",
+              },
+              Object {
+                "color": "white",
+                "top": 5,
+              },
+            ]
+          }
+        >
+          Already a member? Click here to log in
         </Text>
       </View>
     </View>
