@@ -184,7 +184,7 @@ exports[`UserProfile renders correctly 1`] = `
         }
       }
     >
-      - Total points: 
+      - Total gems: 
       30
     </Text>
     <Text
