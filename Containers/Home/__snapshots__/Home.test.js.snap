@@ -48,7 +48,7 @@ exports[`Home renders correctly 1`] = `
           "bottom": 0,
           "height": "62%",
           "left": 0,
-          "opacity": 0.4,
+          "opacity": 0.5,
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -135,7 +135,7 @@ exports[`Home renders correctly 1`] = `
     style={
       Object {
         "height": "77%",
-        "top": -110,
+        "top": "-24%",
         "width": "100%",
       }
     }
@@ -162,7 +162,6 @@ exports[`Home renders correctly 1`] = `
               "display": "flex",
               "flexDirection": "column",
               "fontSize": 14,
-              "opacity": 0.8,
               "padding": 10,
             }
           }
@@ -219,7 +218,6 @@ exports[`Home renders correctly 1`] = `
               "display": "flex",
               "flexDirection": "column",
               "fontSize": 14,
-              "opacity": 0.8,
               "padding": 10,
             }
           }
@@ -276,7 +274,6 @@ exports[`Home renders correctly 1`] = `
               "display": "flex",
               "flexDirection": "column",
               "fontSize": 14,
-              "opacity": 0.8,
               "padding": 10,
             }
           }
