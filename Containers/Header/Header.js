@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { Icon } from 'react-native-elements';
 
-export default class Header extends Component {
+export class Header extends Component {
   constructor() {
     super()
     this.state = {
@@ -40,3 +40,5 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   }
 });
+
+export default Header;

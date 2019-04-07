@@ -1,5 +1,11 @@
+import React from 'react';
+import { App } from './App';
+import renderer from 'react-test-renderer';
+
 describe('App', () => {
-    it('should return true', () => {
-        expect(true).toEqual(true)
+    it('renders correctly', () => {
+        const mockProfilePic = 'stringURL'
+        const tree = renderer.create(<App profilePic={mockProfilePic} />).toJSON();
+        expect(tree).toMatchSnapshot();
     });
 });

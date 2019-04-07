@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-export default class Footer extends Component {
+export class Footer extends Component {
 
   render() {
     return (
@@ -46,3 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   }
 });
+
+
+export default Footer;

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-export default class Login extends Component {
+export class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -46,3 +46,5 @@ const styles = StyleSheet.create({
         height: '100%',
     }
 });
+
+export default Login;

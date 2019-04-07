@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Landmark from '../Landmark/Landmark';
 
-export default class CollectedLandmarksContainer extends Component {
+export class CollectedLandmarksContainer extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -41,3 +41,5 @@ const styles = StyleSheet.create({
         padding: 10
     }
 });
+
+export default CollectedLandmarksContainer;
