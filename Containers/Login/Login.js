@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import { Icon } from 'react-native-elements';
-export default class Login extends Component {
+
+export class Login extends Component {
     constructor() {
         super()
         this.state = {
