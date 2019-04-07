@@ -13,13 +13,14 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
       profilePic: '',
       takingProfilePic: false,
-      cameraLoading: false
+      cameraLoading: false,
+      isLoggedIn: true
     }
   };
 
@@ -88,7 +89,7 @@ export class App extends Component {
         <Header />
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-            : currentPage === 'Login' ? <Login />
+            : currentPage === 'Login' ? <Login isLoggedIn={this.state.isLoggedIn}/>
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
