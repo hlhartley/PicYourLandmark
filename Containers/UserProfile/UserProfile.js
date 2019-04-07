@@ -42,11 +42,11 @@ export class UserProfile extends Component {
                     </View>
                     <View>
                         <Icon color="#009688" name="university" type="font-awesome" size={20} top={13}/>
-                        <Text style={styles.userInfoText}>{this.state.numLandmarksVisited} landmarks visited</Text>
+                        <Text style={[styles.userInfoText, {top: 15}]}>{this.state.numLandmarksVisited} landmarks visited</Text>
                     </View>
                     <View>
                         <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} top={25}/>
-                        <Text style={styles.userInfoText}>Recent landmark: {this.state.recentLandmark}</Text>
+                        <Text style={[styles.userInfoText, {top: 25}]}>Recent landmark: {this.state.recentLandmark}</Text>
                     </View>
                 </View>
             </View>
