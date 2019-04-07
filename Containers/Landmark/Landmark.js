@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 export class Landmark extends Component {
     constructor() {
@@ -34,9 +35,12 @@ export class Landmark extends Component {
                     this.state.collectedLandmarks.map((landmark => {
                         return (
                             <View key={landmark.id} style={styles.landmarkContainer}>
-                                <Text>Landmark name: {landmark.name}</Text>
-                                <Text>Point value: {landmark.pointVal}</Text>
-                                <Text>Date visited: {landmark.visited}</Text>
+                                <Image source={require('../../assets/statueofliberty.jpg')} style={{ width: 300, height: 200, bottom: 15 }}/>
+                                <Text style={{ fontWeight: 'bold' }}>{landmark.name.toUpperCase()} ({landmark.visited})</Text>
+                                <View style={{ display: 'flex' }}>
+                                    <Icon color="#f44336" name="diamond" type="font-awesome" size={20} left={-140} top={3}/>
+                                    <Text style={{ top: -15, left: 30}}>{landmark.pointVal} gems</Text>
+                                </View>
                             </View>
                         )
                     }))
@@ -56,7 +60,7 @@ const styles = StyleSheet.create({
     },
     landmarkContainer: {
         padding: 10,
-        top: -60
+        top: -80,
     }
 });
 
