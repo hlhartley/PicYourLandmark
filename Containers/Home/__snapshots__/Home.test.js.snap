@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": "70%",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "62%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": "62%",
+            "width": "100%",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": "62%",
+          "left": 0,
+          "opacity": 0.4,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "justifyContent": "center",
+          }
+        }
+        theme={
+          Object {
+            "colors": Object {
+              "disabled": "hsl(208, 8%, 90%)",
+              "divider": "#bcbbc1",
+              "error": "#ff190c",
+              "grey0": "#393e42",
+              "grey1": "#43484d",
+              "grey2": "#5e6977",
+              "grey3": "#86939e",
+              "grey4": "#bdc6cf",
+              "grey5": "#e1e8ee",
+              "greyOutline": "#bbb",
+              "platform": Object {
+                "android": Object {
+                  "error": "#f44336",
+                  "primary": "#2196f3",
+                  "secondary": "#9C27B0",
+                  "success": "#4caf50",
+                  "warning": "#ffeb3b",
+                },
+                "ios": Object {
+                  "error": "#ff3b30",
+                  "primary": "#007aff",
+                  "secondary": "#5856d6",
+                  "success": "#4cd964",
+                  "warning": "#ffcc00",
+                },
+              },
+              "primary": "#2089dc",
+              "searchBg": "#303337",
+              "secondary": "#8F0CE8",
+              "success": "#52c41a",
+              "warning": "#faad14",
+            },
+          }
+        }
+        top={-55}
+        underlayColor="white"
+      >
+        <Text />
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "padding": 10,
+          "top": -50,
+        }
+      }
+    >
+      Earn gems by taking and uploading pics of you at various locations
+    </Text>
+  </View>
+  <MapView
+    provider="google"
+    region={
+      Object {
+        "latitude": undefined,
+        "latitudeDelta": 0.015,
+        "longitude": undefined,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    showsUserLocation={true}
+    style={
+      Object {
+        "height": "70%",
+        "left": "5%",
+        "top": -100,
+        "width": "90%",
+      }
+    }
+  >
+    <Marker
+      coordinate={
+        Object {
+          "latitude": 39.75302,
+          "longitude": -104.9965,
+        }
+      }
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <Callout
+        tooltip={true}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "opacity": 0.8,
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Summit
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 1 description
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Distance away: 
+            0
+             mi
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Visited: no
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Link - takes to camera
+          </Text>
+        </View>
+      </Callout>
+    </Marker>
+    <Marker
+      coordinate={
+        Object {
+          "latitude": 39.75023,
+          "longitude": -104.9965,
+        }
+      }
+      onPress={[Function]}
+      pinColor="#FFF000"
+    >
+      <Callout
+        tooltip={true}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "opacity": 0.8,
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            The Delectable Egg
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 2 description
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Distance away: 
+            0
+             mi
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Visited: no
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Link - takes to camera
+          </Text>
+        </View>
+      </Callout>
+    </Marker>
+    <Marker
+      coordinate={
+        Object {
+          "latitude": 39.77023,
+          "longitude": -104.9965,
+        }
+      }
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <Callout
+        tooltip={true}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "opacity": 0.8,
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Far away example
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontStyle": "italic",
+              }
+            }
+          >
+            over a mile away
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Distance away: 
+            0
+             mi
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Visited: no
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            Link - takes to camera
+          </Text>
+        </View>
+      </Callout>
+    </Marker>
+  </MapView>
+</View>
+`;
