@@ -5,22 +5,24 @@ import { Icon } from 'react-native-elements';
 export class Footer extends Component {
 
   render() {
+    const {changeCurrentPage, currentPage} = this.props;
+    const containerHeight = currentPage === 'Camera' ? '15%' : '8%';
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, {height: containerHeight}]}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => this.props.changeCurrentPage('User profile')}>
+          <TouchableOpacity onPress={() => changeCurrentPage('User profile')}>
             <Icon color="#3c4859" name="user" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => this.props.changeCurrentPage('Home')} >
+          <TouchableOpacity onPress={() => changeCurrentPage('Home')} >
             <Icon color="#3c4859" name="map-marker" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => this.props.changeCurrentPage('Camera')}>
+          <TouchableOpacity onPress={() => changeCurrentPage('Camera')}>
             <Icon color="#3c4859" name="camera" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => this.props.changeCurrentPage('Collected landmarks')}>
+          <TouchableOpacity onPress={() => changeCurrentPage('Collected landmarks')}>
             <Icon color="#3c4859" name="image" type="font-awesome" size={30} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => this.props.changeCurrentPage('Login')}>
+          <TouchableOpacity onPress={() => changeCurrentPage('Login')}>
             <Icon color="#3c4859" name="sign-in" type="font-awesome" size={30} />
           </TouchableOpacity>
         </View>
@@ -33,7 +35,6 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: 0,
-    height: '8%',
     width: '100%',
     backgroundColor: '#e9e9e9'
   },
@@ -42,11 +43,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around'
-  },
-  button: {
-    backgroundColor: '#e9e9e9'
   }
 });
-
 
 export default Footer;

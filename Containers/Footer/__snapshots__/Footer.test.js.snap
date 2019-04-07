@@ -3,13 +3,17 @@
 exports[`Footer renders correctly 1`] = `
 <View
   style={
-    Object {
-      "backgroundColor": "#e9e9e9",
-      "bottom": 0,
-      "height": "8%",
-      "position": "absolute",
-      "width": "100%",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#e9e9e9",
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      },
+      Object {
+        "height": "8%",
+      },
+    ]
   }
 >
   <View
@@ -33,7 +37,6 @@ exports[`Footer renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "#e9e9e9",
           "opacity": 1,
         }
       }
@@ -101,7 +104,6 @@ exports[`Footer renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "#e9e9e9",
           "opacity": 1,
         }
       }
@@ -169,7 +171,6 @@ exports[`Footer renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "#e9e9e9",
           "opacity": 1,
         }
       }
@@ -237,7 +238,6 @@ exports[`Footer renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "#e9e9e9",
           "opacity": 1,
         }
       }
@@ -305,7 +305,6 @@ exports[`Footer renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "#e9e9e9",
           "opacity": 1,
         }
       }

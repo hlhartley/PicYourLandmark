@@ -13,7 +13,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Collected landmarks',
+      currentPage: 'Home',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -90,7 +90,9 @@ export class App extends Component {
         {
           cameraLoading && <View style={styles.loading}><Image style={styles.loadingGif} source={require('./assets/loading.gif')} /></View>
         }
-        <Header />
+        {
+          currentPage !== 'Camera' && <Header />
+        }
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
             : currentPage === 'Login' ? <Login isLoggedIn={this.state.isLoggedIn} setLoginStatus={this.setLoginStatus}/>
@@ -99,7 +101,7 @@ export class App extends Component {
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
                     : <View />
         }
-        <Footer changeCurrentPage={this.changeCurrentPage} />
+        <Footer changeCurrentPage={this.changeCurrentPage} currentPage={currentPage} />
       </View>
     );
   };
