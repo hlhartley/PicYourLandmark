@@ -13,13 +13,14 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
       profilePic: '',
       takingProfilePic: false,
-      cameraLoading: false
+      cameraLoading: false,
+      isLoggedIn: true
     }
   };
 
@@ -80,23 +81,33 @@ export class App extends Component {
 
   render() {
     const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading } = this.state;
-    return (
-      <View style={styles.container}>
+    if(currentPage === 'Login') {
+      return (
+        <View style={styles.container}>
         {
           cameraLoading && <View style={styles.loading}><Image style={styles.loadingGif} source={require('./assets/loading.gif')} /></View>
         }
         <Header />
-        {
-          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-            : currentPage === 'Login' ? <Login />
-              : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
-                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
-                  : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
-                    : <View />
-        }
-        <Footer changeCurrentPage={this.changeCurrentPage} />
+        <Login isLoggedIn={this.state.isLoggedIn}/>
       </View>
-    );
+      )
+    } else {
+        return (
+          <View style={styles.container}>
+            {
+              cameraLoading && <View style={styles.loading}><Image style={styles.loadingGif} source={require('./assets/loading.gif')} /></View>
+            }
+            <Header />
+            {
+              currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
+                : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
+                  : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
+                    : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
+                      : <View />
+            }
+          </View>
+        );
+    }
   };
 };
 
