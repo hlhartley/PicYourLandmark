@@ -13,7 +13,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Collected landmarks',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
