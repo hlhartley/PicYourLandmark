@@ -11,6 +11,7 @@ export class Home extends Component {
       calculatedDistance: 0,
       selectedName: '',
       selectedVisited: false,
+      selectedDescription: '',
       selectedPoints: 10,
       currentLocation: {
         currentLatDelta: 0.015,
@@ -45,7 +46,7 @@ export class Home extends Component {
     }
   }
 
-  calculateDistance = (landmarkLatitude, landmarkLongitude) => {
+  calculateDistance = ({ lat: landmarkLatitude, lon: landmarkLongitude, name, visited, description }) => {
     const earthRadiusMiles = 3958.8;
     const { currentLatitude, currentLongitude } = this.props;
     const deltaLatitude = (currentLatitude - landmarkLatitude) * Math.PI / 180;
@@ -54,7 +55,14 @@ export class Home extends Component {
     const currentLatitudeInRads = currentLatitude * Math.PI / 180;
     const a = Math.sin(deltaLatitude / 2) * Math.sin(deltaLatitude / 2) + Math.sin(deltaLongitude / 2) * Math.sin(deltaLongitude / 2) * Math.cos(landmarkLatitudeInRads) * Math.cos(currentLatitudeInRads);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return (earthRadiusMiles * c).toFixed(2);
+    const calculatedDistance = (earthRadiusMiles * c).toFixed(2);
+    this.setState({
+      calculatedDistance,
+      selectedName: name,
+      selectedVisited: visited,
+      selectedDescription: description,
+      clickedLocation: true
+    })
   }
 
   render() {
@@ -121,7 +129,7 @@ export class Home extends Component {
         <MapView
           provider={"google"}
           style={styles.map}
-          region={{
+          initialRegion={{
             latitude: currentLatitude,
             longitude: currentLongitude,
             latitudeDelta: currentLatDelta,
@@ -141,24 +149,19 @@ export class Home extends Component {
                   }}
                   pinColor={pinColor}
                   onPress={() => {
-                    this.setState({
-                      calculatedDistance: this.calculateDistance(location.lat, location.lon),
-                      selectedName: location.name,
-                      selectedVisited: location.visited,
-                      clickedLocation: true
-                    })
+                    this.calculateDistance(location);
                   }}
                 >
                   <Callout tooltip={true} >
                     <View style={styles.landmarkInfo}>
                       <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{location.name}</Text>
                       <Text style={{ fontSize: 14, fontStyle: 'italic' }}>{location.description}</Text>
-                      <Text style={{ fontSize: 14 }}>Distance away: {this.state.calculatedDistance} mi</Text>
+                      <Text style={{ fontSize: 14 }}>Distance away: mi</Text>
                       <Text style={{ fontSize: 14 }}>Visited: no</Text>
                       <Text style={{ fontSize: 14 }}>Link - takes to camera</Text>
                     </View>
                   </Callout>
-                </Marker>
+                </Marker> 
               )
             })
           }
