@@ -36,9 +36,18 @@ export class UserProfile extends Component {
                         </TouchableOpacity>
                 }
                 <View style={styles.userInfo}>
-                    <Text style={{ fontSize: 17 }}>- Total gems: {this.state.points}</Text>
-                    <Text style={{ fontSize: 17 }}>- # Landmarks visited: {this.state.numLandmarksVisited}</Text>
-                    <Text style={{ fontSize: 17 }}>- Most recent landmark: {this.state.recentLandmark}</Text>
+                    <View>
+                        <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
+                        <Text style={{ fontSize: 16, paddingTop: 3 }}>{this.state.points} gems</Text>
+                    </View>
+                    <View>
+                        <Icon color="#009688" name="university" type="font-awesome" size={20} top={13}/>
+                        <Text style={{ fontSize: 16, top: 15, paddingTop: 3 }}>{this.state.numLandmarksVisited} landmarks visited</Text>
+                    </View>
+                    <View>
+                        <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} top={25}/>
+                        <Text style={{ fontSize: 16, top: 25, paddingTop: 3 }}>Recent landmark: {this.state.recentLandmark}</Text>
+                    </View>
                 </View>
             </View>
         )
@@ -51,11 +60,11 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     userInfo: {
-        top: -110,
+        top: -123,
         display: 'flex',
         flexDirection: 'column',
-        height: '40%',
-        paddingLeft: 25
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     profilePictureContainer: {
         top: -110,
