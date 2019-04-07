@@ -93,10 +93,7 @@ exports[`App renders correctly 1`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "height": "90%",
+        "height": "70%",
         "width": "100%",
       }
     }
@@ -107,10 +104,9 @@ exports[`App renders correctly 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
-          "flex": 1,
           "flexDirection": "column",
-          "height": "100%",
-          "justifyContent": "space-evenly",
+          "height": "62%",
+          "justifyContent": "center",
           "width": "100%",
         }
       }
@@ -127,7 +123,7 @@ exports[`App renders correctly 1`] = `
               "top": 0,
             },
             Object {
-              "height": "100%",
+              "height": "62%",
               "width": "100%",
             },
             undefined,
@@ -139,7 +135,7 @@ exports[`App renders correctly 1`] = `
           Object {
             "backgroundColor": "black",
             "bottom": 0,
-            "height": "100%",
+            "height": "62%",
             "left": 0,
             "opacity": 0.4,
             "position": "absolute",
@@ -148,9 +144,21 @@ exports[`App renders correctly 1`] = `
           }
         }
       />
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "padding": 10,
+            "top": -49,
+          }
+        }
+      >
+        COLLECTED LANDMARKS
+      </Text>
       <View>
         <View
-          padding={15}
           style={
             Object {
               "alignItems": "center",
@@ -195,82 +203,330 @@ exports[`App renders correctly 1`] = `
               },
             }
           }
-          top={50}
+          top={-34}
           underlayColor="white"
         >
           <Text />
         </View>
       </View>
-      <View>
-        <TextInput
-          allowFontScaling={true}
-          onChangeText={[Function]}
-          placeholder="Username"
+    </View>
+    <View
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "left": "5%",
+          "padding": 8,
+          "width": "92%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "padding": 10,
+            "top": -80,
+          }
+        }
+      >
+        <Image
+          source={1}
           style={
             Object {
-              "backgroundColor": "white",
-              "borderColor": "gray",
-              "borderWidth": 2,
-              "height": 40,
-              "opacity": 0.7,
-              "padding": 5,
-              "textAlign": "center",
-              "top": -20,
-              "width": 200,
+              "bottom": 15,
+              "height": 200,
+              "width": 300,
             }
           }
-          underlineColorAndroid="transparent"
-          value=""
         />
-        <TextInput
-          allowFontScaling={true}
-          onChangeText={[Function]}
-          password={true}
-          placeholder="Password"
-          secureTextEntry={true}
+        <Text
           style={
             Object {
-              "backgroundColor": "white",
-              "borderColor": "gray",
-              "borderWidth": 2,
-              "height": 40,
-              "opacity": 0.7,
-              "padding": 5,
-              "textAlign": "center",
-              "top": -10,
-              "width": 200,
-            }
-          }
-          underlineColorAndroid="transparent"
-          value=""
-        />
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "#e9e9e9",
-              "borderRadius": 15,
-              "opacity": 1,
-              "padding": 10,
-              "width": 200,
+              "fontWeight": "bold",
             }
           }
         >
+          COORS FIELD
+           (
+          4/1/2019
+          )
+        </Text>
+        <View
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <View>
+            <View
+              left={-140}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+              top={3}
+              underlayColor="white"
+            >
+              <Text />
+            </View>
+          </View>
           <Text
             style={
               Object {
-                "textAlign": "center",
+                "left": 30,
+                "top": -15,
               }
             }
           >
-            Log in
+            10
+             gems
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "padding": 10,
+            "top": -80,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "bottom": 15,
+              "height": 200,
+              "width": 300,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          STATUE OF LIBERTY
+           (
+          3/12/2019
+          )
+        </Text>
+        <View
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <View>
+            <View
+              left={-140}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+              top={3}
+              underlayColor="white"
+            >
+              <Text />
+            </View>
+          </View>
+          <Text
+            style={
+              Object {
+                "left": 30,
+                "top": -15,
+              }
+            }
+          >
+            10
+             gems
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "padding": 10,
+            "top": -80,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "bottom": 15,
+              "height": 200,
+              "width": 300,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          GRAND CANYON
+           (
+          12/9/2018
+          )
+        </Text>
+        <View
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <View>
+            <View
+              left={-140}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+              top={3}
+              underlayColor="white"
+            >
+              <Text />
+            </View>
+          </View>
+          <Text
+            style={
+              Object {
+                "left": 30,
+                "top": -15,
+              }
+            }
+          >
+            10
+             gems
           </Text>
         </View>
       </View>
