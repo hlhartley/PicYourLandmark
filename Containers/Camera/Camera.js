@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Camera, Permissions, FileSystem } from 'expo';
+import { StyleSheet, Text, View, TouchableOpacity, CameraRoll } from 'react-native';
+import { Camera, Permissions } from 'expo';
 
 export class CameraWindow extends Component {
   constructor() {
@@ -12,7 +12,7 @@ export class CameraWindow extends Component {
   };
 
   componentWillMount = async () => {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    const { status } = await Permissions.getAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL)
     this.setState({ hasCameraPermission: status === 'granted' });
   };
 
@@ -24,13 +24,8 @@ export class CameraWindow extends Component {
   };
 
   onPictureSaved = async (photo) => {
-    Expo.FileSystem.copyAsync
-    const newLocation = `${FileSystem.documentDirectory}photos/${Date.now()}.jpg`
-    await FileSystem.moveAsync({
-      from: photo.uri,
-      to: newLocation
-    });
-    this.props.savePicture(newLocation);
+    let saveResult = await CameraRoll.saveToCameraRoll(photo.uri, 'photo');
+    this.props.savePicture(saveResult);
   };
 
   render() {

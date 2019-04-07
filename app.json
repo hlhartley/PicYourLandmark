@@ -23,9 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Allow Expo experiences to use your location."
+        "NSLocationWhenInUseUsageDescription": "Allow Expo experiences to use your location.",
+        "NSCameraUsageDescription": "This app uses the camera to scan barcodes on event tickets.",
+        "NSPhotoLibraryAddUsageDescription": "This app uses the camera to scan barcodes on event tickets.",
+        "NSPhotoLibraryUsageDescription": "This app uses the camera to scan barcodes on event tickets."
       }
     }
   }
