@@ -135,7 +135,7 @@ exports[`Home renders correctly 1`] = `
     style={
       Object {
         "height": "77%",
-        "top": -110,
+        "top": "-24%",
         "width": "100%",
       }
     }
