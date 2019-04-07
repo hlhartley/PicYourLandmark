@@ -5,6 +5,7 @@ exports[`Landmark renders correctly 1`] = `
   style={
     Object {
       "display": "flex",
+      "flex": 1,
       "flexDirection": "column",
       "left": "5%",
       "padding": 8,
@@ -16,7 +17,7 @@ exports[`Landmark renders correctly 1`] = `
     style={
       Object {
         "padding": 10,
-        "top": -80,
+        "top": -200,
       }
     }
   >
@@ -119,7 +120,7 @@ exports[`Landmark renders correctly 1`] = `
     style={
       Object {
         "padding": 10,
-        "top": -80,
+        "top": -200,
       }
     }
   >
@@ -222,7 +223,7 @@ exports[`Landmark renders correctly 1`] = `
     style={
       Object {
         "padding": 10,
-        "top": -80,
+        "top": -200,
       }
     }
   >
