@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Button, ButtonGroup, Icon } from 'react-native-elements';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default class Landmark extends Component {
+export class Landmark extends Component {
     constructor() {
         super()
         this.state = {
@@ -33,7 +32,7 @@ export default class Landmark extends Component {
             <View style={styles.container}>
                 {
                     this.state.collectedLandmarks.map((landmark => {
-                        return(
+                        return (
                             <View key={landmark.id} style={styles.landmarkContainer}>
                                 <Text>Landmark name: {landmark.name}</Text>
                                 <Text>Point value: {landmark.pointVal}</Text>
@@ -60,3 +59,5 @@ const styles = StyleSheet.create({
         top: -60
     }
 });
+
+export default Landmark;
