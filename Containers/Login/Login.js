@@ -17,11 +17,11 @@ export class Login extends Component {
                 <View style={styles.container}>
                 <ImageBackground source={require('../../assets/goldengate.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
                 <View style={styles.overlay} />
-                    <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={60}/>
+                    <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50}/>
                         <View>
                         <TextInput
                             placeholder='Username'
-                            style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center'}}
+                            style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center', top: -20}}
                             onChangeText={(username) => this.setState({username})}
                             value={this.state.username}
                         />
@@ -29,11 +29,11 @@ export class Login extends Component {
                             placeholder='Password'
                             secureTextEntry={true} 
                             password={true}
-                            style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, top: 20, textAlign: 'center'}}
+                            style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, top: -10, textAlign: 'center'}}
                             onChangeText={(password) => this.setState({password})}
                             value={this.state.password}
                         />
-                        <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, padding: 10, borderRadius: 15, top: 55 }}>
+                        <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, padding: 10, borderRadius: 15 }}>
                             <Text style={{textAlign: 'center'}}>Log in</Text>
                         </TouchableOpacity>
                     </View> 
@@ -45,11 +45,11 @@ export class Login extends Component {
                     <View style={styles.container}>
                     <ImageBackground source={require('../../assets/goldengate.jpg')} style={{width: '100%', height: '100%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'}}>
                     <View style={styles.overlay} />
-                        <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={60}/>
+                        <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50}/>
                             <View>
                             <TextInput
                                 placeholder='Username'
-                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center'}}
+                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center', top: -20}}
                                 onChangeText={(username) => this.setState({username})}
                                 value={this.state.username}
                             />
@@ -57,7 +57,7 @@ export class Login extends Component {
                                 placeholder='Password'
                                 secureTextEntry={true} 
                                 password={true}
-                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, top: 10, textAlign: 'center'}}
+                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, top: -10, padding: 5, textAlign: 'center'}}
                                 onChangeText={(password) => this.setState({password})}
                                 value={this.state.password}
                             />
@@ -65,11 +65,11 @@ export class Login extends Component {
                                 placeholder='Confirm Password'
                                 secureTextEntry={true} 
                                 password={true}
-                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, top: 20, textAlign: 'center'}}
+                                style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 2, backgroundColor: 'white', opacity: 0.7, padding: 5, textAlign: 'center'}}
                                 onChangeText={(confirmPassword) => this.setState({confirmPassword})}
                                 value={this.state.confirmPassword}
                             />
-                        <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, padding: 10, borderRadius: 15, top: 45 }}>
+                        <TouchableOpacity style={{ backgroundColor: '#e9e9e9', width: 200, padding: 10, borderRadius: 15, top: 10 }}>
                             <Text>Create account</Text>
                         </TouchableOpacity>
                     </View> 

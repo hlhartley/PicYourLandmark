@@ -81,33 +81,23 @@ export class App extends Component {
 
   render() {
     const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading } = this.state;
-    if(currentPage === 'Login') {
-      return (
-        <View style={styles.container}>
+    return (
+      <View style={styles.container}>
         {
           cameraLoading && <View style={styles.loading}><Image style={styles.loadingGif} source={require('./assets/loading.gif')} /></View>
         }
         <Header />
-        <Login isLoggedIn={this.state.isLoggedIn}/>
+        {
+          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
+            : currentPage === 'Login' ? <Login isLoggedIn={this.state.isLoggedIn}/>
+              : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
+                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
+                  : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
+                    : <View />
+        }
+        <Footer changeCurrentPage={this.changeCurrentPage} />
       </View>
-      )
-    } else {
-        return (
-          <View style={styles.container}>
-            {
-              cameraLoading && <View style={styles.loading}><Image style={styles.loadingGif} source={require('./assets/loading.gif')} /></View>
-            }
-            <Header />
-            {
-              currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-                : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
-                  : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
-                    : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
-                      : <View />
-            }
-          </View>
-        );
-    }
+    );
   };
 };
 
