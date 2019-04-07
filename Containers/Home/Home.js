@@ -78,19 +78,19 @@ export class Home extends Component {
                 <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
               </View>
               <View style={styles.flexRow}>
-                <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} paddingLeft={25}/>
-                <Text style={[styles.pointsText, {color: 'white'}]}>{selectedPoints} gems</Text>
+                <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58}/>
+                <Text style={[styles.pointsText, {color: 'white', left: -5, top: -63}]}>{selectedPoints} gems</Text>
               </View>
               <View style={styles.flexRow}>
-                <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} paddingLeft={25}/>
+                <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57}/>
                 <Text style={[styles.pointsText, {color: 'white'}]}>{calculatedDistance} mi. away </Text>
               </View>
               {
                 calculatedDistance < 1 &&
                 <View style={styles.flexRow}>
                   <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
-                    <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={31} top={3}/>
-                    <Text style={[styles.pointsText, {top: -17, left: 100}]}>Retake Photo</Text>
+                    <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={21} top={3}/>
+                    <Text style={[styles.pointsText, {top: -16, left: 90}]}>Retake Photo</Text>
                   </TouchableOpacity>
                 </View>
               }
@@ -102,19 +102,19 @@ export class Home extends Component {
                     <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
                   </View>
                   <View style={styles.flexRow}>
-                    <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} paddingLeft={25}/>
-                    <Text style={[styles.pointsText, {color: "white"}]}>{selectedPoints} gems</Text>
+                    <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58}/>
+                    <Text style={[styles.pointsText, {color: "white", left: -5, top: -63}]}>{selectedPoints} gems</Text>
                   </View>
                   <View style={styles.flexRow}>
-                    <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} paddingLeft={25}/>
+                    <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57}/>
                     <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
                   </View>
                   {
                     calculatedDistance < 1 ?
                     <View style={styles.flexRow}>
                       <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
-                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={31} top={3}/>
-                        <Text style={[styles.pointsText, {top: -17, left: 93}]}>Take Photo!</Text>
+                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={19} top={3}/>
+                        <Text style={[styles.pointsText, {top: -16, left: 80}]}>Take Photo!</Text>
                       </TouchableOpacity>
                     </View>
                     :
