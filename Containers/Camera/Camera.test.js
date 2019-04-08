@@ -70,5 +70,4 @@ describe('CameraWindow', () => {
       wrapper.find(TouchableOpacity).at(3).simulate('press');
       expect(wrapper.state('type')).toEqual(Camera.Constants.Type.back);
     });
-  });
 });
