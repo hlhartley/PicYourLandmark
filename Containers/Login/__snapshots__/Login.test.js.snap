@@ -106,7 +106,7 @@ exports[`Login renders correctly 1`] = `
             },
           }
         }
-        top={40}
+        top={50}
         underlayColor="white"
       >
         <Text />
@@ -160,33 +160,6 @@ exports[`Login renders correctly 1`] = `
         underlineColorAndroid="transparent"
         value=""
       />
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        password={true}
-        placeholder="Confirm Password"
-        secureTextEntry={true}
-        style={
-          Array [
-            Object {
-              "backgroundColor": "white",
-              "borderColor": "gray",
-              "borderWidth": 2,
-              "height": 40,
-              "opacity": 0.7,
-              "padding": 5,
-              "textAlign": "center",
-              "top": -30,
-              "width": 200,
-            },
-            Object {
-              "top": -10,
-            },
-          ]
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
       <View
         accessible={true}
         isTVSelectable={true}
@@ -202,7 +175,7 @@ exports[`Login renders correctly 1`] = `
             "borderRadius": 15,
             "opacity": 1,
             "padding": 10,
-            "top": 5,
+            "top": -10,
             "width": 200,
           }
         }
@@ -214,7 +187,7 @@ exports[`Login renders correctly 1`] = `
             }
           }
         >
-          Create account
+          Log in
         </Text>
       </View>
       <View
@@ -243,12 +216,11 @@ exports[`Login renders correctly 1`] = `
               },
               Object {
                 "color": "white",
-                "top": 5,
               },
             ]
           }
         >
-          Already a member? Click here to log in
+          Click here to create an account
         </Text>
       </View>
     </View>
