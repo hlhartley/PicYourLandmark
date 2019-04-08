@@ -13,6 +13,9 @@ export class Home extends Component {
       selectedVisited: false,
       selectedDescription: '',
       selectedPoints: 10,
+      selectedID: -1,
+      selectedLongitude: 0,
+      selectedLatitude: 0,
       currentLocation: {
         currentLatDelta: 0.015,
         currentLonDelta: 0.0121
@@ -46,7 +49,7 @@ export class Home extends Component {
     }
   }
 
-  calculateDistance = ({ lat: landmarkLatitude, lon: landmarkLongitude, name, visited, description }) => {
+  calculateDistance = ({ lat: landmarkLatitude, lon: landmarkLongitude, name, visited, description, id }) => {
     const earthRadiusMiles = 3958.8;
     const { currentLatitude, currentLongitude } = this.props;
     const deltaLatitude = (currentLatitude - landmarkLatitude) * Math.PI / 180;
@@ -58,11 +61,19 @@ export class Home extends Component {
     const calculatedDistance = (earthRadiusMiles * c).toFixed(2);
     this.setState({
       calculatedDistance,
+      selectedID: id,
       selectedName: name,
       selectedVisited: visited,
       selectedDescription: description,
+      selectedLatitude: landmarkLatitude,
+      selectedLongitude: landmarkLongitude,
       clickedLocation: true
     })
+  }
+
+  takeLocationPhoto = () => {
+    const {selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID} = this.state;
+    this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID)
   }
 
   render() {
@@ -74,54 +85,54 @@ export class Home extends Component {
         {
           clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
+            <View style={styles.flexRow}>
+              <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+            </View>
+            <View style={styles.flexRow}>
+              <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} />
+              <Text style={[styles.pointsText, { color: 'white', left: -5, top: -63 }]}>{selectedPoints} gems</Text>
+            </View>
+            <View style={styles.flexRow}>
+              <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} />
+              <Text style={[styles.pointsText, { color: 'white' }]}>{calculatedDistance} mi. away </Text>
+            </View>
+            {
+              calculatedDistance < 1 &&
               <View style={styles.flexRow}>
-                <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+                <TouchableOpacity style={styles.locationCamera} onPress={() => this.takeLocationPhoto()}>
+                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={21} top={3} />
+                  <Text style={[styles.pointsText, { top: -16, left: 90 }]}>Retake Photo</Text>
+                </TouchableOpacity>
               </View>
-              <View style={styles.flexRow}>
-                <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58}/>
-                <Text style={[styles.pointsText, {color: 'white', left: -5, top: -63}]}>{selectedPoints} gems</Text>
-              </View>
-              <View style={styles.flexRow}>
-                <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57}/>
-                <Text style={[styles.pointsText, {color: 'white'}]}>{calculatedDistance} mi. away </Text>
-              </View>
-              {
-                calculatedDistance < 1 &&
-                <View style={styles.flexRow}>
-                  <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
-                    <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={21} top={3}/>
-                    <Text style={[styles.pointsText, {top: -16, left: 90}]}>Retake Photo</Text>
-                  </TouchableOpacity>
-                </View>
-              }
+            }
           </ImageBackground>
             : clickedLocation ?
-            <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
+              <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
-                  <View style={styles.flexRow}>
-                    <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
-                  </View>
-                  <View style={styles.flexRow}>
-                    <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58}/>
-                    <Text style={[styles.pointsText, {color: "white", left: -5, top: -63}]}>{selectedPoints} gems</Text>
-                  </View>
-                  <View style={styles.flexRow}>
-                    <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57}/>
-                    <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
-                  </View>
-                  {
-                    calculatedDistance < 1 ?
+                <View style={styles.flexRow}>
+                  <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+                </View>
+                <View style={styles.flexRow}>
+                  <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} />
+                  <Text style={[styles.pointsText, { color: "white", left: -5, top: -63 }]}>{selectedPoints} gems</Text>
+                </View>
+                <View style={styles.flexRow}>
+                  <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} />
+                  <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
+                </View>
+                {
+                  calculatedDistance < 1 ?
                     <View style={styles.flexRow}>
-                      <TouchableOpacity style={styles.locationCamera} onPress={() => this.props.changeCurrentPage('Camera')}>
-                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={19} top={3}/>
-                        <Text style={[styles.pointsText, {top: -16, left: 80}]}>Take Photo!</Text>
+                      <TouchableOpacity style={styles.locationCamera} onPress={() => this.takeLocationPhoto()}>
+                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={19} top={3} />
+                        <Text style={[styles.pointsText, { top: -16, left: 80 }]}>Take Photo!</Text>
                       </TouchableOpacity>
                     </View>
                     :
-                      <View>
-                        <Text style={[styles.pointsText, {top: -50, fontSize: 13}]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
-                      </View>
-                  }
+                    <View>
+                      <Text style={[styles.pointsText, { top: -50, fontSize: 13 }]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
+                    </View>
+                }
               </ImageBackground>
               :
               <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
@@ -158,14 +169,14 @@ export class Home extends Component {
                 >
                   <Callout tooltip={true} >
                     <View style={styles.landmarkInfo}>
-                      <Text style={{fontWeight: 'bold'}}>{location.name}</Text>
-                      <Text style={{fontStyle: 'italic'}}>{location.description}</Text>
+                      <Text style={{ fontWeight: 'bold' }}>{location.name}</Text>
+                      <Text style={{ fontStyle: 'italic' }}>{location.description}</Text>
                       <Text>Distance away: mi</Text>
                       <Text>Visited: no</Text>
                       <Text>Link - takes to camera</Text>
                     </View>
                   </Callout>
-                </Marker> 
+                </Marker>
               )
             })
           }
@@ -205,11 +216,11 @@ const styles = StyleSheet.create({
     height: '62%',
   },
   imageBackground: {
-    width: '100%', 
-    height: '62%', 
-    display: 'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'center', 
+    width: '100%',
+    height: '62%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   bannerText: {
@@ -240,7 +251,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   flexRow: {
-    display: 'flex', 
+    display: 'flex',
     flexDirection: 'row'
   }
 });
