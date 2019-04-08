@@ -71,7 +71,7 @@ export class Home extends Component {
     })
   }
 
-  takeLocationPhoto = () => {
+  sendLocationPhoto = () => {
     const {selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID} = this.state;
     this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID)
   }
@@ -99,7 +99,7 @@ export class Home extends Component {
             {
               calculatedDistance < 1 &&
               <View style={styles.flexRow}>
-                <TouchableOpacity style={styles.locationCamera} onPress={() => this.takeLocationPhoto()}>
+                <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
                   <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={21} top={3} />
                   <Text style={[styles.pointsText, { top: -16, left: 90 }]}>Retake Photo</Text>
                 </TouchableOpacity>
@@ -123,7 +123,7 @@ export class Home extends Component {
                 {
                   calculatedDistance < 1 ?
                     <View style={styles.flexRow}>
-                      <TouchableOpacity style={styles.locationCamera} onPress={() => this.takeLocationPhoto()}>
+                      <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
                         <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={19} top={3} />
                         <Text style={[styles.pointsText, { top: -16, left: 80 }]}>Take Photo!</Text>
                       </TouchableOpacity>
