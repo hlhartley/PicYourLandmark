@@ -13,7 +13,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Collected landmarks',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -21,8 +21,24 @@ export class App extends Component {
       takingProfilePic: false,
       cameraLoading: false,
       currentUserId: -1,
-      visitedLocations: []
-    }
+      visitedLocations: [
+        {
+          name: "Great Lawn Park",
+          description: "Beautiful Park",
+          lat: 39.72386,
+          lon: -104.88715,
+          landmark_id: 6,
+          photo_url: "www.myimage.com/2"
+      },
+      {
+          name: "Buckley Annex",
+          description: "Beautiful Park",
+          lat: 39.7159,
+          lon: -104.90379,
+          landmark_id: 3,
+          photo_url: "www.myimage.com"
+      }
+    ]}
   };
 
   componentDidMount = async () => {
@@ -105,7 +121,7 @@ export class App extends Component {
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
             : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId} fetchUserInfo={this.fetchUserInfo}/>
-              : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
+              : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} visitedLocations={this.state.visitedLocations}/>
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
                     : <View />

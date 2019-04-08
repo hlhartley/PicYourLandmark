@@ -5,7 +5,6 @@ exports[`Landmark renders correctly 1`] = `
   style={
     Object {
       "display": "flex",
-      "flex": 1,
       "flexDirection": "column",
       "left": "5%",
       "padding": 8,
@@ -16,8 +15,7 @@ exports[`Landmark renders correctly 1`] = `
   <View
     style={
       Object {
-        "padding": 10,
-        "top": -200,
+        "top": "-25%",
       }
     }
   >
@@ -38,10 +36,7 @@ exports[`Landmark renders correctly 1`] = `
         }
       }
     >
-      COORS FIELD
-       (
-      4/1/2019
-      )
+      GREAT LAWN PARK
     </Text>
     <View
       style={
@@ -111,214 +106,7 @@ exports[`Landmark renders correctly 1`] = `
           }
         }
       >
-        10
-         gems
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "padding": 10,
-        "top": -200,
-      }
-    }
-  >
-    <Image
-      source={1}
-      style={
-        Object {
-          "bottom": 15,
-          "height": 200,
-          "width": 300,
-        }
-      }
-    />
-    <Text
-      style={
-        Object {
-          "fontWeight": "bold",
-        }
-      }
-    >
-      STATUE OF LIBERTY
-       (
-      3/12/2019
-      )
-    </Text>
-    <View
-      style={
-        Object {
-          "display": "flex",
-        }
-      }
-    >
-      <View>
-        <View
-          left="-45%"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "justifyContent": "center",
-            }
-          }
-          theme={
-            Object {
-              "colors": Object {
-                "disabled": "hsl(208, 8%, 90%)",
-                "divider": "#bcbbc1",
-                "error": "#ff190c",
-                "grey0": "#393e42",
-                "grey1": "#43484d",
-                "grey2": "#5e6977",
-                "grey3": "#86939e",
-                "grey4": "#bdc6cf",
-                "grey5": "#e1e8ee",
-                "greyOutline": "#bbb",
-                "platform": Object {
-                  "android": Object {
-                    "error": "#f44336",
-                    "primary": "#2196f3",
-                    "secondary": "#9C27B0",
-                    "success": "#4caf50",
-                    "warning": "#ffeb3b",
-                  },
-                  "ios": Object {
-                    "error": "#ff3b30",
-                    "primary": "#007aff",
-                    "secondary": "#5856d6",
-                    "success": "#4cd964",
-                    "warning": "#ffcc00",
-                  },
-                },
-                "primary": "#2089dc",
-                "searchBg": "#303337",
-                "secondary": "#8F0CE8",
-                "success": "#52c41a",
-                "warning": "#faad14",
-              },
-            }
-          }
-          top={3}
-          underlayColor="white"
-        >
-          <Text />
-        </View>
-      </View>
-      <Text
-        style={
-          Object {
-            "left": 30,
-            "top": -15,
-          }
-        }
-      >
-        10
-         gems
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "padding": 10,
-        "top": -200,
-      }
-    }
-  >
-    <Image
-      source={1}
-      style={
-        Object {
-          "bottom": 15,
-          "height": 200,
-          "width": 300,
-        }
-      }
-    />
-    <Text
-      style={
-        Object {
-          "fontWeight": "bold",
-        }
-      }
-    >
-      GRAND CANYON
-       (
-      12/9/2018
-      )
-    </Text>
-    <View
-      style={
-        Object {
-          "display": "flex",
-        }
-      }
-    >
-      <View>
-        <View
-          left="-45%"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "justifyContent": "center",
-            }
-          }
-          theme={
-            Object {
-              "colors": Object {
-                "disabled": "hsl(208, 8%, 90%)",
-                "divider": "#bcbbc1",
-                "error": "#ff190c",
-                "grey0": "#393e42",
-                "grey1": "#43484d",
-                "grey2": "#5e6977",
-                "grey3": "#86939e",
-                "grey4": "#bdc6cf",
-                "grey5": "#e1e8ee",
-                "greyOutline": "#bbb",
-                "platform": Object {
-                  "android": Object {
-                    "error": "#f44336",
-                    "primary": "#2196f3",
-                    "secondary": "#9C27B0",
-                    "success": "#4caf50",
-                    "warning": "#ffeb3b",
-                  },
-                  "ios": Object {
-                    "error": "#ff3b30",
-                    "primary": "#007aff",
-                    "secondary": "#5856d6",
-                    "success": "#4cd964",
-                    "warning": "#ffcc00",
-                  },
-                },
-                "primary": "#2089dc",
-                "searchBg": "#303337",
-                "secondary": "#8F0CE8",
-                "success": "#52c41a",
-                "warning": "#faad14",
-              },
-            }
-          }
-          top={3}
-          underlayColor="white"
-        >
-          <Text />
-        </View>
-      </View>
-      <Text
-        style={
-          Object {
-            "left": 30,
-            "top": -15,
-          }
-        }
-      >
-        10
-         gems
+        10 gems
       </Text>
     </View>
   </View>

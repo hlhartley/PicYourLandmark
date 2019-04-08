@@ -53,6 +53,26 @@ exports[`App should match the snapshot when on the Collected landmarks page 1`] 
   <Header />
   <CollectedLandmarksContainer
     pics={Array []}
+    visitedLocations={
+      Array [
+        Object {
+          "description": "Beautiful Park",
+          "landmark_id": 6,
+          "lat": 39.72386,
+          "lon": -104.88715,
+          "name": "Great Lawn Park",
+          "photo_url": "www.myimage.com/2",
+        },
+        Object {
+          "description": "Beautiful Park",
+          "landmark_id": 3,
+          "lat": 39.7159,
+          "lon": -104.90379,
+          "name": "Buckley Annex",
+          "photo_url": "www.myimage.com",
+        },
+      ]
+    }
   />
   <Footer
     changeCurrentPage={[Function]}
