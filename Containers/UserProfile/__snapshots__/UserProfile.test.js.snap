@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserProfile renders correctly 1`] = `
-<View
+exports[`UserProfile should match the snapshot when the user does not have a profile picture 1`] = `
+<Component
   style={
     Object {
       "display": "flex",
@@ -11,8 +11,8 @@ exports[`UserProfile renders correctly 1`] = `
     }
   }
 >
-  <View
-    accessibilityIgnoresInvertColors={true}
+  <ImageBackground
+    source={1}
     style={
       Object {
         "alignItems": "center",
@@ -22,26 +22,7 @@ exports[`UserProfile renders correctly 1`] = `
       }
     }
   >
-    <Image
-      source={1}
-      style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": undefined,
-            "width": "100%",
-          },
-          undefined,
-        ]
-      }
-    />
-    <View
+    <Component
       style={
         Object {
           "backgroundColor": "black",
@@ -53,7 +34,7 @@ exports[`UserProfile renders correctly 1`] = `
         }
       }
     />
-    <Text
+    <Component
       style={
         Object {
           "color": "white",
@@ -67,85 +48,199 @@ exports[`UserProfile renders correctly 1`] = `
       WELCOME, 
       USER 1
       !
-    </Text>
-    <View>
-      <View
+    </Component>
+    <Themed.Icon
+      color="white"
+      name="id-card"
+      size={40}
+      top={-34}
+      type="font-awesome"
+    />
+  </ImageBackground>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "40%",
+        "justifyContent": "space-around",
+        "top": -110,
+      }
+    }
+  >
+    <Themed.Icon
+      color="#3c4859"
+      name="portrait"
+      size={150}
+      type="badge"
+    />
+  </TouchableOpacity>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "top": -123,
+      }
+    }
+  >
+    <Component>
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={20}
+        type="font-awesome"
+      />
+      <Component
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "justifyContent": "center",
+            "fontSize": 16,
+            "paddingTop": 3,
           }
         }
-        theme={
-          Object {
-            "colors": Object {
-              "disabled": "hsl(208, 8%, 90%)",
-              "divider": "#bcbbc1",
-              "error": "#ff190c",
-              "grey0": "#393e42",
-              "grey1": "#43484d",
-              "grey2": "#5e6977",
-              "grey3": "#86939e",
-              "grey4": "#bdc6cf",
-              "grey5": "#e1e8ee",
-              "greyOutline": "#bbb",
-              "platform": Object {
-                "android": Object {
-                  "error": "#f44336",
-                  "primary": "#2196f3",
-                  "secondary": "#9C27B0",
-                  "success": "#4caf50",
-                  "warning": "#ffeb3b",
-                },
-                "ios": Object {
-                  "error": "#ff3b30",
-                  "primary": "#007aff",
-                  "secondary": "#5856d6",
-                  "success": "#4cd964",
-                  "warning": "#ffcc00",
-                },
-              },
-              "primary": "#2089dc",
-              "searchBg": "#303337",
-              "secondary": "#8F0CE8",
-              "success": "#52c41a",
-              "warning": "#faad14",
-            },
-          }
-        }
-        underlayColor="white"
       >
-        <Text />
-      </View>
-    </View>
-  </View>
-  <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+        30
+         gems
+      </Component>
+    </Component>
+    <Component>
+      <Themed.Icon
+        color="#009688"
+        name="university"
+        size={20}
+        top={13}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "fontSize": 16,
+              "paddingTop": 3,
+            },
+            Object {
+              "top": 15,
+            },
+          ]
+        }
+      >
+        3
+         landmarks visited
+      </Component>
+    </Component>
+    <Component>
+      <Themed.Icon
+        color="#9c27b0"
+        name="flag-checkered"
+        size={20}
+        top={25}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "fontSize": 16,
+              "paddingTop": 3,
+            },
+            Object {
+              "top": 25,
+            },
+          ]
+        }
+      >
+        Recent landmark: 
+        Coors Field
+      </Component>
+    </Component>
+  </Component>
+</Component>
+`;
+
+exports[`UserProfile should match the snapshot when the user has a profile picture 1`] = `
+<Component
+  style={
+    Object {
+      "height": "70%",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "62%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": "62%",
+          "left": 0,
+          "opacity": 0.4,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 18,
+          "fontWeight": "600",
+          "padding": 10,
+          "top": -49,
+        }
+      }
+    >
+      WELCOME, 
+      USER 1
+      !
+    </Component>
+    <Themed.Icon
+      color="white"
+      name="id-card"
+      size={40}
+      top={-34}
+      type="font-awesome"
+    />
+  </ImageBackground>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
     style={
       Object {
         "alignItems": "center",
         "flex": 0.8,
         "justifyContent": "space-around",
-        "opacity": 1,
+        "top": -110,
       }
     }
   >
-    <View
+    <Component
       style={
         Object {
           "width": "65%",
         }
       }
     >
-      <Image
+      <Component
         source={
           Object {
             "uri": "stringURL",
@@ -159,9 +254,9 @@ exports[`UserProfile renders correctly 1`] = `
           }
         }
       />
-    </View>
-  </View>
-  <View
+    </Component>
+  </TouchableOpacity>
+  <Component
     style={
       Object {
         "display": "flex",
@@ -171,70 +266,14 @@ exports[`UserProfile renders correctly 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginLeft": "6%",
-          "marginRight": "6%",
-        }
-      }
-    >
-      <View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "justifyContent": "center",
-            }
-          }
-          theme={
-            Object {
-              "colors": Object {
-                "disabled": "hsl(208, 8%, 90%)",
-                "divider": "#bcbbc1",
-                "error": "#ff190c",
-                "grey0": "#393e42",
-                "grey1": "#43484d",
-                "grey2": "#5e6977",
-                "grey3": "#86939e",
-                "grey4": "#bdc6cf",
-                "grey5": "#e1e8ee",
-                "greyOutline": "#bbb",
-                "platform": Object {
-                  "android": Object {
-                    "error": "#f44336",
-                    "primary": "#2196f3",
-                    "secondary": "#9C27B0",
-                    "success": "#4caf50",
-                    "warning": "#ffeb3b",
-                  },
-                  "ios": Object {
-                    "error": "#ff3b30",
-                    "primary": "#007aff",
-                    "secondary": "#5856d6",
-                    "success": "#4cd964",
-                    "warning": "#ffcc00",
-                  },
-                },
-                "primary": "#2089dc",
-                "searchBg": "#303337",
-                "secondary": "#8F0CE8",
-                "success": "#52c41a",
-                "warning": "#faad14",
-              },
-            }
-          }
-          underlayColor="white"
-        >
-          <Text />
-        </View>
-      </View>
-      <Text
+    <Component>
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={20}
+        type="font-awesome"
+      />
+      <Component
         style={
           Object {
             "fontSize": 20,
@@ -244,72 +283,17 @@ exports[`UserProfile renders correctly 1`] = `
       >
         30
          gems
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginLeft": "6%",
-          "marginRight": "6%",
-        }
-      }
-    >
-      <View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "justifyContent": "center",
-            }
-          }
-          theme={
-            Object {
-              "colors": Object {
-                "disabled": "hsl(208, 8%, 90%)",
-                "divider": "#bcbbc1",
-                "error": "#ff190c",
-                "grey0": "#393e42",
-                "grey1": "#43484d",
-                "grey2": "#5e6977",
-                "grey3": "#86939e",
-                "grey4": "#bdc6cf",
-                "grey5": "#e1e8ee",
-                "greyOutline": "#bbb",
-                "platform": Object {
-                  "android": Object {
-                    "error": "#f44336",
-                    "primary": "#2196f3",
-                    "secondary": "#9C27B0",
-                    "success": "#4caf50",
-                    "warning": "#ffeb3b",
-                  },
-                  "ios": Object {
-                    "error": "#ff3b30",
-                    "primary": "#007aff",
-                    "secondary": "#5856d6",
-                    "success": "#4cd964",
-                    "warning": "#ffcc00",
-                  },
-                },
-                "primary": "#2089dc",
-                "searchBg": "#303337",
-                "secondary": "#8F0CE8",
-                "success": "#52c41a",
-                "warning": "#faad14",
-              },
-            }
-          }
-          underlayColor="white"
-        >
-          <Text />
-        </View>
-      </View>
-      <Text
+      </Component>
+    </Component>
+    <Component>
+      <Themed.Icon
+        color="#009688"
+        name="university"
+        size={20}
+        top={13}
+        type="font-awesome"
+      />
+      <Component
         style={
           Object {
             "fontSize": 20,
@@ -319,72 +303,17 @@ exports[`UserProfile renders correctly 1`] = `
       >
         3
          landmarks visited
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginLeft": "6%",
-          "marginRight": "6%",
-        }
-      }
-    >
-      <View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "justifyContent": "center",
-            }
-          }
-          theme={
-            Object {
-              "colors": Object {
-                "disabled": "hsl(208, 8%, 90%)",
-                "divider": "#bcbbc1",
-                "error": "#ff190c",
-                "grey0": "#393e42",
-                "grey1": "#43484d",
-                "grey2": "#5e6977",
-                "grey3": "#86939e",
-                "grey4": "#bdc6cf",
-                "grey5": "#e1e8ee",
-                "greyOutline": "#bbb",
-                "platform": Object {
-                  "android": Object {
-                    "error": "#f44336",
-                    "primary": "#2196f3",
-                    "secondary": "#9C27B0",
-                    "success": "#4caf50",
-                    "warning": "#ffeb3b",
-                  },
-                  "ios": Object {
-                    "error": "#ff3b30",
-                    "primary": "#007aff",
-                    "secondary": "#5856d6",
-                    "success": "#4cd964",
-                    "warning": "#ffcc00",
-                  },
-                },
-                "primary": "#2089dc",
-                "searchBg": "#303337",
-                "secondary": "#8F0CE8",
-                "success": "#52c41a",
-                "warning": "#faad14",
-              },
-            }
-          }
-          underlayColor="white"
-        >
-          <Text />
-        </View>
-      </View>
-      <Text
+      </Component>
+    </Component>
+    <Component>
+      <Themed.Icon
+        color="#9c27b0"
+        name="flag-checkered"
+        size={20}
+        top={25}
+        type="font-awesome"
+      />
+      <Component
         style={
           Object {
             "fontSize": 20,
@@ -394,8 +323,8 @@ exports[`UserProfile renders correctly 1`] = `
       >
         Recent landmark: 
         Coors Field
-      </Text>
-    </View>
-  </View>
-</View>
+      </Component>
+    </Component>
+  </Component>
+</Component>
 `;
