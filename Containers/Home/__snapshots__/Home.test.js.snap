@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders correctly 1`] = `
-<View
+exports[`Home should match the snapshot when a user has not clicked on a location 1`] = `
+<Component
   style={
     Object {
       "height": "70%",
@@ -9,8 +9,8 @@ exports[`Home renders correctly 1`] = `
     }
   }
 >
-  <View
-    accessibilityIgnoresInvertColors={true}
+  <ImageBackground
+    source={1}
     style={
       Object {
         "alignItems": "center",
@@ -22,26 +22,7 @@ exports[`Home renders correctly 1`] = `
       }
     }
   >
-    <Image
-      source={1}
-      style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": "62%",
-            "width": "100%",
-          },
-          undefined,
-        ]
-      }
-    />
-    <View
+    <Component
       style={
         Object {
           "backgroundColor": "black",
@@ -55,59 +36,14 @@ exports[`Home renders correctly 1`] = `
         }
       }
     />
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "justifyContent": "center",
-          }
-        }
-        theme={
-          Object {
-            "colors": Object {
-              "disabled": "hsl(208, 8%, 90%)",
-              "divider": "#bcbbc1",
-              "error": "#ff190c",
-              "grey0": "#393e42",
-              "grey1": "#43484d",
-              "grey2": "#5e6977",
-              "grey3": "#86939e",
-              "grey4": "#bdc6cf",
-              "grey5": "#e1e8ee",
-              "greyOutline": "#bbb",
-              "platform": Object {
-                "android": Object {
-                  "error": "#f44336",
-                  "primary": "#2196f3",
-                  "secondary": "#9C27B0",
-                  "success": "#4caf50",
-                  "warning": "#ffeb3b",
-                },
-                "ios": Object {
-                  "error": "#ff3b30",
-                  "primary": "#007aff",
-                  "secondary": "#5856d6",
-                  "success": "#4cd964",
-                  "warning": "#ffcc00",
-                },
-              },
-              "primary": "#2089dc",
-              "searchBg": "#303337",
-              "secondary": "#8F0CE8",
-              "success": "#52c41a",
-              "warning": "#faad14",
-            },
-          }
-        }
-        top={-55}
-        underlayColor="white"
-      >
-        <Text />
-      </View>
-    </View>
-    <Text
+    <Themed.Icon
+      color="white"
+      name="camera-retro"
+      size={40}
+      top={-55}
+      type="font-awesome"
+    />
+    <Component
       style={
         Object {
           "color": "white",
@@ -119,14 +55,14 @@ exports[`Home renders correctly 1`] = `
       }
     >
       Earn gems by taking and uploading pics of you at various locations
-    </Text>
-  </View>
-  <MapView
+    </Component>
+  </ImageBackground>
+  <MockMapView
     initialRegion={
       Object {
-        "latitude": undefined,
+        "latitude": 23.4,
         "latitudeDelta": 0.015,
-        "longitude": undefined,
+        "longitude": 104.8,
         "longitudeDelta": 0.0121,
       }
     }
@@ -140,20 +76,21 @@ exports[`Home renders correctly 1`] = `
       }
     }
   >
-    <Marker
+    <MockMarker
       coordinate={
         Object {
           "latitude": 39.75302,
           "longitude": -104.9965,
         }
       }
+      key="1"
       onPress={[Function]}
       pinColor="#000FFF"
     >
-      <Callout
+      <MockCallout
         tooltip={true}
       >
-        <View
+        <Component
           style={
             Object {
               "alignItems": "center",
@@ -166,7 +103,7 @@ exports[`Home renders correctly 1`] = `
             }
           }
         >
-          <Text
+          <Component
             style={
               Object {
                 "fontWeight": "bold",
@@ -174,8 +111,8 @@ exports[`Home renders correctly 1`] = `
             }
           >
             Summit
-          </Text>
-          <Text
+          </Component>
+          <Component
             style={
               Object {
                 "fontStyle": "italic",
@@ -183,33 +120,34 @@ exports[`Home renders correctly 1`] = `
             }
           >
             example 1 description
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Distance away: mi
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Visited: no
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Link - takes to camera
-          </Text>
-        </View>
-      </Callout>
-    </Marker>
-    <Marker
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
       coordinate={
         Object {
           "latitude": 39.75023,
           "longitude": -104.9965,
         }
       }
+      key="2"
       onPress={[Function]}
       pinColor="#FFF000"
     >
-      <Callout
+      <MockCallout
         tooltip={true}
       >
-        <View
+        <Component
           style={
             Object {
               "alignItems": "center",
@@ -222,7 +160,7 @@ exports[`Home renders correctly 1`] = `
             }
           }
         >
-          <Text
+          <Component
             style={
               Object {
                 "fontWeight": "bold",
@@ -230,8 +168,8 @@ exports[`Home renders correctly 1`] = `
             }
           >
             The Delectable Egg
-          </Text>
-          <Text
+          </Component>
+          <Component
             style={
               Object {
                 "fontStyle": "italic",
@@ -239,33 +177,34 @@ exports[`Home renders correctly 1`] = `
             }
           >
             example 2 description
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Distance away: mi
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Visited: no
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Link - takes to camera
-          </Text>
-        </View>
-      </Callout>
-    </Marker>
-    <Marker
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
       coordinate={
         Object {
           "latitude": 39.77023,
           "longitude": -104.9965,
         }
       }
+      key="3"
       onPress={[Function]}
       pinColor="#000FFF"
     >
-      <Callout
+      <MockCallout
         tooltip={true}
       >
-        <View
+        <Component
           style={
             Object {
               "alignItems": "center",
@@ -278,7 +217,7 @@ exports[`Home renders correctly 1`] = `
             }
           }
         >
-          <Text
+          <Component
             style={
               Object {
                 "fontWeight": "bold",
@@ -286,8 +225,8 @@ exports[`Home renders correctly 1`] = `
             }
           >
             Far away example
-          </Text>
-          <Text
+          </Component>
+          <Component
             style={
               Object {
                 "fontStyle": "italic",
@@ -295,19 +234,1053 @@ exports[`Home renders correctly 1`] = `
             }
           >
             over a mile away
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Distance away: mi
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Visited: no
-          </Text>
-          <Text>
+          </Component>
+          <Component>
             Link - takes to camera
-          </Text>
-        </View>
-      </Callout>
-    </Marker>
-  </MapView>
-</View>
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+  </MockMapView>
+</Component>
+`;
+
+exports[`Home when a user clicks on a marker location but has not visited the location should match the snapshot if the user is too far away to take a photo 1`] = `
+<Component
+  style={
+    Object {
+      "height": "70%",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "62%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": "62%",
+          "left": 0,
+          "opacity": 0.5,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 22,
+            "fontWeight": "600",
+            "padding": 10,
+            "top": -65,
+          }
+        }
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={15}
+        top={-58}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "paddingLeft": 10,
+              "top": -60,
+            },
+            Object {
+              "color": "white",
+              "left": -5,
+              "top": -63,
+            },
+          ]
+        }
+      >
+        10
+         gems
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#00bcd4"
+        name="car"
+        size={15}
+        top={-57}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "paddingLeft": 10,
+            "top": -60,
+          }
+        }
+      >
+        2
+         mi. away
+      </Component>
+    </Component>
+    <Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "paddingLeft": 10,
+              "top": -60,
+            },
+            Object {
+              "fontSize": 13,
+              "top": -50,
+            },
+          ]
+        }
+      >
+        Get within 1 mile of the landmark to take a photo and add it to your collection
+      </Component>
+    </Component>
+  </ImageBackground>
+  <MockMapView
+    initialRegion={
+      Object {
+        "latitude": 23.4,
+        "latitudeDelta": 0.015,
+        "longitude": 104.8,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    provider="google"
+    showsUserLocation={true}
+    style={
+      Object {
+        "height": "77%",
+        "top": "-24%",
+        "width": "100%",
+      }
+    }
+  >
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.75302,
+          "longitude": -104.9965,
+        }
+      }
+      key="1"
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Summit
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 1 description
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.75023,
+          "longitude": -104.9965,
+        }
+      }
+      key="2"
+      onPress={[Function]}
+      pinColor="#FFF000"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            The Delectable Egg
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 2 description
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.77023,
+          "longitude": -104.9965,
+        }
+      }
+      key="3"
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Far away example
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            over a mile away
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+  </MockMapView>
+</Component>
+`;
+
+exports[`Home when the user clicks a location that they have already visited and are close enough to retake a photo should match the snapshot when the user clicks a location 1`] = `
+<Component
+  style={
+    Object {
+      "height": "70%",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "62%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": "62%",
+          "left": 0,
+          "opacity": 0.5,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 22,
+            "fontWeight": "600",
+            "padding": 10,
+            "top": -65,
+          }
+        }
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={15}
+        top={-58}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "paddingLeft": 10,
+              "top": -60,
+            },
+            Object {
+              "color": "white",
+              "left": -5,
+              "top": -63,
+            },
+          ]
+        }
+      >
+        10
+         gems
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#00bcd4"
+        name="car"
+        size={15}
+        top={-57}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "paddingLeft": 10,
+              "top": -60,
+            },
+            Object {
+              "color": "white",
+            },
+          ]
+        }
+      >
+        0
+         mi. away 
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "bottom": 20,
+            "position": "absolute",
+            "right": 20,
+            "zIndex": 3,
+          }
+        }
+      >
+        <Themed.Icon
+          color="#4caf50"
+          left={21}
+          name="camera"
+          size={15}
+          top={3}
+          type="font-awesome"
+        />
+        <Component
+          style={
+            Array [
+              Object {
+                "color": "white",
+                "fontSize": 16,
+                "fontWeight": "600",
+                "paddingLeft": 10,
+                "top": -60,
+              },
+              Object {
+                "left": 90,
+                "top": -16,
+              },
+            ]
+          }
+        >
+          Retake Photo
+        </Component>
+      </TouchableOpacity>
+    </Component>
+  </ImageBackground>
+  <MockMapView
+    initialRegion={
+      Object {
+        "latitude": 23.4,
+        "latitudeDelta": 0.015,
+        "longitude": 104.8,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    provider="google"
+    showsUserLocation={true}
+    style={
+      Object {
+        "height": "77%",
+        "top": "-24%",
+        "width": "100%",
+      }
+    }
+  >
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.75302,
+          "longitude": -104.9965,
+        }
+      }
+      key="1"
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Summit
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 1 description
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.75023,
+          "longitude": -104.9965,
+        }
+      }
+      key="2"
+      onPress={[Function]}
+      pinColor="#FFF000"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            The Delectable Egg
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 2 description
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.77023,
+          "longitude": -104.9965,
+        }
+      }
+      key="3"
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Far away example
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            over a mile away
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+  </MockMapView>
+</Component>
+`;
+
+exports[`Home when the user clicks a location that they have already visited but they are not close enough to retake a photo 1`] = `
+<Component
+  style={
+    Object {
+      "height": "70%",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "62%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": "62%",
+          "left": 0,
+          "opacity": 0.5,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 22,
+            "fontWeight": "600",
+            "padding": 10,
+            "top": -65,
+          }
+        }
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={15}
+        top={-58}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "paddingLeft": 10,
+              "top": -60,
+            },
+            Object {
+              "color": "white",
+              "left": -5,
+              "top": -63,
+            },
+          ]
+        }
+      >
+        10
+         gems
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#00bcd4"
+        name="car"
+        size={15}
+        top={-57}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "paddingLeft": 10,
+              "top": -60,
+            },
+            Object {
+              "color": "white",
+            },
+          ]
+        }
+      >
+        2
+         mi. away 
+      </Component>
+    </Component>
+  </ImageBackground>
+  <MockMapView
+    initialRegion={
+      Object {
+        "latitude": 23.4,
+        "latitudeDelta": 0.015,
+        "longitude": 104.8,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    provider="google"
+    showsUserLocation={true}
+    style={
+      Object {
+        "height": "77%",
+        "top": "-24%",
+        "width": "100%",
+      }
+    }
+  >
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.75302,
+          "longitude": -104.9965,
+        }
+      }
+      key="1"
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Summit
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 1 description
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.75023,
+          "longitude": -104.9965,
+        }
+      }
+      key="2"
+      onPress={[Function]}
+      pinColor="#FFF000"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            The Delectable Egg
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            example 2 description
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+    <MockMarker
+      coordinate={
+        Object {
+          "latitude": 39.77023,
+          "longitude": -104.9965,
+        }
+      }
+      key="3"
+      onPress={[Function]}
+      pinColor="#000FFF"
+    >
+      <MockCallout
+        tooltip={true}
+      >
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderRadius": 15,
+              "display": "flex",
+              "flexDirection": "column",
+              "fontSize": 14,
+              "padding": 10,
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Far away example
+          </Component>
+          <Component
+            style={
+              Object {
+                "fontStyle": "italic",
+              }
+            }
+          >
+            over a mile away
+          </Component>
+          <Component>
+            Distance away: mi
+          </Component>
+          <Component>
+            Visited: no
+          </Component>
+          <Component>
+            Link - takes to camera
+          </Component>
+        </Component>
+      </MockCallout>
+    </MockMarker>
+  </MockMapView>
+</Component>
 `;
