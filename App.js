@@ -89,8 +89,31 @@ export class App extends Component {
   };
 
   savePicture = (newPic) => {
-    this.setState({ profilePic: newPic, cameraLoading: false, currentPage: 'User profile' });
+    if (this.state.takingProfilePic) {
+      this.setState({ profilePic: newPic, cameraLoading: false, currentPage: 'User profile', takingProfilePic: false });
+    } else {
+      this.addLocationPhoto(newPic);
+    }
   };
+
+  addLocationPhoto = (newPic) => {
+    let currentPhotoLocation = this.state.currentPhotoLocation;
+    currentPhotoLocation.photo_url = newPic;
+    const visitedLocations = [...this.state.visitedLocations, currentPhotoLocation];
+    this.setState({ visitedLocations, cameraLoading: false, currentPage: 'Collected landmarks' });
+  }
+
+  takeLocationPhoto = (selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID) => {
+    const currentPhotoLocation = {
+      name: selectedName,
+      description: selectedDescription,
+      lat: selectedLatitude,
+      lon: selectedLongitude,
+      landmark_id: selectedID,
+      photo_url: ''
+    }
+    this.setState({ currentPhotoLocation, currentPage: "Camera" });
+  }
 
   setCameraLoading = () => {
     this.setState({ cameraLoading: true })
@@ -104,7 +127,7 @@ export class App extends Component {
     const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=${username}&password=${password}`
     const response = await fetch(url)
     const result = await response.json()
-    const {user_id, user_locations } = result;
+    const { user_id, user_locations } = result;
     this.setState({ currentUserId: user_id, visitedLocations: user_locations, currentPage: 'Home' })
   }
 
@@ -119,8 +142,8 @@ export class App extends Component {
           currentPage !== 'Camera' && <Header />
         }
         {
-          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId} fetchUserInfo={this.fetchUserInfo}/>
+          currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} takeLocationPhoto={this.takeLocationPhoto} />
+            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId} fetchUserInfo={this.fetchUserInfo} />
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} visitedLocations={this.state.visitedLocations}/>
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
