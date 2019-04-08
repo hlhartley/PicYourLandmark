@@ -1,7 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CameraWindow renders correctly 1`] = `
-<Text>
+exports[`CameraWindow should match the snapshot when hasCameraPermission is false 1`] = `
+<Component>
+  Access to camera has not been given
+</Component>
+`;
+
+exports[`CameraWindow should match the snapshot when hasCameraPermission is granted 1`] = `
+<Component
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "flex": 1,
+    }
+  }
+>
+  <Camera
+    faceDetectorSettings={Object {}}
+    focusDepth={0}
+    ratio="4:3"
+    style={
+      Object {
+        "height": "85%",
+      }
+    }
+    zoom={0}
+  >
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "space-around",
+          }
+        }
+      >
+        <Component
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        />
+        <Component
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        />
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        >
+          <Themed.Icon
+            color="white"
+            name="camera"
+            size={35}
+            type="font-awesome"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        >
+          <Themed.Icon
+            color="white"
+            name="random"
+            size={35}
+            type="font-awesome"
+          />
+        </TouchableOpacity>
+      </Component>
+      <Component
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "space-around",
+          }
+        }
+      >
+        <Component
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        />
+        <Component
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        />
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        >
+          <Themed.Icon
+            color="white"
+            name="camera"
+            size={35}
+            type="font-awesome"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
+        >
+          <Themed.Icon
+            color="white"
+            name="random"
+            size={35}
+            type="font-awesome"
+          />
+        </TouchableOpacity>
+      </Component>
+    </Component>
+  </Camera>
+</Component>
+`;
+
+exports[`CameraWindow should match the snapshot when hasCameraPermission is null 1`] = `
+<Component>
   Request to access camera has not been made
-</Text>
+</Component>
 `;
