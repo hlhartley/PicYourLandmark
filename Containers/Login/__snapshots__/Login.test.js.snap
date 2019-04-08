@@ -131,7 +131,7 @@ exports[`Login renders correctly 1`] = `
           }
         }
         underlineColorAndroid="transparent"
-        value=""
+        value="joe55"
       />
       <TextInput
         allowFontScaling={true}
@@ -158,7 +158,7 @@ exports[`Login renders correctly 1`] = `
           ]
         }
         underlineColorAndroid="transparent"
-        value=""
+        value="abc123"
       />
       <View
         accessible={true}

@@ -92,8 +92,9 @@ exports[`App should match the snapshot when on the Login page 1`] = `
 >
   <Header />
   <Login
-    isLoggedIn={true}
-    setLoginStatus={[Function]}
+    currentUserId={-1}
+    fetchUserInfo={[Function]}
+    setUserLoginId={[Function]}
   />
   <Footer
     changeCurrentPage={[Function]}

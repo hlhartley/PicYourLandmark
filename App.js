@@ -20,7 +20,8 @@ export class App extends Component {
       profilePic: '',
       takingProfilePic: false,
       cameraLoading: false,
-      currentUserId: -1
+      currentUserId: -1,
+      visitedLocations: []
     }
   };
 
@@ -83,6 +84,14 @@ export class App extends Component {
     this.setState({ currentUserId: id })
   }
 
+  fetchUserInfo = async (username, password) => {
+    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=${username}&password=${password}`
+    const response = await fetch(url)
+    const result = await response.json()
+    const {user_id, user_locations } = result;
+    this.setState({ currentUserId: user_id, visitedLocations: user_locations, currentPage: 'Home' })
+  }
+
   render() {
     const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading } = this.state;
     return (
@@ -95,7 +104,7 @@ export class App extends Component {
         }
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId}/>
+            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId} fetchUserInfo={this.fetchUserInfo}/>
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />

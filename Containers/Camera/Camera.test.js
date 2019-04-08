@@ -17,7 +17,7 @@ describe('CameraWindow', () => {
     mockSavePicture = jest.fn()
     wrapper = shallow(<CameraWindow setCameraLoading={mockSetCameraLoading} savePicture={mockSavePicture} />)
   });
-  
+
   it('should match the snapshot when hasCameraPermission is null', () => {
     wrapper.setState({ hasCameraPermission: null });
     expect(wrapper).toMatchSnapshot()
@@ -39,7 +39,7 @@ describe('CameraWindow', () => {
       expect(mockSetCameraLoading).toHaveBeenCalled()
     });
   });
-  
+
   describe('onPictureSaved method', () => {
     it.skip('should call savePicture', async () => {
       wrapper.instance().onPictureSaved()
@@ -70,4 +70,5 @@ describe('CameraWindow', () => {
       wrapper.find(TouchableOpacity).at(3).simulate('press');
       expect(wrapper.state('type')).toEqual(Camera.Constants.Type.back);
     });
+  });
 });

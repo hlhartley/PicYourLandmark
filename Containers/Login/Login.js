@@ -6,8 +6,8 @@ export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: '',
-      password: '',
+      username: 'joe55',
+      password: 'abc123',
       confirmPassword: '',
       email: 'new4@gmail.com',
       isLoginPage: true
@@ -21,6 +21,11 @@ export class Login extends Component {
     const result = await response.json()
     this.setState({ isLoginPage: true })
     this.props.setUserLoginId(Date.now())
+  }
+
+  loginUser = () => {
+    const {username, password} = this.state;
+    this.props.fetchUserInfo(username, password)
   }
 
   toggleLoginPage = () => {
@@ -61,7 +66,7 @@ export class Login extends Component {
                 onChangeText={(password) => this.setState({ password })}
                 value={this.state.password}
               />
-              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]}>
+              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.loginUser()}>
                 <Text style={{ textAlign: 'center' }}>Log in</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.button} onPress={() => this.toggleLoginPage()}>
