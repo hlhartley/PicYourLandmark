@@ -19,7 +19,7 @@ export class UserProfile extends Component {
                 <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={styles.imageBackground}>
                     <View style={styles.overlay} />
                     <Text style={styles.bannerText}>WELCOME, {this.state.username.toUpperCase()}!</Text>
-                    <Icon color="white" name="id-card" type="font-awesome" size={40} top={-34} />
+                    <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} />
                 </ImageBackground>
                 {
                     profilePic.length ?
@@ -36,17 +36,17 @@ export class UserProfile extends Component {
                         </TouchableOpacity>
                 }
                 <View style={styles.userInfo}>
-                    <View>
+                    <View style={styles.achievements}>
                         <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
                         <Text style={styles.userInfoText}>{this.state.points} gems</Text>
                     </View>
-                    <View>
-                        <Icon color="#009688" name="university" type="font-awesome" size={20} top={13}/>
-                        <Text style={[styles.userInfoText, {top: 15}]}>{this.state.numLandmarksVisited} landmarks visited</Text>
+                    <View style={styles.achievements}>
+                        <Icon color="#009688" name="university" type="font-awesome" size={20} />
+                        <Text style={styles.userInfoText}>{this.state.numLandmarksVisited} landmarks visited</Text>
                     </View>
-                    <View>
-                        <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} top={25}/>
-                        <Text style={[styles.userInfoText, {top: 25}]}>Recent landmark: {this.state.recentLandmark}</Text>
+                    <View style={styles.achievements}>
+                        <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} />
+                        <Text style={styles.userInfoText}>Recent landmark: {this.state.recentLandmark}</Text>
                     </View>
                 </View>
             </View>
@@ -56,59 +56,62 @@ export class UserProfile extends Component {
 
 const styles = StyleSheet.create({
     viewContainer: {
-        height: '70%',
-        width: '100%'
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
     },
     imageBackground: {
-        width: '100%', 
-        height: '62%', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'center', 
-        alignItems: 'center'
-    },
-    userInfo: {
-        top: -123,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    userInfoText: {
-        fontSize: 16, 
-        paddingTop: 3
-    },
-    profilePictureContainer: {
-        top: -110,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        height: '40%',
-    },
-    pictureContainer: {
-        width: '40%'
-    },
-    profilePicture: {
+        flex: 1,
         width: '100%',
-        height: '100%'
+        display: 'flex',
+        alignItems: 'center',
     },
     overlay: {
         position: 'absolute',
         top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
+        width: '100%',
+        height: '100%',
         backgroundColor: 'black',
         opacity: 0.4,
-        height: '62%',
+    },
+    achievements: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        marginLeft: '6%',
+        marginRight: '6%'
+    },
+    userInfo: {
+        flex: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        flexWrap: 'wrap'
+    },
+    userInfoText: {
+        fontSize: 20,
+        padding: 10,
+    },
+    profilePictureContainer: {
+        flex: .8,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+    },
+    pictureContainer: {
+        width: '65%',
+    },
+    profilePicture: {
+        marginTop: 10,
+        width: '100%',
+        height: '90%'
     },
     bannerText: {
         color: 'white',
+        paddingTop: '20%',
+        paddingBottom: '3%',
         fontSize: 18,
         fontWeight: '600',
-        top: -49,
-        padding: 10
     }
 });
 
