@@ -20,7 +20,7 @@ export class App extends Component {
       profilePic: '',
       takingProfilePic: false,
       cameraLoading: false,
-      isLoggedIn: true
+      currentUserId: -1
     }
   };
 
@@ -79,8 +79,8 @@ export class App extends Component {
     this.setState({ cameraLoading: true })
   }
 
-  setLoginStatus = () => {
-    this.setState({ isLoggedIn: !this.state.isLoggedIn })
+  setUserLoginId = (id) => {
+    this.setState({ currentUserId: id })
   }
 
   render() {
@@ -95,7 +95,7 @@ export class App extends Component {
         }
         {
           currentPage === 'Home' && currentLongitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} />
-            : currentPage === 'Login' ? <Login isLoggedIn={this.state.isLoggedIn} setLoginStatus={this.setLoginStatus}/>
+            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId}/>
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
