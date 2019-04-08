@@ -7,4 +7,6 @@ describe('CameraWindow', () => {
     const tree = renderer.create(<CameraWindow />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  
 })

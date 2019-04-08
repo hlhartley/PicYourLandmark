@@ -53,7 +53,6 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
       color="white"
       name="id-card"
       size={40}
-      top={-34}
       type="font-awesome"
     />
   </ImageBackground>
@@ -63,11 +62,8 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
     style={
       Object {
         "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "height": "40%",
+        "flex": 0.8,
         "justifyContent": "space-around",
-        "top": -110,
       }
     }
   >
@@ -81,15 +77,25 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
   <Component
     style={
       Object {
-        "alignItems": "center",
         "display": "flex",
+        "flex": 2,
         "flexDirection": "column",
-        "justifyContent": "center",
-        "top": -123,
+        "flexWrap": "wrap",
       }
     }
   >
-    <Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": "6%",
+          "marginRight": "6%",
+        }
+      }
+    >
       <Themed.Icon
         color="#f44336"
         name="diamond"
@@ -99,8 +105,8 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
       <Component
         style={
           Object {
-            "fontSize": 16,
-            "paddingTop": 3,
+            "fontSize": 20,
+            "padding": 10,
           }
         }
       >
@@ -108,50 +114,60 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
          gems
       </Component>
     </Component>
-    <Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": "6%",
+          "marginRight": "6%",
+        }
+      }
+    >
       <Themed.Icon
         color="#009688"
         name="university"
         size={20}
-        top={13}
         type="font-awesome"
       />
       <Component
         style={
-          Array [
-            Object {
-              "fontSize": 16,
-              "paddingTop": 3,
-            },
-            Object {
-              "top": 15,
-            },
-          ]
+          Object {
+            "fontSize": 20,
+            "padding": 10,
+          }
         }
       >
         3
          landmarks visited
       </Component>
     </Component>
-    <Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": "6%",
+          "marginRight": "6%",
+        }
+      }
+    >
       <Themed.Icon
         color="#9c27b0"
         name="flag-checkered"
         size={20}
-        top={25}
         type="font-awesome"
       />
       <Component
         style={
-          Array [
-            Object {
-              "fontSize": 16,
-              "paddingTop": 3,
-            },
-            Object {
-              "top": 25,
-            },
-          ]
+          Object {
+            "fontSize": 20,
+            "padding": 10,
+          }
         }
       >
         Recent landmark: 
@@ -166,7 +182,9 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
 <Component
   style={
     Object {
-      "height": "70%",
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "100%",
       "width": "100%",
     }
   }
@@ -177,9 +195,7 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
       Object {
         "alignItems": "center",
         "display": "flex",
-        "flexDirection": "column",
-        "height": "62%",
-        "justifyContent": "center",
+        "flex": 1,
         "width": "100%",
       }
     }
@@ -188,13 +204,11 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
       style={
         Object {
           "backgroundColor": "black",
-          "bottom": 0,
-          "height": "62%",
-          "left": 0,
+          "height": "100%",
           "opacity": 0.4,
           "position": "absolute",
-          "right": 0,
           "top": 0,
+          "width": "100%",
         }
       }
     />
@@ -204,8 +218,8 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
           "color": "white",
           "fontSize": 18,
           "fontWeight": "600",
-          "padding": 10,
-          "top": -49,
+          "paddingBottom": "3%",
+          "paddingTop": "20%",
         }
       }
     >
@@ -217,7 +231,6 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
       color="white"
       name="id-card"
       size={40}
-      top={-34}
       type="font-awesome"
     />
   </ImageBackground>
@@ -229,7 +242,6 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
         "alignItems": "center",
         "flex": 0.8,
         "justifyContent": "space-around",
-        "top": -110,
       }
     }
   >
@@ -266,7 +278,18 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
       }
     }
   >
-    <Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": "6%",
+          "marginRight": "6%",
+        }
+      }
+    >
       <Themed.Icon
         color="#f44336"
         name="diamond"
@@ -285,12 +308,22 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
          gems
       </Component>
     </Component>
-    <Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": "6%",
+          "marginRight": "6%",
+        }
+      }
+    >
       <Themed.Icon
         color="#009688"
         name="university"
         size={20}
-        top={13}
         type="font-awesome"
       />
       <Component
@@ -305,12 +338,22 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
          landmarks visited
       </Component>
     </Component>
-    <Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginLeft": "6%",
+          "marginRight": "6%",
+        }
+      }
+    >
       <Themed.Icon
         color="#9c27b0"
         name="flag-checkered"
         size={20}
-        top={25}
         type="font-awesome"
       />
       <Component
