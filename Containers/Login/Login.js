@@ -38,10 +38,13 @@ export class Login extends Component {
         <View style={styles.container}>
           <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
-            <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50} />
-              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.props.setUserLoginId(-1)}>
-                <Text style={{ textAlign: 'center' }}>Log out</Text>
-              </TouchableOpacity>
+              <View>
+                <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50} />
+                <Text style={styles.usernameText}>{this.state.username}</Text>
+              </View>
+                <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.props.setUserLoginId(-1)}>
+                  <Text style={{ textAlign: 'center' }}>Log out</Text>
+                </TouchableOpacity>
           </ImageBackground>
         </View>
       )
@@ -164,6 +167,13 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center'
+  },
+  usernameText: {
+    color:'white', 
+    fontSize: 24, 
+    top: 55, 
+    textAlign: 'center', 
+    fontWeight: 'bold'
   }
 });
 
