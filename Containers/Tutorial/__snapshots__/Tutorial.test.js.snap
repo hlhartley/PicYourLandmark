@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tutorial should match the snapshot with the correct data passed in when on User profile page 1`] = `
+<Component
+  style={
+    Object {
+      "display": "flex",
+      "flex": 3,
+      "flexDirection": "column",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flex": 1.5,
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "height": "100%",
+          "opacity": 0.4,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 18,
+          "fontWeight": "600",
+          "paddingBottom": "3%",
+        }
+      }
+    >
+      TUTORIAL
+    </Component>
+    <Themed.Icon
+      color="white"
+      name="university"
+      size={40}
+      type="font-awesome"
+    />
+  </ImageBackground>
+</Component>
+`;

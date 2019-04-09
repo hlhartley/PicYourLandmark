@@ -15,11 +15,11 @@ export class Footer extends Component {
           <TouchableOpacity onPress={() => changeCurrentPage('Home')} >
             <Icon color={this.props.currentPage === 'Home' ? "#0b80dc" : "#3c4859"} name="map-marker" type="font-awesome" size={30}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => changeCurrentPage('Camera')}>
-            <Icon color={this.props.currentPage === 'Camera' ? "#0b80dc" : "#3c4859"} name="camera" type="font-awesome" size={30} />
-          </TouchableOpacity>
           <TouchableOpacity onPress={() => changeCurrentPage('Collected landmarks')}>
             <Icon color={this.props.currentPage === 'Collected landmarks' ? "#0b80dc" : "#3c4859"} name="image" type="font-awesome" size={30} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => changeCurrentPage('Tutorial')}>
+            <Icon color={this.props.currentPage === 'Camera' ? "#0b80dc" : "#3c4859"} name="book" type="font-awesome" size={30} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => changeCurrentPage('Login')}>
             <Icon color={this.props.currentPage === 'Login' ? "#0b80dc" : "#3c4859"} name="sign-in" type="font-awesome" size={30} />
