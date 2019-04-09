@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
-import { Icon } from 'react-native-elements';
+import { Icon, Image } from 'react-native-elements';
 
 export class Home extends Component {
   constructor() {
@@ -72,13 +72,13 @@ export class Home extends Component {
   }
 
   sendLocationPhoto = () => {
-    const {selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID} = this.state;
+    const { selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID } = this.state;
     this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID)
   }
 
   render() {
     const { currentLatDelta, currentLonDelta } = this.state.currentLocation;
-    const { currentLatitude, currentLongitude } = this.props;
+    const { currentLatitude, currentLongitude, allLocations, visitedLocationIds } = this.props;
     const { locations, clickedLocation, selectedName, selectedVisited, selectedPoints, calculatedDistance } = this.state;
     return (
       <View style={styles.container}>
@@ -89,18 +89,18 @@ export class Home extends Component {
               <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
             </View>
             <View style={styles.flexRow}>
-              <Icon color="#f44336" name="diamond" type="font-awesome" size={15}  />
+              <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
               <Text style={[styles.pointsText, { color: 'white' }]}>{selectedPoints} gems</Text>
             </View>
             <View style={styles.flexRow}>
-              <Icon color="#00bcd4" name="car" type="font-awesome" size={15}  />
+              <Icon color="#00bcd4" name="car" type="font-awesome" size={15} />
               <Text style={[styles.pointsText, { color: 'white' }]}>{calculatedDistance} mi. away </Text>
             </View>
             {
               calculatedDistance < 1 &&
               <View style={styles.flexRow}>
                 <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15}  />
+                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15} />
                   <Text style={[styles.pointsText]}>Retake Photo</Text>
                 </TouchableOpacity>
               </View>
@@ -138,49 +138,58 @@ export class Home extends Component {
               <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
                 <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
-                <Icon color="white" name="camera-retro" type="font-awesome" size={40}  />
+                <Icon color="white" name="camera-retro" type="font-awesome" size={40} />
               </ImageBackground>
         }
-        <MapView
-          provider={"google"}
-          style={styles.map}
-          initialRegion={{
-            latitude: currentLatitude,
-            longitude: currentLongitude,
-            latitudeDelta: currentLatDelta,
-            longitudeDelta: currentLonDelta,
-          }}
-          showsUserLocation={true}
-        >
-          {
-            locations.map(location => {
-              const pinColor = location.visited ? '#FFF000' : '#000FFF';
-              return (
-                <Marker
-                  key={location.id}
-                  coordinate={{
-                    latitude: location.lat,
-                    longitude: location.lon
-                  }}
-                  pinColor={pinColor}
-                  onPress={() => {
-                    this.calculateDistance(location);
-                  }}
-                >
-                  <Callout tooltip={true} >
-                    <View style={styles.landmarkInfo}>
-                      <Text style={{ fontWeight: 'bold' }}>{location.name}</Text>
-                      <Text style={{ fontStyle: 'italic' }}>{location.description}</Text>
-                      <Text>Distance away: mi</Text>
-                      <Text>Visited: no</Text>
-                      <Text>Link - takes to camera</Text>
-                    </View>
-                  </Callout>
-                </Marker>
-              )
-            })
-          }
-        </MapView>
+        {
+          currentLatitude ?
+            <MapView
+              provider={"google"}
+              style={styles.map}
+              initialRegion={{
+                latitude: currentLatitude,
+                longitude: currentLongitude,
+                latitudeDelta: currentLatDelta,
+                longitudeDelta: currentLonDelta,
+              }}
+              showsUserLocation={true}
+            >
+              {
+                allLocations.map(location => {
+                  const pinColor = visitedLocationIds.includes(location.id) ? '#FFF000' : '#000FFF';
+                  return (
+                    <Marker
+                      key={location.id}
+                      coordinate={{
+                        latitude: location.lat,
+                        longitude: location.lon
+                      }}
+                      pinColor={pinColor}
+                      onPress={() => {
+                        this.calculateDistance(location);
+                      }}
+                    >
+                      <Callout tooltip={true} >
+                        <View style={styles.landmarkInfo}>
+                          <Text style={{ fontWeight: 'bold' }}>{location.name}</Text>
+                          <Text style={{ fontStyle: 'italic' }}>{location.description}</Text>
+                          <Text>Distance away: mi</Text>
+                          <Text>Visited: no</Text>
+                          <Text>Link - takes to camera</Text>
+                        </View>
+                      </Callout>
+                    </Marker>
+                  )
+                })
+              }
+            </MapView>
+            :
+            <View style={{ flex: 3 }}>
+              <View style={styles.loading} >
+                <Image style={styles.loadingGif} source={require('../../assets/loading.gif')} />
+              </View>
+            </View>
+        }
       </View>
     );
   }
@@ -241,6 +250,23 @@ const styles = StyleSheet.create({
   flexRow: {
     display: 'flex',
     flexDirection: 'row'
+  },
+  loading: {
+    flex: 3,
+    position: 'absolute',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1,
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'black'
+  },
+  loadingGif: {
+    position: 'relative',
+    zIndex: 3,
   }
 });
 
