@@ -104,4 +104,76 @@ describe('App', () => {
       expect(wrapper.state('currentUserId')).toEqual(2);
     });
   });
+
+  describe('fetchUserInfo method', () => {
+    it('should make fetch call when fetchUserInfo is called', async () => {
+      window.fetch = jest.fn()
+      await wrapper.instance().fetchUserInfo('tester', 'abc')
+      let mockUrl = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=tester&password=abc`
+      expect(window.fetch).toHaveBeenCalledWith(mockUrl)
+    });
+
+    it('should get the user info if everything is ok', async () => {
+      const expected = {
+          user_id: 1,
+          username: "joe55",
+          user_locations: [
+            {
+                "name": "Great Lawn Park",
+                "description": "Beautiful Park",
+                "lat": 39.72386,
+                "lon": -104.88715,
+                "landmark_id": 6,
+                "photo_url": "www.myimage.com/2"
+            },
+            {
+                "name": "Buckley Annex",
+                "description": "Beautiful Park",
+                "lat": 39.7159,
+                "lon": -104.90379,
+                "landmark_id": 3,
+                "photo_url": "www.myimage.com"
+            }
+          ]
+      }
+
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve({
+          user_id: 1,
+          username: "joe55",
+          user_locations: [
+            {
+                "name": "Great Lawn Park",
+                "description": "Beautiful Park",
+                "lat": 39.72386,
+                "lon": -104.88715,
+                "landmark_id": 6,
+                "photo_url": "www.myimage.com/2"
+            },
+            {
+                "name": "Buckley Annex",
+                "description": "Beautiful Park",
+                "lat": 39.7159,
+                "lon": -104.90379,
+                "landmark_id": 3,
+                "photo_url": "www.myimage.com"
+            }
+          ]
+      }),
+        status: 200
+      }));
+      const result = await wrapper.instance().fetchUserInfo('joe55', 'abc123');
+      expect(result).toEqual(expected);
+    });
+
+    it('should return an error if everything is not ok', async () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 404,
+        statusText: 'Not found'
+      }));
+
+      const expected = Error('Error fetching');
+      expect(wrapper.instance().fetchUserInfo).rejects.toEqual(expected)
+    });
+  });
 });
