@@ -6,16 +6,16 @@ exports[`Header renders correctly 1`] = `
     Object {
       "alignItems": "center",
       "backgroundColor": "#e9e9e9",
+      "display": "flex",
+      "flex": 0.4,
       "flexDirection": "column",
-      "height": "12%",
-      "paddingBottom": 20,
-      "paddingTop": 20,
+      "justifyContent": "flex-end",
     }
   }
 >
   <View>
     <View
-      left="-28%"
+      left="-25%"
       position="absolute"
       style={
         Object {
@@ -61,7 +61,7 @@ exports[`Header renders correctly 1`] = `
           },
         }
       }
-      top={5}
+      top={-17}
       underlayColor="white"
     >
       <Text />
@@ -73,8 +73,6 @@ exports[`Header renders correctly 1`] = `
         "color": "#3c4859",
         "fontSize": 20,
         "fontWeight": "bold",
-        "paddingBottom": 10,
-        "top": 23,
       }
     }
   >
@@ -89,20 +87,20 @@ exports[`Header should match the snapshot with the correct title text 1`] = `
     Object {
       "alignItems": "center",
       "backgroundColor": "#e9e9e9",
+      "display": "flex",
+      "flex": 0.4,
       "flexDirection": "column",
-      "height": "12%",
-      "paddingBottom": 20,
-      "paddingTop": 20,
+      "justifyContent": "flex-end",
     }
   }
 >
   <Themed.Icon
     color="tomato"
-    left="-28%"
+    left="-25%"
     name="map-marker"
     position="absolute"
     size={22}
-    top={5}
+    top={-17}
     type="font-awesome"
   />
   <Component
@@ -111,8 +109,6 @@ exports[`Header should match the snapshot with the correct title text 1`] = `
         "color": "#3c4859",
         "fontSize": 20,
         "fontWeight": "bold",
-        "paddingBottom": 10,
-        "top": 23,
       }
     }
   >

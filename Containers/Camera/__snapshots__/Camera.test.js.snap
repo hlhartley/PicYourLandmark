@@ -11,7 +11,7 @@ exports[`CameraWindow should match the snapshot when hasCameraPermission is gran
   style={
     Object {
       "backgroundColor": "transparent",
-      "flex": 1,
+      "flex": 2.3,
     }
   }
 >
@@ -21,7 +21,7 @@ exports[`CameraWindow should match the snapshot when hasCameraPermission is gran
     ratio="4:3"
     style={
       Object {
-        "height": "85%",
+        "flex": 1,
       }
     }
     zoom={0}

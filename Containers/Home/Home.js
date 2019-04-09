@@ -89,19 +89,19 @@ export class Home extends Component {
               <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
             </View>
             <View style={styles.flexRow}>
-              <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} />
-              <Text style={[styles.pointsText, { color: 'white', left: -5, top: -63 }]}>{selectedPoints} gems</Text>
+              <Icon color="#f44336" name="diamond" type="font-awesome" size={15}  />
+              <Text style={[styles.pointsText, { color: 'white' }]}>{selectedPoints} gems</Text>
             </View>
             <View style={styles.flexRow}>
-              <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} />
+              <Icon color="#00bcd4" name="car" type="font-awesome" size={15}  />
               <Text style={[styles.pointsText, { color: 'white' }]}>{calculatedDistance} mi. away </Text>
             </View>
             {
               calculatedDistance < 1 &&
               <View style={styles.flexRow}>
                 <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={21} top={3} />
-                  <Text style={[styles.pointsText, { top: -16, left: 90 }]}>Retake Photo</Text>
+                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15}  />
+                  <Text style={[styles.pointsText]}>Retake Photo</Text>
                 </TouchableOpacity>
               </View>
             }
@@ -113,32 +113,32 @@ export class Home extends Component {
                   <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
                 </View>
                 <View style={styles.flexRow}>
-                  <Icon color="#f44336" name="diamond" type="font-awesome" size={15} top={-58} />
-                  <Text style={[styles.pointsText, { color: "white", left: -5, top: -63 }]}>{selectedPoints} gems</Text>
+                  <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
+                  <Text style={[styles.pointsText, { color: "white" }]}>{selectedPoints} gems</Text>
                 </View>
                 <View style={styles.flexRow}>
-                  <Icon color="#00bcd4" name="car" type="font-awesome" size={15} top={-57} />
+                  <Icon color="#00bcd4" name="car" type="font-awesome" size={15} />
                   <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
                 </View>
                 {
                   calculatedDistance < 1 ?
                     <View style={styles.flexRow}>
                       <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} left={19} top={3} />
-                        <Text style={[styles.pointsText, { top: -16, left: 80 }]}>Take Photo!</Text>
+                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} />
+                        <Text style={styles.pointsText}>Take Photo!</Text>
                       </TouchableOpacity>
                     </View>
                     :
                     <View>
-                      <Text style={[styles.pointsText, { top: -50, fontSize: 13 }]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
+                      <Text style={styles.pointsText}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
                     </View>
                 }
               </ImageBackground>
               :
               <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
-                <Icon color="white" name="camera-retro" type="font-awesome" size={40} top={-55} />
                 <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
+                <Icon color="white" name="camera-retro" type="font-awesome" size={40}  />
               </ImageBackground>
         }
         <MapView
@@ -188,13 +188,21 @@ export class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: '70%',
+    flex: 3,
     width: '100%',
   },
   map: {
     width: '100%',
-    height: '77%',
-    top: '-24%',
+    flex: 3,
+  },
+  imageBackground: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1.5,
+    position: 'relative',
   },
   landmarkInfo: {
     display: 'flex',
@@ -207,27 +215,15 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
     backgroundColor: 'black',
     opacity: 0.5,
-    height: '62%',
-  },
-  imageBackground: {
-    width: '100%',
-    height: '62%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
+    height: '100%',
+    width: '100%'
   },
   bannerText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
-    top: -50,
     padding: 10
   },
   headerText: {
@@ -235,20 +231,12 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '600',
     padding: 10,
-    top: -65
   },
   pointsText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
-    top: -60,
     paddingLeft: 10,
-  },
-  locationCamera: {
-    position: 'absolute',
-    right: 20,
-    bottom: 20,
-    zIndex: 3,
   },
   flexRow: {
     display: 'flex',

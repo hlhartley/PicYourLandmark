@@ -7,15 +7,19 @@ export class Landmark extends Component {
     super()
   }
   render() {
+    const { landmark } = this.props;
     return (
       <View style={styles.container}>
-        <View style={styles.landmarkContainer}>
-          <Image source={require('../../assets/statueofliberty.jpg')} style={{ width: 300, height: 200, bottom: 15 }} />
-          <Text style={{ fontWeight: 'bold' }}>{this.props.landmark.name.toUpperCase()}</Text>
-          <View style={{ display: 'flex' }}>
-            <Icon color="#f44336" name="diamond" type="font-awesome" size={20} left={'-45%'} top={3} />
-            <Text style={{ top: -15, left: 30 }}>10 gems</Text>
-          </View>
+        <Text style={styles.landmarkName}>{landmark.name.toUpperCase()}</Text>
+        <View style={styles.pictureContainer} >
+          <Image
+            style={styles.landmarkImage}
+            source={{ uri: landmark.photo_url }}
+          />
+        </View>
+        <View style={styles.gemContainer}>
+          <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
+          <Text style={styles.gemText}>10 gems</Text>
         </View>
       </View>
     )
@@ -24,14 +28,31 @@ export class Landmark extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    left: '5%',
-    width: '92%',
-    padding: 8
   },
-  landmarkContainer: {
-    top: '-25%'
+  landmarkImage: {
+    height: 200,
+    width: 300
+  },
+  pictureContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  landmarkName: {
+    fontWeight: 'bold',
+    padding: 10,
+  },
+  gemContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    padding: 10,
+  },
+  gemText: {
+    marginLeft: 10
   }
 });
 
