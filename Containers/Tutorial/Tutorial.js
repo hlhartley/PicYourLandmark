@@ -8,11 +8,26 @@ export class Tutorial extends Component {
       <View style={styles.viewContainer}>
         <ImageBackground source={require('../../assets/pyramid.jpg')} style={styles.imageBackground}>
           <View style={styles.overlay} />
-          <Text style={styles.bannerText}>TUTORIAL</Text>
+          <Text style={styles.bannerText}>GUIDE BOOK</Text>
           <Icon style={styles.bannerIcon} color="white" name="book" type="font-awesome" size={40} />
         </ImageBackground>
         <View style={styles.tutorialInfo}>
-          <Text>Tutorial text</Text>
+          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+            <Text style={{ paddingBottom: 5, paddingRight: 5, textAlign: 'center', fontStyle: 'italic'}}>Earn</Text>
+            <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
+            <Text style={{ paddingBottom: 5, paddingLeft: 5, textAlign: 'center', fontStyle: 'italic'}}>'s by collecting landmarks!</Text>
+          </View>
+          <Text style={{ padding: 5, fontWeight: 'bold'}}>Collect a landmark:</Text>
+          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+          </View>
+          <Text style={{ padding: 5}}>STEP 1: Create an account</Text>
+          <Icon color="#0b80dc" name="sign-in" type="font-awesome" size={28} />
+          <Text style={{ padding: 5}}>STEP 2: Go to the maps page to find the closest landmark to you or a landmark you'd like to visit</Text>
+          <Icon color="#9c27b0" name="map-marker" type="font-awesome" size={28} />
+          <Text style={{ padding: 5}}>STEP 3: Click on the map marker of that landmark</Text>
+          <Text style={{ padding: 5}}>STEP 4: Get within 1 mile of the selected landmark and click the 'Take Photo!' button in the banner</Text>
+          <Text style={{ padding: 5}}>STEP 5: View your pictures on the Collected Landmarks page</Text>
+          <Icon color="#4caf50" name="image" type="font-awesome" size={28} />
         </View>
       </View>
     )
@@ -42,7 +57,8 @@ const styles = StyleSheet.create({
     opacity: 0.4,
   },
   tutorialInfo: {
-    flex: 3
+    flex: 3,
+    padding: 15
   },
   bannerText: {
     color: 'white',
