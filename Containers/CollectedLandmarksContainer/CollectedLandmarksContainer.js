@@ -17,7 +17,7 @@ export class CollectedLandmarksContainer extends Component {
           <ScrollView>
             {
               this.props.visitedLocations.map((location) => {
-                return (<Landmark key={location.landmark_id} landmark={location} />)
+                return (<Landmark key={location.id} landmark={location} />)
               })
             }
           </ScrollView>

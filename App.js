@@ -9,6 +9,7 @@ import CollectedLandMarks from './Containers/CollectedLandmarksContainer/Collect
 import { StyleSheet, View } from 'react-native';
 import { Image } from 'react-native-elements';
 import { ScreenOrientation } from 'expo';
+import {utf8} from 'utf8';
 
 export class App extends Component {
   constructor() {
@@ -22,36 +23,10 @@ export class App extends Component {
       takingProfilePic: false,
       cameraLoading: false,
       currentUserId: -1,
+      currentUserName: '',
       allLocations: [],
-      visitedLocations: [
-        {
-          landmark_id: 1,
-          lat: 39.75302,
-          lon: -104.9965,
-          visited: false,
-          name: 'Summit',
-          description: 'example 1 description',
-          photo_url: ''
-        },
-        {
-          landmark_id: 2,
-          lat: 39.75023,
-          lon: -104.9965,
-          visited: true,
-          name: 'The Delectable Egg',
-          description: 'example 2 description',
-          photo_url: ''
-        },
-        {
-          landmark_id: 3,
-          lat: 39.77023,
-          lon: -104.9965,
-          visited: false,
-          name: 'Far away example',
-          description: 'over a mile away',
-          photo_url: ''
-        }
-      ]
+      visitedLocationIds: [],
+      visitedLocations: []
     }
   };
 
@@ -60,7 +35,6 @@ export class App extends Component {
   };
 
   componentDidMount = async () => {
-    this.fetchAllLocations();
     const { Permissions } = Expo;
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status === 'granted') {
@@ -75,11 +49,22 @@ export class App extends Component {
     navigator.geolocation.clearWatch(this.watchId);
   };
 
-  fetchAllLocations = async () => {
-    const url = `https://pic-landmark-api.herokuapp.com/api/v1/locations/?lat=39.719683&lon=-104.498445`
-    const response = await fetch(url, { method: 'GET', headers: { 'Content-type': 'application/json' } })
-    const result = await response.json()
-    this.setState({allLocations: result})
+  componentWillUpdate(nextProps, nextState) {
+    const { currentLatitude, currentLongitude } = this.state;
+    if (nextState.currentLatitude !== currentLatitude || nextState.currentLongitude !== currentLongitude) {
+      this.fetchAllLocations(nextState.currentLongitude, nextState.currentLatitude);
+    }
+  }
+
+  fetchAllLocations = async (lon, lat) => {
+    try {
+      const url = `https://pic-landmark-api.herokuapp.com/api/v1/locations/?lat=${lat}&lon=${lon}`
+      const response = await fetch(url, { method: 'GET', headers: { 'Content-type': 'application/json' } })
+      const result = await response.json()
+      this.setState({ allLocations: result })
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   getStartLocation = () => {
@@ -126,13 +111,18 @@ export class App extends Component {
     let currentPhotoLocation = this.state.currentPhotoLocation;
     currentPhotoLocation.photo_url = newPic;
     const visitedLocations = [...this.state.visitedLocations, currentPhotoLocation];
-    this.setState({ visitedLocations, cameraLoading: false, currentPage: 'Collected landmarks' });
+    const visitedLocationIds = [...this.state.visitedLocationIds, currentPhotoLocation.id];
+    this.setState({ visitedLocations, visitedLocationIds, cameraLoading: false, currentPage: 'Collected landmarks' });
+    this.storePhoto(currentPhotoLocation)
   }
 
-  storePhoto = async (currentPhotoLocation) => {
-    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks?url=${currentPhotoLocation.photo_url}&location=${currentPhotoLocation.landmark_id}`
-    const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
-    const result = await response.json()
+  storePhoto = (currentPhotoLocation) => {
+    const string = utf8.encode(currentPhotoLocation.photo_url)
+    console.log(string)
+    // const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks?url=${currentPhotoLocation.photo_url}&location=${currentPhotoLocation.id}`
+    // const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
+    // const result = await response.json()
+    // console.log(result)
   }
 
   takeLocationPhoto = (selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID) => {
@@ -141,7 +131,7 @@ export class App extends Component {
       description: selectedDescription,
       lat: selectedLatitude,
       lon: selectedLongitude,
-      landmark_id: selectedID,
+      id: selectedID,
       photo_url: ''
     }
     this.setState({ currentPhotoLocation, currentPage: "Camera" });
@@ -151,8 +141,8 @@ export class App extends Component {
     this.setState({ cameraLoading: true })
   }
 
-  setUserLoginId = (id) => {
-    this.setState({ currentUserId: id })
+  setUserLogin = (id, username) => {
+    this.setState({ currentUserId: id, currentUserName: username })
   }
 
   fetchUserInfo = async (username, password) => {
@@ -161,14 +151,14 @@ export class App extends Component {
       const response = await fetch(url)
       const result = await response.json()
       const { user_id, user_locations } = result;
-      this.setState({ currentUserId: user_id, visitedLocations: user_locations, currentPage: 'Home' })
+      this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: user_locations, currentPage: 'User profile' })
     } catch (error) {
       console.log(error.message)
     }
   }
 
   render() {
-    const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading, allLocations } = this.state;
+    const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading, allLocations, visitedLocations, visitedLocationIds, currentUserName } = this.state;
     return (
       <View style={styles.container}>
         {
@@ -178,10 +168,17 @@ export class App extends Component {
           currentPage !== 'Camera' && <Header />
         }
         {
-          currentPage === 'Home' && currentLatitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} takeLocationPhoto={this.takeLocationPhoto} allLocations={allLocations} />
-            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId} fetchUserInfo={this.fetchUserInfo} />
+          currentPage === 'Home' ? <Home currentLatitude={currentLatitude}
+            currentLongitude={currentLongitude}
+            changeCurrentPage={this.changeCurrentPage}
+            takeLocationPhoto={this.takeLocationPhoto}
+            allLocations={allLocations}
+            visitedLocations={visitedLocations}
+            visitedLocationIds={visitedLocationIds}
+          />
+            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLogin={this.setUserLogin} changeCurrentPage={this.changeCurrentPage} fetchUserInfo={this.fetchUserInfo} />
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} visitedLocations={this.state.visitedLocations} />
-                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
+                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName}/>
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
                     : <View style={{ flex: 3 }} />
         }
