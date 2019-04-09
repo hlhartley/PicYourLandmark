@@ -33,16 +33,15 @@ export class Footer extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    bottom: 0,
+    flex: .3,
     width: '100%',
-    backgroundColor: '#e9e9e9'
+    backgroundColor: '#e9e9e9',
   },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   }
 });
 
