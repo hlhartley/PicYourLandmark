@@ -701,6 +701,7 @@ exports[`Home when the user clicks a location that they have already visited and
       >
         <Themed.Icon
           color="#4caf50"
+          marginTop={15}
           name="camera"
           size={15}
           type="font-awesome"
@@ -714,10 +715,14 @@ exports[`Home when the user clicks a location that they have already visited and
                 "fontWeight": "600",
                 "paddingLeft": 10,
               },
+              Object {
+                "color": "#c9c9c9",
+                "marginTop": 4,
+              },
             ]
           }
         >
-          Retake Photo
+          Click to Retake Photo!
         </Component>
       </TouchableOpacity>
     </Component>
