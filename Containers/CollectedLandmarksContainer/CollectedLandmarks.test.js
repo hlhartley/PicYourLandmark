@@ -1,10 +1,11 @@
 import React from 'react';
 import { CollectedLandmarksContainer } from './CollectedLandmarksContainer';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 describe('CollectedLandmarksContainer', () => {
+  let wrapper;
   let mockVisitedLocations;
-  it('renders correctly', () => {
+  beforeEach(() => {
     mockVisitedLocations = [
       {
         name: "Great Lawn Park",
@@ -23,7 +24,15 @@ describe('CollectedLandmarksContainer', () => {
         photo_url: "www.myimage.com"
     }
   ]
-    const tree = renderer.create(<CollectedLandmarksContainer visitedLocations={mockVisitedLocations}/>).toJSON();
-    expect(tree).toMatchSnapshot();
+    wrapper = shallow(<CollectedLandmarksContainer visitedLocations={mockVisitedLocations}/>);
+  });
+
+  it('should match the snapshot when there are visited locations', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the snapshot when there are no visited locations', () => {
+    wrapper.setProps({ visitedLocations: []})
+    expect(wrapper).toMatchSnapshot();
   });
 });
