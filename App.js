@@ -6,10 +6,11 @@ import Login from './Containers/Login/Login';
 import UserProfile from './Containers/UserProfile/UserProfile';
 import Tutorial from './Containers/Tutorial/Tutorial';
 import CollectedLandmarksContainer from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
+import CameraPage from './Containers/Camera/Camera';
 import { StyleSheet, View } from 'react-native';
 import { Image } from 'react-native-elements';
 import { ScreenOrientation } from 'expo';
-import {utf8} from 'utf8';
+import base64 from 'react-native-base64'
 
 export class App extends Component {
   constructor() {
@@ -116,13 +117,14 @@ export class App extends Component {
     this.storePhoto(currentPhotoLocation)
   }
 
-  storePhoto = (currentPhotoLocation) => {
-    const string = utf8.encode(currentPhotoLocation.photo_url)
-    console.log(string)
-    // const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks?url=${currentPhotoLocation.photo_url}&location=${currentPhotoLocation.id}`
-    // const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
-    // const result = await response.json()
-    // console.log(result)
+  storePhoto = async (currentPhotoLocation) => {
+    const photoURL = base64.encode(currentPhotoLocation.photo_url);
+    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks/?url=${photoURL}&location=${currentPhotoLocation.id}`;
+    try {
+      await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   takeLocationPhoto = (selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID) => {
@@ -151,7 +153,13 @@ export class App extends Component {
       const response = await fetch(url)
       const result = await response.json()
       const { user_id, user_locations } = result;
-      this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: user_locations, currentPage: 'User profile' })
+      let visitedLocationIds = []
+      let decodedLocations = user_locations.map(location => {
+        visitedLocationIds.push(location.landmark_id)
+        location.photo_url = base64.decode(location.photo_url)
+        return location;
+      })
+      this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: decodedLocations, visitedLocationIds, currentPage: 'User profile' })
     } catch (error) {
       console.log(error.message)
     }
@@ -177,10 +185,11 @@ export class App extends Component {
             visitedLocationIds={visitedLocationIds}
           />
             : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLogin={this.setUserLogin} changeCurrentPage={this.changeCurrentPage} fetchUserInfo={this.fetchUserInfo} />
-              : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} visitedLocations={this.state.visitedLocations} />
-                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName}/>
-                  : currentPage === 'Tutorial' ? <Tutorial />
-                    : <View style={{ flex: 3 }} />
+              : currentPage === 'Collected landmarks' ? <CollectedLandmarksContainer pics={pics} visitedLocations={this.state.visitedLocations} />
+                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName} />
+                  : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
+                    : currentPage === 'Tutorial' ? <Tutorial />
+                      : <View style={{ flex: 3 }} />
         }
         <Footer changeCurrentPage={this.changeCurrentPage} currentPage={currentPage} />
       </View>
