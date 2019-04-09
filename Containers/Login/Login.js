@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import { Icon } from 'react-native-elements';
+// import console = require('console');
 
 export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'test',
-      password: '',
-      confirmPassword: '',
-      email: '',
+      username: 'matt9',
+      password: 'matt',
+      confirmPassword: 'matt',
+      email: 'test84@gmail.com',
       isLoginPage: true
     }
   }
 
   createAccount = async () => {
-    const { username, password, confirmPassword, email } = this.state
-    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?email=${email}&username=${username}&password=${password}&password_confirmation=${confirmPassword}`
-    const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' }})
-    const result = await response.json()
-    this.setState({ isLoginPage: true })
-    this.props.setUserLoginId(Date.now())
+    try {
+      const { username, password, confirmPassword, email } = this.state
+      const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?email=${email}&username=${username}&password=${password}&password_confirmation=${confirmPassword}`
+      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
+      const result = await response.json()
+      this.props.setUserLogin(result.id, result.username)
+      this.props.changeCurrentPage('User profile')
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   loginUser = () => {
-    const {username, password} = this.state;
+    const { username, password } = this.state;
     this.props.fetchUserInfo(username, password)
   }
 
@@ -50,13 +55,13 @@ export class Login extends Component {
         <View style={styles.container}>
           <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
-              <View>
-                <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50} />
-                <Text style={styles.usernameText}>{this.state.username}</Text>
-              </View>
-                <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.props.setUserLoginId(-1)}>
-                  <Text style={{ textAlign: 'center' }}>Log out</Text>
-                </TouchableOpacity>
+            <View>
+              <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50} />
+              <Text style={styles.usernameText}>{this.state.username}</Text>
+            </View>
+            <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.props.setUserLogin(-1, '')}>
+              <Text style={{ textAlign: 'center' }}>Log out</Text>
+            </TouchableOpacity>
           </ImageBackground>
         </View>
       )
@@ -181,10 +186,10 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   usernameText: {
-    color:'white', 
-    fontSize: 24, 
-    top: 55, 
-    textAlign: 'center', 
+    color: 'white',
+    fontSize: 24,
+    top: 55,
+    textAlign: 'center',
     fontWeight: 'bold'
   }
 });
