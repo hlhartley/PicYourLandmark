@@ -45,14 +45,145 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
         }
       }
     >
-      TUTORIAL
+      GUIDE BOOK
     </Component>
     <Themed.Icon
       color="white"
-      name="university"
+      name="book"
       size={40}
       type="font-awesome"
     />
   </ImageBackground>
+  <Component
+    style={
+      Object {
+        "flex": 3,
+        "padding": 15,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "fontStyle": "italic",
+            "paddingBottom": 5,
+            "paddingRight": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        Earn
+      </Component>
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={20}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Object {
+            "fontStyle": "italic",
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        's by collecting landmarks!
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "fontWeight": "bold",
+          "padding": 5,
+        }
+      }
+    >
+      Collect a landmark:
+    </Component>
+    <Component
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "padding": 5,
+        }
+      }
+    >
+      STEP 1: Create an account
+    </Component>
+    <Themed.Icon
+      color="#0b80dc"
+      name="sign-in"
+      size={28}
+      type="font-awesome"
+    />
+    <Component
+      style={
+        Object {
+          "padding": 5,
+        }
+      }
+    >
+      STEP 2: Go to the maps page to find the closest landmark to you or a landmark you'd like to visit
+    </Component>
+    <Themed.Icon
+      color="#9c27b0"
+      name="map-marker"
+      size={28}
+      type="font-awesome"
+    />
+    <Component
+      style={
+        Object {
+          "padding": 5,
+        }
+      }
+    >
+      STEP 3: Click on the map marker of that landmark
+    </Component>
+    <Component
+      style={
+        Object {
+          "padding": 5,
+        }
+      }
+    >
+      STEP 4: Get within 1 mile of the selected landmark and click the 'Take Photo!' button in the banner
+    </Component>
+    <Component
+      style={
+        Object {
+          "padding": 5,
+        }
+      }
+    >
+      STEP 5: View your pictures on the Collected Landmarks page
+    </Component>
+    <Themed.Icon
+      color="#4caf50"
+      name="image"
+      size={28}
+      type="font-awesome"
+    />
+  </Component>
 </Component>
 `;
