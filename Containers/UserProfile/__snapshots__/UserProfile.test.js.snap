@@ -5,8 +5,8 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
   style={
     Object {
       "display": "flex",
+      "flex": 3,
       "flexDirection": "column",
-      "height": "100%",
       "width": "100%",
     }
   }
@@ -17,7 +17,8 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
       Object {
         "alignItems": "center",
         "display": "flex",
-        "flex": 1,
+        "flex": 1.5,
+        "justifyContent": "center",
         "width": "100%",
       }
     }
@@ -41,7 +42,6 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           "fontSize": 18,
           "fontWeight": "600",
           "paddingBottom": "3%",
-          "paddingTop": "20%",
         }
       }
     >
@@ -62,7 +62,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
     style={
       Object {
         "alignItems": "center",
-        "flex": 0.8,
+        "flex": 1.2,
         "justifyContent": "space-around",
       }
     }
@@ -78,7 +78,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
     style={
       Object {
         "display": "flex",
-        "flex": 2,
+        "flex": 1.8,
         "flexDirection": "column",
         "flexWrap": "wrap",
       }
@@ -90,9 +90,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
           "marginLeft": "6%",
-          "marginRight": "6%",
         }
       }
     >
@@ -120,9 +118,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
           "marginLeft": "6%",
-          "marginRight": "6%",
         }
       }
     >
@@ -150,9 +146,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
           "marginLeft": "6%",
-          "marginRight": "6%",
         }
       }
     >
@@ -183,8 +177,8 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
   style={
     Object {
       "display": "flex",
+      "flex": 3,
       "flexDirection": "column",
-      "height": "100%",
       "width": "100%",
     }
   }
@@ -195,7 +189,8 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
       Object {
         "alignItems": "center",
         "display": "flex",
-        "flex": 1,
+        "flex": 1.5,
+        "justifyContent": "center",
         "width": "100%",
       }
     }
@@ -219,7 +214,6 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
           "fontSize": 18,
           "fontWeight": "600",
           "paddingBottom": "3%",
-          "paddingTop": "20%",
         }
       }
     >
@@ -240,7 +234,7 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
     style={
       Object {
         "alignItems": "center",
-        "flex": 0.8,
+        "flex": 1.2,
         "justifyContent": "space-around",
       }
     }
@@ -261,7 +255,6 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
         style={
           Object {
             "height": "90%",
-            "marginTop": 10,
             "width": "100%",
           }
         }
@@ -272,7 +265,7 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
     style={
       Object {
         "display": "flex",
-        "flex": 2,
+        "flex": 1.8,
         "flexDirection": "column",
         "flexWrap": "wrap",
       }
@@ -284,9 +277,7 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
           "marginLeft": "6%",
-          "marginRight": "6%",
         }
       }
     >
@@ -314,9 +305,7 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
           "marginLeft": "6%",
-          "marginRight": "6%",
         }
       }
     >
@@ -344,9 +333,7 @@ exports[`UserProfile should match the snapshot when the user has a profile pictu
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
           "marginLeft": "6%",
-          "marginRight": "6%",
         }
       }
     >

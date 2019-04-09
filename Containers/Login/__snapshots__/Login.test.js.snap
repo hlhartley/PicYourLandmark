@@ -6,6 +6,7 @@ exports[`Login renders correctly 1`] = `
     Object {
       "alignItems": "center",
       "display": "flex",
+      "flex": 3,
       "flexDirection": "column",
       "height": "90%",
       "width": "100%",
@@ -20,7 +21,6 @@ exports[`Login renders correctly 1`] = `
         "display": "flex",
         "flex": 1,
         "flexDirection": "column",
-        "height": "100%",
         "justifyContent": "space-evenly",
         "width": "100%",
       }
@@ -38,7 +38,7 @@ exports[`Login renders correctly 1`] = `
             "top": 0,
           },
           Object {
-            "height": "100%",
+            "height": undefined,
             "width": "100%",
           },
           undefined,
