@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login should match the snapshot when the currentUserId is greater than or equal to 0 1`] = `
-<Component
+<KeyboardAvoidingView
+  behavior="padding"
+  enabled={true}
+  keyboardVerticalOffset={0}
   style={
     Object {
       "alignItems": "center",
@@ -45,7 +48,6 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
       name="user-circle"
       padding={15}
       size={70}
-      top={50}
       type="font-awesome"
     />
     <Component>
@@ -151,7 +153,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
       </TouchableOpacity>
     </Component>
   </ImageBackground>
-</Component>
+</KeyboardAvoidingView>
 `;
 
 exports[`Login should match the snapshot when the currentUserId is greater than or equal to 0 2`] = `

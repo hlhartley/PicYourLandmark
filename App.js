@@ -3,9 +3,9 @@ import Home from './Containers/Home/Home';
 import Header from './Containers/Header/Header';
 import Footer from './Containers/Footer/Footer';
 import Login from './Containers/Login/Login';
-import CameraPage from './Containers/Camera/Camera';
 import UserProfile from './Containers/UserProfile/UserProfile';
-import CollectedLandMarks from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
+import Tutorial from './Containers/Tutorial/Tutorial';
+import CollectedLandmarksContainer from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
 import { StyleSheet, View } from 'react-native';
 import { Image } from 'react-native-elements';
 import { ScreenOrientation } from 'expo';
@@ -15,7 +15,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -179,7 +179,7 @@ export class App extends Component {
             : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLogin={this.setUserLogin} changeCurrentPage={this.changeCurrentPage} fetchUserInfo={this.fetchUserInfo} />
               : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} visitedLocations={this.state.visitedLocations} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName}/>
-                  : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
+                  : currentPage === 'Tutorial' ? <Tutorial />
                     : <View style={{ flex: 3 }} />
         }
         <Footer changeCurrentPage={this.changeCurrentPage} currentPage={currentPage} />

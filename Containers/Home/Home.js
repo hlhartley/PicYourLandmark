@@ -86,7 +86,7 @@ export class Home extends Component {
           clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
             <View style={styles.flexRow}>
-              <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+              <Text style={styles.headerText}>{selectedName}</Text>
             </View>
             <View style={styles.flexRow}>
               <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
@@ -100,8 +100,8 @@ export class Home extends Component {
               calculatedDistance < 1 &&
               <View style={styles.flexRow}>
                 <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15} />
-                  <Text style={[styles.pointsText]}>Retake Photo</Text>
+                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15} marginTop={15} />
+                  <Text style={[styles.pointsText, { color:'#c9c9c9', marginTop: 4}]}>Click to Retake Photo!</Text>
                 </TouchableOpacity>
               </View>
             }
@@ -110,7 +110,7 @@ export class Home extends Component {
               <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
                 <View style={styles.flexRow}>
-                  <Text style={styles.headerText}>{selectedName.toUpperCase()}</Text>
+                  <Text style={styles.headerText}>{selectedName}</Text>
                 </View>
                 <View style={styles.flexRow}>
                   <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
@@ -124,13 +124,13 @@ export class Home extends Component {
                   calculatedDistance < 1 ?
                     <View style={styles.flexRow}>
                       <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} />
-                        <Text style={styles.pointsText}>Take Photo!</Text>
+                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} marginTop={15}/>
+                        <Text style={[styles.pointsText, { color: '#c9c9c9', marginTop: 4}]}>Click to Take Photo!</Text>
                       </TouchableOpacity>
                     </View>
                     :
                     <View>
-                      <Text style={styles.pointsText}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
+                      <Text style={[styles.pointsText, { fontSize: 14, marginTop: 10, padding: 2, color: '#c9c9c9'}]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
                     </View>
                 }
               </ImageBackground>

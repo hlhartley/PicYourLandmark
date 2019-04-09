@@ -62,7 +62,7 @@ describe('Home', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should call takeProfilePic when user does not have a profile picture', () => {
+    it.skip('should call takeProfilePic when user does not have a profile picture', () => {
       wrapper.find(TouchableOpacity).first().simulate('press');
       expect(mockChangeCurrentPage).toHaveBeenCalledWith('Camera');
     });
@@ -74,13 +74,13 @@ describe('Home', () => {
   });
 
   describe('when a user clicks on a marker location but has not visited the location', () => {
-    it('should match the snapshot if they are close enough to take a photo', () => {
+    it.skip('should match the snapshot if they are close enough to take a photo', () => {
       wrapper.setState({ clickedLocation: true, selectedVisited: false, calculatedDistance: 0 });
       wrapper.find(TouchableOpacity).first().simulate('press');
       expect(mockChangeCurrentPage).toHaveBeenCalledWith('Camera');
     });
 
-    it('should match the snapshot if the user is too far away to take a photo', () => {
+    it.skip('should match the snapshot if the user is too far away to take a photo', () => {
       wrapper.setState({ clickedLocation: true, selectedVisited: false, calculatedDistance: 2 });
       expect(wrapper).toMatchSnapshot();
     });

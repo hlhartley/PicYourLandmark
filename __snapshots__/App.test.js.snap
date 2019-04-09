@@ -35,9 +35,12 @@ exports[`App should match the snapshot when on the Camera page 1`] = `
     }
   }
 >
-  <CameraWindow
-    savePicture={[Function]}
-    setCameraLoading={[Function]}
+  <Component
+    style={
+      Object {
+        "flex": 3,
+      }
+    }
   />
   <Footer
     changeCurrentPage={[Function]}
@@ -67,7 +70,7 @@ exports[`App should match the snapshot when on the Collected landmarks page 1`] 
           "lat": 39.75302,
           "lon": -104.9965,
           "name": "Summit",
-          "photo_url": "content://media/external/images/media/692",
+          "photo_url": "",
           "visited": false,
         },
         Object {
@@ -76,7 +79,7 @@ exports[`App should match the snapshot when on the Collected landmarks page 1`] 
           "lat": 39.75023,
           "lon": -104.9965,
           "name": "The Delectable Egg",
-          "photo_url": "content://media/external/images/media/692",
+          "photo_url": "",
           "visited": true,
         },
         Object {
@@ -85,7 +88,7 @@ exports[`App should match the snapshot when on the Collected landmarks page 1`] 
           "lat": 39.77023,
           "lon": -104.9965,
           "name": "Far away example",
-          "photo_url": "content://media/external/images/media/692",
+          "photo_url": "",
           "visited": false,
         },
       ]

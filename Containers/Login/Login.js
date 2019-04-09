@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { Icon } from 'react-native-elements';
 // import console = require('console');
 
@@ -67,10 +67,10 @@ export class Login extends Component {
       )
     } else if (this.state.isLoginPage) {
       return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior='padding'>
           <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
-            <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50} />
+            <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15}  />
             <View>
               <TextInput
                 placeholder='Username'
@@ -94,14 +94,14 @@ export class Login extends Component {
               </TouchableOpacity>
             </View>
           </ImageBackground>
-        </View>
+        </KeyboardAvoidingView>
       )
     } else {
       return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior='padding'>
           <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
-            <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={40} />
+            <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} />
             <View>
               <TextInput
                 placeholder='Username'
@@ -133,7 +133,7 @@ export class Login extends Component {
               </TouchableOpacity>
             </View>
           </ImageBackground>
-        </View>
+        </KeyboardAvoidingView>
       )
     }
   }

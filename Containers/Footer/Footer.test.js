@@ -12,15 +12,30 @@ describe('Footer', () => {
     wrapper = shallow(<Footer changeCurrentPage={mockChangeCurrentPage}/>)
   });
 
-  it('should match the snapshot with the correct data passed in', () => {
+  it('should match the snapshot with the correct data passed in when on User profile page', () => {
+    wrapper.setProps({ currentPage: 'User profile'})
     expect(wrapper).toMatchSnapshot()
   });
 
-  it('should match the snapshot with 15% containerHeight if the currentPage is Camera', () => {
-    wrapper.setProps({ currentPage: 'Camera'})
+  it('should match the snapshot with the correct data passed in when on Home page', () => {
+    wrapper.setProps({ currentPage: 'Home'})
     expect(wrapper).toMatchSnapshot()
   });
 
+  it('should match the snapshot with the correct data passed in when on Tutorial page', () => {
+    wrapper.setProps({ currentPage: 'Tutorial'})
+    expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should match the snapshot with the correct data passed in when on Collecrted landmarks page', () => {
+    wrapper.setProps({ currentPage: 'Collected landmarks'})
+    expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should match the snapshot with the correct data passed in when on Login page', () => {
+    wrapper.setProps({ currentPage: 'Login'})
+    expect(wrapper).toMatchSnapshot()
+  });
 
   it('user button should call changeCurrentPage and pass in the string User Profile', () => {
     wrapper.find(TouchableOpacity).at(0).simulate('press')
@@ -32,16 +47,16 @@ describe('Footer', () => {
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('Home')
   });
 
-  it('camera button should call changeCurrentPage and pass in the string Camera', () => {
-    wrapper.find(TouchableOpacity).at(2).simulate('press')
-    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Camera')
-  });
-
   it('image/picture button should call changeCurrentPage and pass in the string Collected landmarks', () => {
-    wrapper.find(TouchableOpacity).at(3).simulate('press')
+    wrapper.find(TouchableOpacity).at(2).simulate('press')
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('Collected landmarks')
   });
-
+  
+  it('tutorial button should call changeCurrentPage and pass in the string Tutorial', () => {
+    wrapper.find(TouchableOpacity).at(3).simulate('press')
+    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Tutorial')
+  });
+  
   it('sign in button should call changeCurrentPage and pass in the string Login', () => {
     wrapper.find(TouchableOpacity).at(4).simulate('press')
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('Login')
