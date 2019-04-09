@@ -124,6 +124,7 @@ export class Login extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 3,
     display: 'flex',
     flexDirection: 'column',
     height: '90%',
@@ -142,7 +143,6 @@ const styles = StyleSheet.create({
   },
   imageBackground: {
     width: '100%',
-    height: '100%',
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
