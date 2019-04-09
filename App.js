@@ -8,6 +8,7 @@ import UserProfile from './Containers/UserProfile/UserProfile';
 import CollectedLandMarks from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
 import { StyleSheet, View } from 'react-native';
 import { Image } from 'react-native-elements';
+import { ScreenOrientation } from 'expo';
 
 export class App extends Component {
   constructor() {
@@ -30,7 +31,7 @@ export class App extends Component {
           visited: false,
           name: 'Summit',
           description: 'example 1 description',
-          photo_url: 'content://media/external/images/media/692'
+          photo_url: ''
         },
         {
           landmark_id: 2,
@@ -39,7 +40,7 @@ export class App extends Component {
           visited: true,
           name: 'The Delectable Egg',
           description: 'example 2 description',
-          photo_url: 'content://media/external/images/media/692'
+          photo_url: ''
         },
         {
           landmark_id: 3,
@@ -48,10 +49,14 @@ export class App extends Component {
           visited: false,
           name: 'Far away example',
           description: 'over a mile away',
-          photo_url: 'content://media/external/images/media/692'
+          photo_url: ''
         }
       ]
     }
+  };
+
+  componentWillMount = () => {
+    ScreenOrientation.allowAsync(ScreenOrientation.Orientation.PORTRAIT);
   };
 
   componentDidMount = async () => {
