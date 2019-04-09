@@ -14,7 +14,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Home',
+      currentPage: 'Collected landmarks',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -24,33 +24,33 @@ export class App extends Component {
       currentUserId: -1,
       allLocations: [],
       visitedLocations: [
-        {
-          landmark_id: 1,
-          lat: 39.75302,
-          lon: -104.9965,
-          visited: false,
-          name: 'Summit',
-          description: 'example 1 description',
-          photo_url: ''
-        },
-        {
-          landmark_id: 2,
-          lat: 39.75023,
-          lon: -104.9965,
-          visited: true,
-          name: 'The Delectable Egg',
-          description: 'example 2 description',
-          photo_url: ''
-        },
-        {
-          landmark_id: 3,
-          lat: 39.77023,
-          lon: -104.9965,
-          visited: false,
-          name: 'Far away example',
-          description: 'over a mile away',
-          photo_url: ''
-        }
+        // {
+        //   landmark_id: 1,
+        //   lat: 39.75302,
+        //   lon: -104.9965,
+        //   visited: false,
+        //   name: 'Summit',
+        //   description: 'example 1 description',
+        //   photo_url: ''
+        // },
+        // {
+        //   landmark_id: 2,
+        //   lat: 39.75023,
+        //   lon: -104.9965,
+        //   visited: true,
+        //   name: 'The Delectable Egg',
+        //   description: 'example 2 description',
+        //   photo_url: ''
+        // },
+        // {
+        //   landmark_id: 3,
+        //   lat: 39.77023,
+        //   lon: -104.9965,
+        //   visited: false,
+        //   name: 'Far away example',
+        //   description: 'over a mile away',
+        //   photo_url: ''
+        // }
       ]
     }
   };

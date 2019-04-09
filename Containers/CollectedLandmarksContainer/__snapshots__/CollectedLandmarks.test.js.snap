@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CollectedLandmarksContainer renders correctly 1`] = `
-<View
+exports[`CollectedLandmarksContainer should match the snapshot when there are no visited locations 1`] = `
+<Component
   style={
     Object {
       "display": "flex",
@@ -11,8 +11,8 @@ exports[`CollectedLandmarksContainer renders correctly 1`] = `
     }
   }
 >
-  <View
-    accessibilityIgnoresInvertColors={true}
+  <ImageBackground
+    source={1}
     style={
       Object {
         "alignItems": "center",
@@ -23,26 +23,7 @@ exports[`CollectedLandmarksContainer renders correctly 1`] = `
       }
     }
   >
-    <Image
-      source={1}
-      style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": undefined,
-            "width": "100%",
-          },
-          undefined,
-        ]
-      }
-    />
-    <View
+    <Component
       style={
         Object {
           "backgroundColor": "black",
@@ -54,7 +35,7 @@ exports[`CollectedLandmarksContainer renders correctly 1`] = `
         }
       }
     />
-    <Text
+    <Component
       style={
         Object {
           "color": "white",
@@ -65,67 +46,149 @@ exports[`CollectedLandmarksContainer renders correctly 1`] = `
       }
     >
       COLLECTED LANDMARKS
-    </Text>
-    <View>
-      <View
+    </Component>
+    <Themed.Icon
+      color="white"
+      name="university"
+      size={40}
+      type="font-awesome"
+    />
+  </ImageBackground>
+  <Component
+    style={
+      Object {
+        "flex": 3,
+      }
+    }
+  >
+    <ScrollViewMock>
+      <Component
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "transparent",
-            "justifyContent": "center",
+            "display": "flex",
+            "flex": 3,
+            "flexDirection": "column",
+            "justifyContent": "space-between",
+            "padding": 10,
           }
         }
-        theme={
-          Object {
-            "colors": Object {
-              "disabled": "hsl(208, 8%, 90%)",
-              "divider": "#bcbbc1",
-              "error": "#ff190c",
-              "grey0": "#393e42",
-              "grey1": "#43484d",
-              "grey2": "#5e6977",
-              "grey3": "#86939e",
-              "grey4": "#bdc6cf",
-              "grey5": "#e1e8ee",
-              "greyOutline": "#bbb",
-              "platform": Object {
-                "android": Object {
-                  "error": "#f44336",
-                  "primary": "#2196f3",
-                  "secondary": "#9C27B0",
-                  "success": "#4caf50",
-                  "warning": "#ffeb3b",
-                },
-                "ios": Object {
-                  "error": "#ff3b30",
-                  "primary": "#007aff",
-                  "secondary": "#5856d6",
-                  "success": "#4cd964",
-                  "warning": "#ffcc00",
-                },
-              },
-              "primary": "#2089dc",
-              "searchBg": "#303337",
-              "secondary": "#8F0CE8",
-              "success": "#52c41a",
-              "warning": "#faad14",
-            },
-          }
-        }
-        underlayColor="white"
       >
-        <Text />
-      </View>
-    </View>
-  </View>
-  <View
+        <Component
+          style={
+            Object {
+              "fontWeight": "bold",
+              "paddingTop": 30,
+            }
+          }
+        >
+          You have 0 collected landmarks
+        </Component>
+        <Themed.Icon
+          color="#745f57"
+          name="map"
+          padding={30}
+          size={50}
+          type="font-awesome"
+        />
+        <Component>
+          Get within 1 mile of a landmark to snap a photo and add it to your landmarks collection
+        </Component>
+      </Component>
+    </ScrollViewMock>
+  </Component>
+</Component>
+`;
+
+exports[`CollectedLandmarksContainer should match the snapshot when there are visited locations 1`] = `
+<Component
+  style={
+    Object {
+      "display": "flex",
+      "flex": 3,
+      "flexDirection": "column",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
     style={
       Object {
+        "alignItems": "center",
         "display": "flex",
-        "flex": 3,
-        "flexDirection": "column",
+        "flex": 1.5,
+        "justifyContent": "center",
+        "width": "100%",
       }
     }
-  />
-</View>
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "height": "100%",
+          "opacity": 0.4,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 18,
+          "fontWeight": "600",
+          "paddingBottom": "3%",
+        }
+      }
+    >
+      COLLECTED LANDMARKS
+    </Component>
+    <Themed.Icon
+      color="white"
+      name="university"
+      size={40}
+      type="font-awesome"
+    />
+  </ImageBackground>
+  <Component
+    style={
+      Object {
+        "flex": 3,
+      }
+    }
+  >
+    <ScrollViewMock>
+      <Landmark
+        key="6"
+        landmark={
+          Object {
+            "description": "Beautiful Park",
+            "landmark_id": 6,
+            "lat": 39.72386,
+            "lon": -104.88715,
+            "name": "Great Lawn Park",
+            "photo_url": "www.myimage.com/2",
+          }
+        }
+      />
+      <Landmark
+        key="3"
+        landmark={
+          Object {
+            "description": "Beautiful Park",
+            "landmark_id": 3,
+            "lat": 39.7159,
+            "lon": -104.90379,
+            "name": "Buckley Annex",
+            "photo_url": "www.myimage.com",
+          }
+        }
+      />
+    </ScrollViewMock>
+  </Component>
+</Component>
 `;
