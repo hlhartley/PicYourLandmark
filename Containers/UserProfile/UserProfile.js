@@ -6,19 +6,21 @@ export class UserProfile extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'user 1',
       points: 30,
       numLandmarksVisited: 3,
       recentLandmark: 'Coors Field'
     }
   }
   render() {
-    const { profilePic } = this.props;
+    const { profilePic, currentUserName } = this.props;
     return (
       <View style={styles.viewContainer}>
         <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={styles.imageBackground}>
           <View style={styles.overlay} />
-          <Text style={styles.bannerText}>WELCOME, {this.state.username.toUpperCase()}!</Text>
+          {
+            currentUserName.length > 0 ? <Text style={styles.bannerText}>WELCOME, {this.props.currentUserName.toUpperCase()}!</Text>
+              : <Text style={styles.bannerText}>Please create an account or log in to track your progress!</Text>
+          }
           <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} />
         </ImageBackground>
         {
