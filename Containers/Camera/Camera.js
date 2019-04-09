@@ -94,11 +94,12 @@ export class CameraWindow extends Component {
 
 const styles = StyleSheet.create({
   viewContainer: {
-    flex: 1,
+    flex: 2.3,
     backgroundColor: 'transparent',
   },
   camera: {
-    height: '85%'
+    flex: 1
+    // height: '85%'
   },
   cameraButtonsContainer: {
     display: 'flex',
