@@ -5,10 +5,9 @@ import { Icon } from 'react-native-elements';
 export class Footer extends Component {
 
   render() {
-    const {changeCurrentPage, currentPage} = this.props;
-    const containerHeight = currentPage === 'Camera' ? '15%' : '8%';
+    const {changeCurrentPage} = this.props;
     return (
-      <View style={[styles.container, {height: containerHeight}]}>
+      <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => changeCurrentPage('User profile')}>
             <Icon color="#3c4859" name="user" type="font-awesome" size={30} />

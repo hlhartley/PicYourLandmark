@@ -90,8 +90,7 @@ exports[`Footer should match the snapshot with the correct data passed in 1`] = 
     Array [
       Object {
         "backgroundColor": "#e9e9e9",
-        "bottom": 0,
-        "position": "absolute",
+        "flex": 0.3,
         "width": "100%",
       },
       Object {

@@ -160,20 +160,22 @@ describe('App', () => {
             }
           ]
       }),
-        status: 200
+        status: 200,
+        ok: true
       }));
-      const result = await wrapper.instance().fetchUserInfo('joe55', 'abc123');
-      expect(result).toEqual(expected);
+      await wrapper.instance().fetchUserInfo('joe55', 'abc123');
+      expect(wrapper.state('currentUserId')).toEqual(1);
+      expect(wrapper.state('visitedLocations')).toEqual(expected.user_locations);
+      expect(wrapper.state('currentPage')).toEqual('Home');
     });
 
     it('should return an error if everything is not ok', async () => {
+      const expected = Error('Error fetching data');
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        status: 404,
-        statusText: 'Not found'
+        ok: false,
+        json: jest.fn().mockReturnValue('Error fetching data')
       }));
-
-      const expected = Error('Error fetching');
-      expect(wrapper.instance().fetchUserInfo).rejects.toEqual(expected)
+      expect(wrapper.instance().fetchUserInfo('joe55', 'abc123')).rejects.toEqual(expected)
     });
   });
 });

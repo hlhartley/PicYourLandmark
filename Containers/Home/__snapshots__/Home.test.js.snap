@@ -4,7 +4,7 @@ exports[`Home should match the snapshot when a user has not clicked on a locatio
 <Component
   style={
     Object {
-      "height": "70%",
+      "flex": 3,
       "width": "100%",
     }
   }
@@ -15,9 +15,10 @@ exports[`Home should match the snapshot when a user has not clicked on a locatio
       Object {
         "alignItems": "center",
         "display": "flex",
+        "flex": 1.5,
         "flexDirection": "column",
-        "height": "62%",
         "justifyContent": "center",
+        "position": "relative",
         "width": "100%",
       }
     }
@@ -26,22 +27,12 @@ exports[`Home should match the snapshot when a user has not clicked on a locatio
       style={
         Object {
           "backgroundColor": "black",
-          "bottom": 0,
-          "height": "62%",
-          "left": 0,
+          "height": "100%",
           "opacity": 0.5,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "width": "100%",
         }
       }
-    />
-    <Themed.Icon
-      color="white"
-      name="camera-retro"
-      size={40}
-      top={-55}
-      type="font-awesome"
     />
     <Component
       style={
@@ -50,12 +41,17 @@ exports[`Home should match the snapshot when a user has not clicked on a locatio
           "fontSize": 16,
           "fontWeight": "600",
           "padding": 10,
-          "top": -50,
         }
       }
     >
       Earn gems by taking and uploading pics of you at various locations
     </Component>
+    <Themed.Icon
+      color="white"
+      name="camera-retro"
+      size={40}
+      type="font-awesome"
+    />
   </ImageBackground>
   <MockMapView
     initialRegion={
@@ -70,8 +66,7 @@ exports[`Home should match the snapshot when a user has not clicked on a locatio
     showsUserLocation={true}
     style={
       Object {
-        "height": "77%",
-        "top": "-24%",
+        "flex": 3,
         "width": "100%",
       }
     }
@@ -255,7 +250,7 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
 <Component
   style={
     Object {
-      "height": "70%",
+      "flex": 3,
       "width": "100%",
     }
   }
@@ -266,9 +261,10 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
       Object {
         "alignItems": "center",
         "display": "flex",
+        "flex": 1.5,
         "flexDirection": "column",
-        "height": "62%",
         "justifyContent": "center",
+        "position": "relative",
         "width": "100%",
       }
     }
@@ -277,13 +273,10 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
       style={
         Object {
           "backgroundColor": "black",
-          "bottom": 0,
-          "height": "62%",
-          "left": 0,
+          "height": "100%",
           "opacity": 0.5,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "width": "100%",
         }
       }
     />
@@ -302,7 +295,6 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
             "fontSize": 22,
             "fontWeight": "600",
             "padding": 10,
-            "top": -65,
           }
         }
       />
@@ -319,7 +311,6 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
         color="#f44336"
         name="diamond"
         size={15}
-        top={-58}
         type="font-awesome"
       />
       <Component
@@ -330,12 +321,9 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
               "fontSize": 16,
               "fontWeight": "600",
               "paddingLeft": 10,
-              "top": -60,
             },
             Object {
               "color": "white",
-              "left": -5,
-              "top": -63,
             },
           ]
         }
@@ -356,7 +344,6 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
         color="#00bcd4"
         name="car"
         size={15}
-        top={-57}
         type="font-awesome"
       />
       <Component
@@ -366,7 +353,6 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
             "fontSize": 16,
             "fontWeight": "600",
             "paddingLeft": 10,
-            "top": -60,
           }
         }
       >
@@ -377,19 +363,12 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
     <Component>
       <Component
         style={
-          Array [
-            Object {
-              "color": "white",
-              "fontSize": 16,
-              "fontWeight": "600",
-              "paddingLeft": 10,
-              "top": -60,
-            },
-            Object {
-              "fontSize": 13,
-              "top": -50,
-            },
-          ]
+          Object {
+            "color": "white",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "paddingLeft": 10,
+          }
         }
       >
         Get within 1 mile of the landmark to take a photo and add it to your collection
@@ -409,8 +388,7 @@ exports[`Home when a user clicks on a marker location but has not visited the lo
     showsUserLocation={true}
     style={
       Object {
-        "height": "77%",
-        "top": "-24%",
+        "flex": 3,
         "width": "100%",
       }
     }
@@ -594,7 +572,7 @@ exports[`Home when the user clicks a location that they have already visited and
 <Component
   style={
     Object {
-      "height": "70%",
+      "flex": 3,
       "width": "100%",
     }
   }
@@ -605,9 +583,10 @@ exports[`Home when the user clicks a location that they have already visited and
       Object {
         "alignItems": "center",
         "display": "flex",
+        "flex": 1.5,
         "flexDirection": "column",
-        "height": "62%",
         "justifyContent": "center",
+        "position": "relative",
         "width": "100%",
       }
     }
@@ -616,13 +595,10 @@ exports[`Home when the user clicks a location that they have already visited and
       style={
         Object {
           "backgroundColor": "black",
-          "bottom": 0,
-          "height": "62%",
-          "left": 0,
+          "height": "100%",
           "opacity": 0.5,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "width": "100%",
         }
       }
     />
@@ -641,7 +617,6 @@ exports[`Home when the user clicks a location that they have already visited and
             "fontSize": 22,
             "fontWeight": "600",
             "padding": 10,
-            "top": -65,
           }
         }
       />
@@ -658,7 +633,6 @@ exports[`Home when the user clicks a location that they have already visited and
         color="#f44336"
         name="diamond"
         size={15}
-        top={-58}
         type="font-awesome"
       />
       <Component
@@ -669,12 +643,9 @@ exports[`Home when the user clicks a location that they have already visited and
               "fontSize": 16,
               "fontWeight": "600",
               "paddingLeft": 10,
-              "top": -60,
             },
             Object {
               "color": "white",
-              "left": -5,
-              "top": -63,
             },
           ]
         }
@@ -695,7 +666,6 @@ exports[`Home when the user clicks a location that they have already visited and
         color="#00bcd4"
         name="car"
         size={15}
-        top={-57}
         type="font-awesome"
       />
       <Component
@@ -706,7 +676,6 @@ exports[`Home when the user clicks a location that they have already visited and
               "fontSize": 16,
               "fontWeight": "600",
               "paddingLeft": 10,
-              "top": -60,
             },
             Object {
               "color": "white",
@@ -729,21 +698,11 @@ exports[`Home when the user clicks a location that they have already visited and
       <TouchableOpacity
         activeOpacity={0.2}
         onPress={[Function]}
-        style={
-          Object {
-            "bottom": 20,
-            "position": "absolute",
-            "right": 20,
-            "zIndex": 3,
-          }
-        }
       >
         <Themed.Icon
           color="#4caf50"
-          left={21}
           name="camera"
           size={15}
-          top={3}
           type="font-awesome"
         />
         <Component
@@ -754,11 +713,6 @@ exports[`Home when the user clicks a location that they have already visited and
                 "fontSize": 16,
                 "fontWeight": "600",
                 "paddingLeft": 10,
-                "top": -60,
-              },
-              Object {
-                "left": 90,
-                "top": -16,
               },
             ]
           }
@@ -781,8 +735,7 @@ exports[`Home when the user clicks a location that they have already visited and
     showsUserLocation={true}
     style={
       Object {
-        "height": "77%",
-        "top": "-24%",
+        "flex": 3,
         "width": "100%",
       }
     }
@@ -966,7 +919,7 @@ exports[`Home when the user clicks a location that they have already visited but
 <Component
   style={
     Object {
-      "height": "70%",
+      "flex": 3,
       "width": "100%",
     }
   }
@@ -977,9 +930,10 @@ exports[`Home when the user clicks a location that they have already visited but
       Object {
         "alignItems": "center",
         "display": "flex",
+        "flex": 1.5,
         "flexDirection": "column",
-        "height": "62%",
         "justifyContent": "center",
+        "position": "relative",
         "width": "100%",
       }
     }
@@ -988,13 +942,10 @@ exports[`Home when the user clicks a location that they have already visited but
       style={
         Object {
           "backgroundColor": "black",
-          "bottom": 0,
-          "height": "62%",
-          "left": 0,
+          "height": "100%",
           "opacity": 0.5,
           "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "width": "100%",
         }
       }
     />
@@ -1013,7 +964,6 @@ exports[`Home when the user clicks a location that they have already visited but
             "fontSize": 22,
             "fontWeight": "600",
             "padding": 10,
-            "top": -65,
           }
         }
       />
@@ -1030,7 +980,6 @@ exports[`Home when the user clicks a location that they have already visited but
         color="#f44336"
         name="diamond"
         size={15}
-        top={-58}
         type="font-awesome"
       />
       <Component
@@ -1041,12 +990,9 @@ exports[`Home when the user clicks a location that they have already visited but
               "fontSize": 16,
               "fontWeight": "600",
               "paddingLeft": 10,
-              "top": -60,
             },
             Object {
               "color": "white",
-              "left": -5,
-              "top": -63,
             },
           ]
         }
@@ -1067,7 +1013,6 @@ exports[`Home when the user clicks a location that they have already visited but
         color="#00bcd4"
         name="car"
         size={15}
-        top={-57}
         type="font-awesome"
       />
       <Component
@@ -1078,7 +1023,6 @@ exports[`Home when the user clicks a location that they have already visited but
               "fontSize": 16,
               "fontWeight": "600",
               "paddingLeft": 10,
-              "top": -60,
             },
             Object {
               "color": "white",
@@ -1104,8 +1048,7 @@ exports[`Home when the user clicks a location that they have already visited but
     showsUserLocation={true}
     style={
       Object {
-        "height": "77%",
-        "top": "-24%",
+        "flex": 3,
         "width": "100%",
       }
     }

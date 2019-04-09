@@ -26,26 +26,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
       }
     }
   >
-    <Image
-      source={1}
-      style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": undefined,
-            "width": "100%",
-          },
-          undefined,
-        ]
-      }
-    />
-    <View
+    <Component
       style={
         Object {
           "backgroundColor": "black",
@@ -179,6 +160,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
     Object {
       "alignItems": "center",
       "display": "flex",
+      "flex": 3,
       "flexDirection": "column",
       "height": "90%",
       "width": "100%",
@@ -193,7 +175,6 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
         "display": "flex",
         "flex": 1,
         "flexDirection": "column",
-        "height": "100%",
         "justifyContent": "space-evenly",
         "width": "100%",
       }
@@ -273,6 +254,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is false 1`
     Object {
       "alignItems": "center",
       "display": "flex",
+      "flex": 3,
       "flexDirection": "column",
       "height": "90%",
       "width": "100%",
@@ -287,7 +269,6 @@ exports[`Login should match the snapshot when this.state.isLoginPage is false 1`
         "display": "flex",
         "flex": 1,
         "flexDirection": "column",
-        "height": "100%",
         "justifyContent": "space-evenly",
         "width": "100%",
       }
@@ -367,6 +348,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is true 1`]
     Object {
       "alignItems": "center",
       "display": "flex",
+      "flex": 3,
       "flexDirection": "column",
       "height": "90%",
       "width": "100%",
@@ -381,7 +363,6 @@ exports[`Login should match the snapshot when this.state.isLoginPage is true 1`]
         "display": "flex",
         "flex": 1,
         "flexDirection": "column",
-        "height": "100%",
         "justifyContent": "space-evenly",
         "width": "100%",
       }
