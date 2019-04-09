@@ -12,15 +12,30 @@ describe('Footer', () => {
     wrapper = shallow(<Footer changeCurrentPage={mockChangeCurrentPage}/>)
   });
 
-  it('should match the snapshot with the correct data passed in', () => {
+  it('should match the snapshot with the correct data passed in when on User profile page', () => {
+    wrapper.setProps({ currentPage: 'User profile'})
     expect(wrapper).toMatchSnapshot()
   });
 
-  it('should match the snapshot with 15% containerHeight if the currentPage is Camera', () => {
+  it('should match the snapshot with the correct data passed in when on Home page', () => {
+    wrapper.setProps({ currentPage: 'Home'})
+    expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should match the snapshot with the correct data passed in when on Camera page', () => {
     wrapper.setProps({ currentPage: 'Camera'})
     expect(wrapper).toMatchSnapshot()
   });
 
+  it('should match the snapshot with the correct data passed in when on Collecrted landmarks page', () => {
+    wrapper.setProps({ currentPage: 'Collected landmarks'})
+    expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should match the snapshot with the correct data passed in when on Login page', () => {
+    wrapper.setProps({ currentPage: 'Login'})
+    expect(wrapper).toMatchSnapshot()
+  });
 
   it('user button should call changeCurrentPage and pass in the string User Profile', () => {
     wrapper.find(TouchableOpacity).at(0).simulate('press')
