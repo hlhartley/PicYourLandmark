@@ -22,8 +22,8 @@ describe('Footer', () => {
     expect(wrapper).toMatchSnapshot()
   });
 
-  it('should match the snapshot with the correct data passed in when on Camera page', () => {
-    wrapper.setProps({ currentPage: 'Camera'})
+  it('should match the snapshot with the correct data passed in when on Tutorial page', () => {
+    wrapper.setProps({ currentPage: 'Tutorial'})
     expect(wrapper).toMatchSnapshot()
   });
 
@@ -47,16 +47,16 @@ describe('Footer', () => {
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('Home')
   });
 
-  it('camera button should call changeCurrentPage and pass in the string Camera', () => {
-    wrapper.find(TouchableOpacity).at(2).simulate('press')
-    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Camera')
-  });
-
   it('image/picture button should call changeCurrentPage and pass in the string Collected landmarks', () => {
-    wrapper.find(TouchableOpacity).at(3).simulate('press')
+    wrapper.find(TouchableOpacity).at(2).simulate('press')
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('Collected landmarks')
   });
-
+  
+  it('tutorial button should call changeCurrentPage and pass in the string Tutorial', () => {
+    wrapper.find(TouchableOpacity).at(3).simulate('press')
+    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Tutorial')
+  });
+  
   it('sign in button should call changeCurrentPage and pass in the string Login', () => {
     wrapper.find(TouchableOpacity).at(4).simulate('press')
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('Login')

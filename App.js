@@ -3,9 +3,9 @@ import Home from './Containers/Home/Home';
 import Header from './Containers/Header/Header';
 import Footer from './Containers/Footer/Footer';
 import Login from './Containers/Login/Login';
-import CameraPage from './Containers/Camera/Camera';
 import UserProfile from './Containers/UserProfile/UserProfile';
-import CollectedLandMarks from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
+import Tutorial from './Containers/Tutorial/Tutorial';
+import CollectedLandmarksContainer from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
 import { StyleSheet, View } from 'react-native';
 import { Image } from 'react-native-elements';
 import { ScreenOrientation } from 'expo';
@@ -14,7 +14,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Collected landmarks',
+      currentPage: 'Tutorial',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
@@ -24,33 +24,33 @@ export class App extends Component {
       currentUserId: -1,
       allLocations: [],
       visitedLocations: [
-        // {
-        //   landmark_id: 1,
-        //   lat: 39.75302,
-        //   lon: -104.9965,
-        //   visited: false,
-        //   name: 'Summit',
-        //   description: 'example 1 description',
-        //   photo_url: ''
-        // },
-        // {
-        //   landmark_id: 2,
-        //   lat: 39.75023,
-        //   lon: -104.9965,
-        //   visited: true,
-        //   name: 'The Delectable Egg',
-        //   description: 'example 2 description',
-        //   photo_url: ''
-        // },
-        // {
-        //   landmark_id: 3,
-        //   lat: 39.77023,
-        //   lon: -104.9965,
-        //   visited: false,
-        //   name: 'Far away example',
-        //   description: 'over a mile away',
-        //   photo_url: ''
-        // }
+        {
+          landmark_id: 1,
+          lat: 39.75302,
+          lon: -104.9965,
+          visited: false,
+          name: 'Summit',
+          description: 'example 1 description',
+          photo_url: ''
+        },
+        {
+          landmark_id: 2,
+          lat: 39.75023,
+          lon: -104.9965,
+          visited: true,
+          name: 'The Delectable Egg',
+          description: 'example 2 description',
+          photo_url: ''
+        },
+        {
+          landmark_id: 3,
+          lat: 39.77023,
+          lon: -104.9965,
+          visited: false,
+          name: 'Far away example',
+          description: 'over a mile away',
+          photo_url: ''
+        }
       ]
     }
   };
@@ -180,9 +180,9 @@ export class App extends Component {
         {
           currentPage === 'Home' && currentLatitude !== null ? <Home currentLatitude={currentLatitude} currentLongitude={currentLongitude} changeCurrentPage={this.changeCurrentPage} takeLocationPhoto={this.takeLocationPhoto} allLocations={allLocations} />
             : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLoginId={this.setUserLoginId} fetchUserInfo={this.fetchUserInfo} />
-              : currentPage === 'Collected landmarks' ? <CollectedLandMarks pics={pics} visitedLocations={this.state.visitedLocations} />
+              : currentPage === 'Collected landmarks' ? <CollectedLandmarksContainer pics={pics} visitedLocations={this.state.visitedLocations} />
                 : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} />
-                  : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
+                  : currentPage === 'Tutorial' ? <Tutorial />
                     : <View style={{ flex: 3 }} />
         }
         <Footer changeCurrentPage={this.changeCurrentPage} currentPage={currentPage} />
