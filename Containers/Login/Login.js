@@ -6,10 +6,10 @@ export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'joe55',
-      password: 'abc123',
+      username: 'test',
+      password: '',
       confirmPassword: '',
-      email: 'new4@gmail.com',
+      email: '',
       isLoginPage: true
     }
   }
@@ -30,6 +30,18 @@ export class Login extends Component {
 
   toggleLoginPage = () => {
     this.setState({ isLoginPage: !this.state.isLoginPage })
+  }
+
+  handleUsernameText = (e) => {
+    this.setState({ username: e })
+  }
+
+  handlePasswordText = (e) => {
+    this.setState({ password: e })
+  }
+
+  handleConfirmPasswordText = (e) => {
+    this.setState({ confirmPassword: e })
   }
 
   render() {
@@ -58,7 +70,7 @@ export class Login extends Component {
               <TextInput
                 placeholder='Username'
                 style={styles.inputBox}
-                onChangeText={(username) => this.setState({ username })}
+                onChangeText={(e) => this.handleUsernameText(e)}
                 value={this.state.username}
               />
               <TextInput
@@ -66,7 +78,7 @@ export class Login extends Component {
                 secureTextEntry={true}
                 password={true}
                 style={[styles.inputBox, { top: -20 }]}
-                onChangeText={(password) => this.setState({ password })}
+                onChangeText={(e) => this.handlePasswordText(e)}
                 value={this.state.password}
               />
               <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.loginUser()}>
@@ -89,7 +101,7 @@ export class Login extends Component {
               <TextInput
                 placeholder='Username'
                 style={styles.inputBox}
-                onChangeText={(username) => this.setState({ username })}
+                onChangeText={(e) => this.handleUsernameText(e)}
                 value={this.state.username}
               />
               <TextInput
@@ -97,7 +109,7 @@ export class Login extends Component {
                 secureTextEntry={true}
                 password={true}
                 style={[styles.inputBox, { top: -20 }]}
-                onChangeText={(password) => this.setState({ password })}
+                onChangeText={(e) => this.handlePasswordText(e)}
                 value={this.state.password}
               />
               <TextInput
@@ -105,7 +117,7 @@ export class Login extends Component {
                 secureTextEntry={true}
                 password={true}
                 style={[styles.inputBox, { top: -10 }]}
-                onChangeText={(confirmPassword) => this.setState({ confirmPassword })}
+                onChangeText={(e) => this.handleConfirmPasswordText(e)}
                 value={this.state.confirmPassword}
               />
               <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: 5 }]} onPress={() => this.createAccount()}>
