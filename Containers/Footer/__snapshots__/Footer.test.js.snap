@@ -3,16 +3,11 @@
 exports[`Footer should match the snapshot with 15% containerHeight if the currentPage is Camera 1`] = `
 <Component
   style={
-    Array [
-      Object {
-        "backgroundColor": "#e9e9e9",
-        "flex": 0.3,
-        "width": "100%",
-      },
-      Object {
-        "height": "15%",
-      },
-    ]
+    Object {
+      "backgroundColor": "#e9e9e9",
+      "flex": 0.3,
+      "width": "100%",
+    }
   }
 >
   <Component
@@ -87,16 +82,11 @@ exports[`Footer should match the snapshot with 15% containerHeight if the curren
 exports[`Footer should match the snapshot with the correct data passed in 1`] = `
 <Component
   style={
-    Array [
-      Object {
-        "backgroundColor": "#e9e9e9",
-        "flex": 0.3,
-        "width": "100%",
-      },
-      Object {
-        "height": "8%",
-      },
-    ]
+    Object {
+      "backgroundColor": "#e9e9e9",
+      "flex": 0.3,
+      "width": "100%",
+    }
   }
 >
   <Component
