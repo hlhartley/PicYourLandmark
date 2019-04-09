@@ -14,7 +14,7 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'Tutorial',
+      currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null,
       pics: [],
