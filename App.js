@@ -151,11 +151,15 @@ export class App extends Component {
   }
 
   fetchUserInfo = async (username, password) => {
-    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=${username}&password=${password}`
-    const response = await fetch(url)
-    const result = await response.json()
-    const { user_id, user_locations } = result;
-    this.setState({ currentUserId: user_id, visitedLocations: user_locations, currentPage: 'Home' })
+    try {
+      const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=${username}&password=${password}`
+      const response = await fetch(url)
+      const result = await response.json()
+      const { user_id, user_locations } = result;
+      this.setState({ currentUserId: user_id, visitedLocations: user_locations, currentPage: 'Home' })
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   render() {

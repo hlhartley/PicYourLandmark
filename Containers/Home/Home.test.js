@@ -34,7 +34,7 @@ jest.mock('react-native-maps', () => {
   return MockMapView;
 });
 
-describe.skip('Home', () => {
+describe('Home', () => {
 
   let wrapper;
   let mockLatitude;
