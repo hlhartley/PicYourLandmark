@@ -56,16 +56,17 @@ export class UserProfile extends Component {
 
 const styles = StyleSheet.create({
   viewContainer: {
-    height: '100%',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    flex: 3,
   },
   imageBackground: {
-    flex: 1,
+    flex: 1.5,
     width: '100%',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center'
   },
   overlay: {
     position: 'absolute',
@@ -78,13 +79,11 @@ const styles = StyleSheet.create({
   achievements: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'row',
     marginLeft: '6%',
-    marginRight: '6%'
   },
   userInfo: {
-    flex: 2,
+    flex: 1.8,
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap'
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   profilePictureContainer: {
-    flex: .8,
+    flex: 1.2,
     justifyContent: 'space-around',
     alignItems: 'center',
   },
@@ -102,13 +101,11 @@ const styles = StyleSheet.create({
     width: '65%',
   },
   profilePicture: {
-    marginTop: 10,
     width: '100%',
-    height: '90%'
+    height: '90%',
   },
   bannerText: {
     color: 'white',
-    paddingTop: '20%',
     paddingBottom: '3%',
     fontSize: 18,
     fontWeight: '600',
