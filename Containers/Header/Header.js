@@ -13,8 +13,8 @@ export class Header extends Component {
   render() {
     const {titleText} = this.state
     return (
-      <View style={styles.container}>
-        <Icon name="map-marker" type="font-awesome" size={22} color='tomato' position='absolute' top={-17} left={'-25%'}/>
+      <View style={[styles.container, {paddingTop: 25}]}>
+        <Icon name="map-marker" type="font-awesome" size={22} color='tomato' marginRight={7} marginLeft={7} />
         <Text style={styles.titleText}>
           {titleText}
         </Text>
@@ -26,11 +26,11 @@ export class Header extends Component {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
+    flexDirection: 'row',
     backgroundColor: '#e9e9e9',
-    flexDirection: 'column',
     alignItems: 'center',
-    flex: .4,
-    justifyContent: 'flex-end'
+    justifyContent: 'center',
+    flex: .3
 
   },
   titleText: {
