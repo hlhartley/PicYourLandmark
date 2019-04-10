@@ -19,9 +19,9 @@ export class UserProfile extends Component {
           <View style={styles.overlay} />
           {
             currentUserName.length > 0 ? <Text style={styles.bannerText}>WELCOME, {this.props.currentUserName.toUpperCase()}!</Text>
-              : <Text style={styles.bannerText}>Please create an account or log in to track your progress!</Text>
+              : <Text style={[styles.bannerText, { fontSize: 17 }]}>Please create an account or log in to track your progress!</Text>
           }
-          <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} />
+          <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} paddingTop={15}/>
         </ImageBackground>
         {
           profilePic.length ?
@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
   },
   bannerText: {
     color: 'white',
-    paddingBottom: '3%',
     fontSize: 18,
     fontWeight: '600',
   }

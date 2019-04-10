@@ -138,7 +138,7 @@ export class Home extends Component {
               <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
                 <View style={styles.overlay} />
                 <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
-                <Icon color="white" name="camera-retro" type="font-awesome" size={40} />
+                <Icon color="white" name="camera-retro" type="font-awesome" size={40} paddingTop={15}/>
               </ImageBackground>
         }
         {
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
   },
   bannerText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '600',
     padding: 10
   },

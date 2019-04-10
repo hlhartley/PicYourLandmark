@@ -29,7 +29,7 @@ export class CollectedLandmarksContainer extends Component {
         <ImageBackground source={require('../../assets/greatwallofchina.jpg')} style={styles.imageBackground}>
           <View style={styles.overlay} />
           <Text style={styles.bannerText}>COLLECTED LANDMARKS</Text>
-          <Icon style={styles.bannerIcon} color="white" name="university" type="font-awesome" size={40} />
+          <Icon style={styles.bannerIcon} color="white" name="university" type="font-awesome" size={40} paddingTop={15}/>
         </ImageBackground>
         <View style={styles.locations}>
           <ScrollView>

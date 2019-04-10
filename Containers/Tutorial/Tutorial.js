@@ -9,7 +9,7 @@ export class Tutorial extends Component {
         <ImageBackground source={require('../../assets/pyramid.jpg')} style={styles.imageBackground}>
           <View style={styles.overlay} />
           <Text style={styles.bannerText}>GUIDE BOOK</Text>
-          <Icon style={styles.bannerIcon} color="white" name="book" type="font-awesome" size={40} />
+          <Icon style={styles.bannerIcon} color="white" name="book" type="font-awesome" size={40} paddingTop={15}/>
         </ImageBackground>
         <View style={styles.tutorialInfo}>
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
