@@ -6,10 +6,10 @@ export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'matt22',
+      username: 'heather5',
       password: 'matt',
       confirmPassword: 'matt',
-      email: 'test102@gmail.com',
+      email: 'heather1@gmail.com',
       isLoginPage: true
     }
   }
@@ -46,6 +46,10 @@ export class Login extends Component {
 
   handleConfirmPasswordText = (e) => {
     this.setState({ confirmPassword: e });
+  }
+
+  handleEmailText = (e) => {
+    this.setState({ email: e});
   }
 
   render() {
@@ -109,10 +113,16 @@ export class Login extends Component {
                 value={this.state.username}
               />
               <TextInput
+                placeholder='E-mail'
+                style={[styles.inputBox, { top: -20 }]}
+                onChangeText={(e) => this.handleEmailText(e)}
+                value={this.state.email}
+              />
+              <TextInput
                 placeholder='Password'
                 secureTextEntry={true}
                 password={true}
-                style={[styles.inputBox, { top: -20 }]}
+                style={[styles.inputBox, { top: -10 }]}
                 onChangeText={(e) => this.handlePasswordText(e)}
                 value={this.state.password}
               />
@@ -120,15 +130,15 @@ export class Login extends Component {
                 placeholder='Confirm Password'
                 secureTextEntry={true}
                 password={true}
-                style={[styles.inputBox, { top: -10 }]}
+                style={[styles.inputBox, { top: 0 }]}
                 onChangeText={(e) => this.handleConfirmPasswordText(e)}
                 value={this.state.confirmPassword}
               />
-              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: 5 }]} onPress={() => this.createAccount()}>
+              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: 10 }]} onPress={() => this.createAccount()}>
                 <Text style={styles.buttonText}>Create account</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.button} onPress={() => this.toggleLoginPage()}>
-                <Text style={[styles.buttonText, { color: 'white', top: 5 }]}>Already a member? Click here to log in</Text>
+                <Text style={[styles.buttonText, { color: 'white', top: 10 }]}>Already a member? Click here to log in</Text>
               </TouchableOpacity>
             </View>
           </ImageBackground>
