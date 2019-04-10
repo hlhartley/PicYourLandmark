@@ -171,6 +171,7 @@ export class App extends Component {
         location.photo_url = base64.decode(location.photo_url);
         return location;
       })
+      console.log(profilePic)
       this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: decodedLocations, visitedLocationIds, currentPage: 'User profile', profilePic });
     } catch (error) {
       console.log(error.message);

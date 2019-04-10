@@ -13,6 +13,9 @@ export class UserProfile extends Component {
   }
   render() {
     const { profilePic, currentUserName } = this.props;
+    console.log(profilePic)
+    console.log(currentUserName)
+    console.log('pic',profilePic.length)
     return (
       <View style={styles.viewContainer}>
         <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={styles.imageBackground}>
@@ -24,7 +27,7 @@ export class UserProfile extends Component {
           <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} paddingTop={15}/>
         </ImageBackground>
         {
-          profilePic.length ?
+          profilePic.length > 5 ?
             <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.props.takeProfilePic()}>
               <View style={styles.pictureContainer} >
                 <Image
@@ -41,7 +44,7 @@ export class UserProfile extends Component {
           currentUserName.length > 0 ? <View style={styles.userInfo}>
           <View style={styles.achievements}>
             <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
-            <Text style={styles.userInfoText}>{this.props.visitedLocations.length ? this.props.visitedLocations*10 : this.state.points} gems</Text>
+            <Text style={styles.userInfoText}>{this.props.visitedLocations.length ? this.props.visitedLocations.length*10 : this.state.points} gems</Text>
           </View>
           <View style={styles.achievements}>
             <Icon color="#009688" name="university" type="font-awesome" size={20} />
@@ -49,7 +52,7 @@ export class UserProfile extends Component {
           </View>
           <View style={styles.achievements}>
             <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} />
-            <Text style={styles.userInfoText}>Recent landmark: {this.props.visitedLocations.length ? this.props.visitedLocations.shift() : this.state.recentLandmark}</Text>
+            <Text style={styles.userInfoText}>Recent landmark: {this.props.visitedLocations.length ? this.props.visitedLocations[0].name : this.state.recentLandmark}</Text>
           </View>
         </View> :
         <View style={styles.userInfo}>
