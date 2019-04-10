@@ -8,11 +8,13 @@ describe('UserProfile', () => {
   let wrapper;
   let mockProfilePic;
   let mockTakeProfilePic;
+  let mockCurrentUserName;
 
   beforeEach(() => {
     mockTakeProfilePic = jest.fn();
     mockProfilePic = 'stringURL';
-    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} />);
+    mockCurrentUserName = ''
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName}/>);
   });
 
   it('should match the snapshot when the user has a profile picture', () => {
@@ -21,7 +23,7 @@ describe('UserProfile', () => {
 
   it('should match the snapshot when the user does not have a profile picture', () => {
     mockProfilePic = '';
-    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} />);
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName}/>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -32,9 +34,8 @@ describe('UserProfile', () => {
 
   it('should call takeProfilePic when user does not have a profile picture', () => {
     mockProfilePic = '';
-    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} />);
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName}/>);
     wrapper.find(TouchableOpacity).first().simulate('press');
     expect(mockTakeProfilePic).toHaveBeenCalled();
   });
-
 });

@@ -37,21 +37,25 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
     />
     <Component
       style={
-        Object {
-          "color": "white",
-          "fontSize": 18,
-          "fontWeight": "600",
-          "paddingBottom": "3%",
-        }
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 18,
+            "fontWeight": "600",
+          },
+          Object {
+            "fontSize": 17,
+            "padding": 5,
+          },
+        ]
       }
     >
-      WELCOME, 
-      USER 1
-      !
+      Please create an account or log in to track your progress!
     </Component>
     <Themed.Icon
       color="white"
       name="id-card"
+      paddingTop={15}
       size={40}
       type="font-awesome"
     />
@@ -108,8 +112,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           }
         }
       >
-        30
-         gems
+        0 gems
       </Component>
     </Component>
     <Component
@@ -136,8 +139,7 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           }
         }
       >
-        3
-         landmarks visited
+        0 landmarks visited
       </Component>
     </Component>
     <Component
@@ -164,12 +166,197 @@ exports[`UserProfile should match the snapshot when the user does not have a pro
           }
         }
       >
-        Recent landmark: 
-        Coors Field
+        Recent landmark: n/a
       </Component>
     </Component>
   </Component>
 </Component>
 `;
 
-exports[`UserProfile should match the snapshot when the user has a profile picture 1`] = `undefined`;
+exports[`UserProfile should match the snapshot when the user has a profile picture 1`] = `
+<Component
+  style={
+    Object {
+      "display": "flex",
+      "flex": 3,
+      "flexDirection": "column",
+      "width": "100%",
+    }
+  }
+>
+  <ImageBackground
+    source={1}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flex": 1.5,
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "black",
+          "height": "100%",
+          "opacity": 0.4,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        }
+      }
+    />
+    <Component
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 18,
+            "fontWeight": "600",
+          },
+          Object {
+            "fontSize": 17,
+            "padding": 5,
+          },
+        ]
+      }
+    >
+      Please create an account or log in to track your progress!
+    </Component>
+    <Themed.Icon
+      color="white"
+      name="id-card"
+      paddingTop={15}
+      size={40}
+      type="font-awesome"
+    />
+  </ImageBackground>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1.2,
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "width": "65%",
+        }
+      }
+    >
+      <Component
+        source={
+          Object {
+            "uri": "stringURL",
+          }
+        }
+        style={
+          Object {
+            "height": "90%",
+            "width": "100%",
+          }
+        }
+      />
+    </Component>
+  </TouchableOpacity>
+  <Component
+    style={
+      Object {
+        "display": "flex",
+        "flex": 1.8,
+        "flexDirection": "column",
+        "flexWrap": "wrap",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "marginLeft": "6%",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#f44336"
+        name="diamond"
+        size={20}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Object {
+            "fontSize": 20,
+            "padding": 10,
+          }
+        }
+      >
+        0 gems
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "marginLeft": "6%",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#009688"
+        name="university"
+        size={20}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Object {
+            "fontSize": 20,
+            "padding": 10,
+          }
+        }
+      >
+        0 landmarks visited
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "marginLeft": "6%",
+        }
+      }
+    >
+      <Themed.Icon
+        color="#9c27b0"
+        name="flag-checkered"
+        size={20}
+        type="font-awesome"
+      />
+      <Component
+        style={
+          Object {
+            "fontSize": 20,
+            "padding": 10,
+          }
+        }
+      >
+        Recent landmark: n/a
+      </Component>
+    </Component>
+  </Component>
+</Component>
+`;
