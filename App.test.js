@@ -80,7 +80,7 @@ describe('App', () => {
         description: 'selectedDescription',
         lat: 'selectedLatitude',
         lon: 'selectedLongitude',
-        id: 'selectedID',
+        landmark_id: 'selectedID',
         photo_url: ''
       }
       wrapper.instance().takeLocationPhoto('selectedName', 'selectedDescription', 'selectedLatitude', 'selectedLongitude', 'selectedID')
