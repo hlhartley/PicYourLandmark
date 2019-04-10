@@ -1,6 +1,6 @@
 # Pic Your Landmark
 
-The goal of this project was to create a native app that allows users to visit famous landmarks and take pictures on their phone within a certain distance (1 mile). Users can gain points/gems based on how many landmarks they have 'collected' and show them off to their friends and family. We used react-native-expo as our primary front-end framework and the Django API for backend.
+Pic Your Landmark is a native app that allows users to visit famous landmarks and store their collection of pictures in the app. Users can gain points/gems based on how many landmarks they have 'collected'. They can show off their status as well as collection of photos to their friends and family. 
 
 ### Set-Up:
 **Back end**  
@@ -15,13 +15,14 @@ Run `npm start` to view on mobile device
 ![]()
 
 ### Primary Technologies Used:
-* React-Native-Expo
-* Jest and Enzyme
-* Django API
+* React-Native-Expo (FE)
+* Django (BE)
+* Rest_framework (BE)
+* Postgresql (BE)
 
-### Testing:
+### Front-end Testing:
 Jest and Enzyme for front-end testing  
-Run `npm test` from the root directory of this front-end repo 
+Run `npm test` from the root directory of this front-end repo
 
 ### Original Assignment: 
 [Cross-pollination Project](http://frontend.turing.io/projects/capstone.html) project from Turing School of Software and Design  
