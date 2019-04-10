@@ -37,6 +37,17 @@ exports[`Footer should match the snapshot with the correct data passed in when o
     >
       <Themed.Icon
         color="#3c4859"
+        name="book"
+        size={30}
+        type="font-awesome"
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Themed.Icon
+        color="#3c4859"
         name="map-marker"
         size={30}
         type="font-awesome"
@@ -49,17 +60,6 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       <Themed.Icon
         color="#0b80dc"
         name="image"
-        size={30}
-        type="font-awesome"
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-    >
-      <Themed.Icon
-        color="#3c4859"
-        name="book"
         size={30}
         type="font-awesome"
       />
@@ -115,6 +115,17 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       onPress={[Function]}
     >
       <Themed.Icon
+        color="#3c4859"
+        name="book"
+        size={30}
+        type="font-awesome"
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Themed.Icon
         color="#0b80dc"
         name="map-marker"
         size={30}
@@ -128,17 +139,6 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       <Themed.Icon
         color="#3c4859"
         name="image"
-        size={30}
-        type="font-awesome"
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-    >
-      <Themed.Icon
-        color="#3c4859"
-        name="book"
         size={30}
         type="font-awesome"
       />
@@ -195,6 +195,17 @@ exports[`Footer should match the snapshot with the correct data passed in when o
     >
       <Themed.Icon
         color="#3c4859"
+        name="book"
+        size={30}
+        type="font-awesome"
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Themed.Icon
+        color="#3c4859"
         name="map-marker"
         size={30}
         type="font-awesome"
@@ -207,17 +218,6 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       <Themed.Icon
         color="#3c4859"
         name="image"
-        size={30}
-        type="font-awesome"
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-    >
-      <Themed.Icon
-        color="#3c4859"
-        name="book"
         size={30}
         type="font-awesome"
       />
@@ -274,6 +274,17 @@ exports[`Footer should match the snapshot with the correct data passed in when o
     >
       <Themed.Icon
         color="#3c4859"
+        name="book"
+        size={30}
+        type="font-awesome"
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Themed.Icon
+        color="#3c4859"
         name="map-marker"
         size={30}
         type="font-awesome"
@@ -286,17 +297,6 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       <Themed.Icon
         color="#3c4859"
         name="image"
-        size={30}
-        type="font-awesome"
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-    >
-      <Themed.Icon
-        color="#3c4859"
-        name="book"
         size={30}
         type="font-awesome"
       />
@@ -353,6 +353,17 @@ exports[`Footer should match the snapshot with the correct data passed in when o
     >
       <Themed.Icon
         color="#3c4859"
+        name="book"
+        size={30}
+        type="font-awesome"
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Themed.Icon
+        color="#3c4859"
         name="map-marker"
         size={30}
         type="font-awesome"
@@ -365,17 +376,6 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       <Themed.Icon
         color="#3c4859"
         name="image"
-        size={30}
-        type="font-awesome"
-      />
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-    >
-      <Themed.Icon
-        color="#3c4859"
-        name="book"
         size={30}
         type="font-awesome"
       />

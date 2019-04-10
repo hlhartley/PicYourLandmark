@@ -69,7 +69,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
           }
         }
         underlineColorAndroid="transparent"
-        value="matt10"
+        value="matt22"
       />
       <TextInput
         allowFontScaling={true}
@@ -216,7 +216,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
           }
         }
       >
-        matt10
+        matt22
       </Component>
     </Component>
     <TouchableOpacity
@@ -310,7 +310,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is false 1`
           }
         }
       >
-        matt10
+        matt22
       </Component>
     </Component>
     <TouchableOpacity
@@ -404,7 +404,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is true 1`]
           }
         }
       >
-        matt10
+        matt22
       </Component>
     </Component>
     <TouchableOpacity
