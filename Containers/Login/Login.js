@@ -6,10 +6,10 @@ export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'heather5',
+      username: 'matt221',
       password: 'matt',
       confirmPassword: 'matt',
-      email: 'heather1@gmail.com',
+      email: 'test298@gmail.com',
       isLoginPage: true
     }
   }
