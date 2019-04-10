@@ -25,7 +25,7 @@ Jest and Enzyme for front-end testing
 Run `npm test` from the root directory of this front-end repo
 
 ### Original Assignment: 
-[Cross-pollination Project](http://frontend.turing.io/projects/capstone.html) project from Turing School of Software and Design  
+[Cross-pollination](http://frontend.turing.io/projects/capstone.html) project from Turing School of Software and Design  
 
 ### Contributors:
 [Matthew Foxwell (front end)](https://github.com/foxwellm)  
