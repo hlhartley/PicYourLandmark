@@ -6,13 +6,17 @@ export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'heather5',
+      username: 'hea12',
       password: 'matt',
       confirmPassword: 'matt',
-      email: 'heather1@gmail.com',
-      isLoginPage: true
+      email: 'hea8@gmail.com',
+      isLoginPage: true,
     }
   }
+
+  componentWillUnmount() {
+    this.props.setLoggedOutMessage('')
+  };
 
   createAccount = async () => {
     try {
@@ -21,7 +25,6 @@ export class Login extends Component {
       const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' }});
       const result = await response.json();
       this.props.setUserLogin(result.id, result.username);
-      this.props.changeCurrentPage('User profile');
     } catch (error) {
       console.log(error.message);
     }
@@ -62,7 +65,7 @@ export class Login extends Component {
               <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15} top={50} />
               <Text style={styles.usernameText}>{this.state.username}</Text>
             </View>
-            <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.props.setUserLogin(-1, '')}>
+            <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: -10 }]} onPress={() => this.props.setUserLogout()}>
               <Text style={{ textAlign: 'center' }}>Log out</Text>
             </TouchableOpacity>
           </ImageBackground>
@@ -73,6 +76,7 @@ export class Login extends Component {
         <KeyboardAvoidingView style={styles.container} behavior='padding'>
           <ImageBackground source={require('../../assets/goldengate.jpg')} style={styles.imageBackground}>
             <View style={styles.overlay} />
+            <Text style={[styles.buttonText, { color: 'yellow' }]}>{this.props.loggedOutMessage}</Text>
             <Icon color="white" name="user-circle" type="font-awesome" size={70} padding={15}  />
             <View>
               <TextInput
