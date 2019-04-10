@@ -50,6 +50,7 @@ exports[`CollectedLandmarksContainer should match the snapshot when there are no
     <Themed.Icon
       color="white"
       name="university"
+      paddingTop={15}
       size={40}
       type="font-awesome"
     />
@@ -150,6 +151,7 @@ exports[`CollectedLandmarksContainer should match the snapshot when there are vi
     <Themed.Icon
       color="white"
       name="university"
+      paddingTop={15}
       size={40}
       type="font-awesome"
     />

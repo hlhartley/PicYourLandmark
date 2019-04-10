@@ -50,6 +50,7 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
     <Themed.Icon
       color="white"
       name="book"
+      paddingTop={15}
       size={40}
       type="font-awesome"
     />
@@ -105,16 +106,6 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
     <Component
       style={
         Object {
-          "fontWeight": "bold",
-          "padding": 5,
-        }
-      }
-    >
-      Collect a landmark:
-    </Component>
-    <Component
-      style={
-        Object {
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "center",
@@ -125,10 +116,11 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
       style={
         Object {
           "padding": 5,
+          "paddingTop": 10,
         }
       }
     >
-      STEP 1: Create an account
+      STEP 1: Create an account / Log in
     </Component>
     <Themed.Icon
       color="#0b80dc"
@@ -143,10 +135,10 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
         }
       }
     >
-      STEP 2: Go to the maps page to find the closest landmark to you or a landmark you'd like to visit
+      STEP 2: Go to maps page and click on a landmark
     </Component>
     <Themed.Icon
-      color="#9c27b0"
+      color="#673ab7"
       name="map-marker"
       size={28}
       type="font-awesome"
@@ -169,6 +161,12 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
     >
       STEP 4: Get within 1/2 mile of the selected landmark and click the 'Take Photo!' button in the banner
     </Component>
+    <Themed.Icon
+      color="#4caf50"
+      name="camera"
+      size={28}
+      type="font-awesome"
+    />
     <Component
       style={
         Object {
@@ -176,10 +174,10 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
         }
       }
     >
-      STEP 5: View your pictures on the Collected Landmarks page
+      STEP 4: View your pictures on Collected Landmarks page
     </Component>
     <Themed.Icon
-      color="#4caf50"
+      color="#f19105"
       name="image"
       size={28}
       type="font-awesome"
