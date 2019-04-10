@@ -273,7 +273,7 @@ exports[`Footer should match the snapshot with the correct data passed in when o
       onPress={[Function]}
     >
       <Themed.Icon
-        color="#3c4859"
+        color="#0b80dc"
         name="book"
         size={30}
         type="font-awesome"
