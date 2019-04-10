@@ -150,7 +150,16 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
         }
       }
     >
-      STEP 3: Click 'Take Photo!' within 1 mi of that landmark
+      STEP 3: Click on the map marker of that landmark
+    </Component>
+    <Component
+      style={
+        Object {
+          "padding": 5,
+        }
+      }
+    >
+      STEP 4: Get within 1/2 mile of the selected landmark and click the 'Take Photo!' button in the banner
     </Component>
     <Themed.Icon
       color="#4caf50"

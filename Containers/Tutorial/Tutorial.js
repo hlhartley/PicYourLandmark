@@ -23,7 +23,7 @@ export class Tutorial extends Component {
           <Icon color="#0b80dc" name="sign-in" type="font-awesome" size={28} />
           <Text style={{ padding: 5}}>STEP 2: Go to maps page and click on a landmark</Text>
           <Icon color="#673ab7" name="map-marker" type="font-awesome" size={28} />
-          <Text style={{ padding: 5}}>STEP 3: Click 'Take Photo!' within 1 mi of that landmark</Text>
+          <Text style={{ padding: 5}}>STEP 3: Click 'Take Photo!' within 1/2 mi of that landmark</Text>
           <Icon color="#4caf50" name="camera" type="font-awesome" size={28} />
           <Text style={{ padding: 5}}>STEP 4: View your pictures on Collected Landmarks page</Text>
           <Icon color="#f19105" name="image" type="font-awesome" size={28} />
