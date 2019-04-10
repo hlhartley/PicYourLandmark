@@ -80,7 +80,7 @@ describe('App', () => {
         description: 'selectedDescription',
         lat: 'selectedLatitude',
         lon: 'selectedLongitude',
-        landmark_id: 'selectedID',
+        id: 'selectedID',
         photo_url: ''
       }
       wrapper.instance().takeLocationPhoto('selectedName', 'selectedDescription', 'selectedLatitude', 'selectedLongitude', 'selectedID')
@@ -97,10 +97,10 @@ describe('App', () => {
     });
   });
 
-  describe('setUserLoginId method', () => {
+  describe('setUserLogin method', () => {
     it('should change state to what was passed as an argument', () => {
       wrapper.setState({ currentUserId: 1 })
-      wrapper.instance().setUserLoginId(2)
+      wrapper.instance().setUserLogin(2)
       expect(wrapper.state('currentUserId')).toEqual(2);
     });
   });
@@ -113,7 +113,7 @@ describe('App', () => {
       expect(window.fetch).toHaveBeenCalledWith(mockUrl)
     });
 
-    it('should get the user info if everything is ok', async () => {
+    it.skip('should get the user info if everything is ok', async () => {
       const expected = {
           user_id: 1,
           username: "joe55",
@@ -164,9 +164,9 @@ describe('App', () => {
         ok: true
       }));
       await wrapper.instance().fetchUserInfo('joe55', 'abc123');
-      expect(wrapper.state('currentUserId')).toEqual(1);
       expect(wrapper.state('visitedLocations')).toEqual(expected.user_locations);
       expect(wrapper.state('currentPage')).toEqual('Home');
+      expect(wrapper.state('currentUserId')).toEqual(expected.user_id);
     });
 
     it('should return an error if everything is not ok', async () => {

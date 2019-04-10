@@ -42,19 +42,19 @@ describe('Footer', () => {
     expect(mockChangeCurrentPage).toHaveBeenCalledWith('User profile')
   });
 
-  it('map marker/home button should call changeCurrentPage and pass in the string Home', () => {
+  it('map marker/home button should call changeCurrentPage and pass in the string Tutorial', () => {
     wrapper.find(TouchableOpacity).at(1).simulate('press')
-    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Home')
+    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Tutorial')
   });
 
-  it('image/picture button should call changeCurrentPage and pass in the string Collected landmarks', () => {
+  it('image/picture button should call changeCurrentPage and pass in the string Home', () => {
     wrapper.find(TouchableOpacity).at(2).simulate('press')
-    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Collected landmarks')
+    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Home')
   });
   
-  it('tutorial button should call changeCurrentPage and pass in the string Tutorial', () => {
+  it('tutorial button should call changeCurrentPage and pass in the string Collected landmarks', () => {
     wrapper.find(TouchableOpacity).at(3).simulate('press')
-    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Tutorial')
+    expect(mockChangeCurrentPage).toHaveBeenCalledWith('Collected landmarks')
   });
   
   it('sign in button should call changeCurrentPage and pass in the string Login', () => {

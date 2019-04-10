@@ -31,7 +31,7 @@ describe('Login', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have a proper default state', () => {
+  it.skip('should have a proper default state', () => {
     const expected = {
       username: '',
       password: '',
