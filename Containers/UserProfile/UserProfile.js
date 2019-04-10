@@ -13,9 +13,6 @@ export class UserProfile extends Component {
   }
   render() {
     const { profilePic, currentUserName } = this.props;
-    console.log(profilePic)
-    console.log(currentUserName)
-    console.log('pic',profilePic.length)
     return (
       <View style={styles.viewContainer}>
         <ImageBackground source={require('../../assets/brandenburggate.jpg')} style={styles.imageBackground}>
