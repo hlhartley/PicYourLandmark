@@ -19,7 +19,6 @@ export class App extends Component {
       currentPage: 'Login',
       currentLatitude: null,
       currentLongitude: null,
-      pics: [],
       profilePic: '',
       takingProfilePic: false,
       cameraLoading: false,
@@ -27,7 +26,8 @@ export class App extends Component {
       currentUserName: '',
       allLocations: [],
       visitedLocationIds: [],
-      visitedLocations: []
+      visitedLocations: [],
+      loggedOutMessage: ''
     }
   };
 
@@ -96,6 +96,10 @@ export class App extends Component {
     this.setState({ currentPage: page });
   };
 
+  setLoggedOutMessage = (message) => {
+    this.setState({ loggedOutMessage: message });
+  }
+
   takeProfilePic = () => {
     this.setState({ takingProfilePic: true, currentPage: "Camera" });
   };
@@ -155,7 +159,11 @@ export class App extends Component {
   }
 
   setUserLogin = (id, username) => {
-    this.setState({ currentUserId: id, currentUserName: username });
+    this.setState({ currentUserId: id, currentUserName: username }, this.changeCurrentPage('User profile'));
+  }
+
+  setUserLogout = () => {
+    this.setState({ currentUserId: -1, currentUserName: '', profilePic: '', currentUserName: '', visitedLocations: [], visitedLocationIds: [] });
   }
 
   fetchUserInfo = async (username, password) => {
@@ -171,7 +179,6 @@ export class App extends Component {
         location.photo_url = base64.decode(location.photo_url);
         return location;
       })
-      console.log(profilePic)
       this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: decodedLocations, visitedLocationIds, currentPage: 'User profile', profilePic });
     } catch (error) {
       console.log(error.message);
@@ -179,7 +186,8 @@ export class App extends Component {
   }
 
   render() {
-    const { currentPage, currentLatitude, currentLongitude, pics, profilePic, cameraLoading, allLocations, visitedLocations, visitedLocationIds, currentUserName } = this.state;
+    const { currentPage, currentLatitude, currentLongitude, profilePic, cameraLoading, allLocations,
+      visitedLocations, visitedLocationIds, currentUserName, loggedOutMessage, currentUserId } = this.state;
     return (
       <View style={styles.container}>
         {
@@ -196,10 +204,25 @@ export class App extends Component {
             allLocations={allLocations}
             visitedLocations={visitedLocations}
             visitedLocationIds={visitedLocationIds}
+            currentUserId={currentUserId}
+            setLoggedOutMessage={this.setLoggedOutMessage}
           />
-            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLogin={this.setUserLogin} changeCurrentPage={this.changeCurrentPage} fetchUserInfo={this.fetchUserInfo} />
-              : currentPage === 'Collected landmarks' ? <CollectedLandmarksContainer pics={pics} visitedLocations={this.state.visitedLocations} />
-                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName} visitedLocations={visitedLocations}/>
+            : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId}
+              setUserLogin={this.setUserLogin}
+              changeCurrentPage={this.changeCurrentPage}
+              fetchUserInfo={this.fetchUserInfo}
+              loggedOutMessage={loggedOutMessage}
+              setLoggedOutMessage={this.setLoggedOutMessage}
+              setUserLogout={this.setUserLogout}
+            />
+              : currentPage === 'Collected landmarks' ? <CollectedLandmarksContainer visitedLocations={this.state.visitedLocations} />
+                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic}
+                  profilePic={profilePic}
+                  currentUserName={currentUserName}
+                  visitedLocations={visitedLocations}
+                  setLoggedOutMessage={this.setLoggedOutMessage}
+                  changeCurrentPage={this.changeCurrentPage}
+                />
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
                     : currentPage === 'Tutorial' ? <Tutorial />
                       : <View style={{ flex: 3 }} />
