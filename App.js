@@ -198,7 +198,7 @@ export class App extends Component {
           />
             : currentPage === 'Login' ? <Login currentUserId={this.state.currentUserId} setUserLogin={this.setUserLogin} changeCurrentPage={this.changeCurrentPage} fetchUserInfo={this.fetchUserInfo} />
               : currentPage === 'Collected landmarks' ? <CollectedLandmarksContainer pics={pics} visitedLocations={this.state.visitedLocations} />
-                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName} />
+                : currentPage === 'User profile' ? <UserProfile takeProfilePic={this.takeProfilePic} profilePic={profilePic} currentUserName={currentUserName} visitedLocations={visitedLocations}/>
                   : currentPage === 'Camera' ? <CameraPage setCameraLoading={this.setCameraLoading} savePicture={this.savePicture} />
                     : currentPage === 'Tutorial' ? <Tutorial />
                       : <View style={{ flex: 3 }} />
