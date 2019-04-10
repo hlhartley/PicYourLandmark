@@ -11,6 +11,12 @@ export class UserProfile extends Component {
       recentLandmark: 'n/a'
     }
   }
+
+  userNeedLogin = () => {
+    this.props.changeCurrentPage('Login');
+    this.props.setLoggedOutMessage('You need to be logged in to perform that action');
+  };
+
   render() {
     const { profilePic, currentUserName } = this.props;
     return (
@@ -21,7 +27,7 @@ export class UserProfile extends Component {
             currentUserName.length > 0 ? <Text style={styles.bannerText}>WELCOME, {this.props.currentUserName.toUpperCase()}!</Text>
               : <Text style={[styles.bannerText, { fontSize: 17, padding: 5 }]}>Please create an account or log in to track your progress!</Text>
           }
-          <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} paddingTop={15}/>
+          <Icon style={styles.bannerIcon} color="white" name="id-card" type="font-awesome" size={40} paddingTop={15} />
         </ImageBackground>
         {
           profilePic.length > 5 ?
@@ -33,39 +39,42 @@ export class UserProfile extends Component {
                 />
               </View>
             </TouchableOpacity>
-            : <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.props.takeProfilePic()}>
+            : currentUserName.length > 0 ? <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.props.takeProfilePic()}>
               <Icon color="#3c4859" name="portrait" type="badge" size={150} />
-            </TouchableOpacity>
+            </TouchableOpacity> 
+              : <TouchableOpacity style={styles.profilePictureContainer} onPress={() => this.userNeedLogin()}>
+                <Icon color="#3c4859" name="portrait" type="badge" size={150} />
+              </TouchableOpacity> 
         }
         {
           currentUserName.length > 0 ? <View style={styles.userInfo}>
-          <View style={styles.achievements}>
-            <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
-            <Text style={styles.userInfoText}>{this.props.visitedLocations.length ? this.props.visitedLocations.length*10 : this.state.points} gems</Text>
-          </View>
-          <View style={styles.achievements}>
-            <Icon color="#009688" name="university" type="font-awesome" size={20} />
-            <Text style={styles.userInfoText}>{this.props.visitedLocations.length ? this.props.visitedLocations.length : this.state.numLandmarksVisited} landmarks visited</Text>
-          </View>
-          <View style={styles.achievements}>
-            <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} />
-            <Text style={styles.userInfoText}>Recent landmark: {this.props.visitedLocations.length ? this.props.visitedLocations[0].name : this.state.recentLandmark}</Text>
-          </View>
-        </View> :
-        <View style={styles.userInfo}>
-        <View style={styles.achievements}>
-          <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
-          <Text style={styles.userInfoText}>0 gems</Text>
-        </View>
-        <View style={styles.achievements}>
-          <Icon color="#009688" name="university" type="font-awesome" size={20} />
-          <Text style={styles.userInfoText}>0 landmarks visited</Text>
-        </View>
-        <View style={styles.achievements}>
-          <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} />
-          <Text style={styles.userInfoText}>Recent landmark: n/a</Text>
-        </View>
-      </View>
+            <View style={styles.achievements}>
+              <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
+              <Text style={styles.userInfoText}>{this.props.visitedLocations.length ? this.props.visitedLocations.length * 10 : this.state.points} gems</Text>
+            </View>
+            <View style={styles.achievements}>
+              <Icon color="#009688" name="university" type="font-awesome" size={20} />
+              <Text style={styles.userInfoText}>{this.props.visitedLocations.length ? this.props.visitedLocations.length : this.state.numLandmarksVisited} landmarks visited</Text>
+            </View>
+            <View style={styles.achievements}>
+              <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} />
+              <Text style={styles.userInfoText}>Recent landmark: {this.props.visitedLocations.length ? this.props.visitedLocations[0].name : this.state.recentLandmark}</Text>
+            </View>
+          </View> :
+            <View style={styles.userInfo}>
+              <View style={styles.achievements}>
+                <Icon color="#f44336" name="diamond" type="font-awesome" size={20} />
+                <Text style={styles.userInfoText}>0 gems</Text>
+              </View>
+              <View style={styles.achievements}>
+                <Icon color="#009688" name="university" type="font-awesome" size={20} />
+                <Text style={styles.userInfoText}>0 landmarks visited</Text>
+              </View>
+              <View style={styles.achievements}>
+                <Icon color="#9c27b0" name="flag-checkered" type="font-awesome" size={20} />
+                <Text style={styles.userInfoText}>Recent landmark: n/a</Text>
+              </View>
+            </View>
         }
       </View>
     )
