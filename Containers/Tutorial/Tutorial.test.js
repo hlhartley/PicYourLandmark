@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tutorial } from './Tutorial';
 import { shallow } from 'enzyme';
-import { TouchableOpacity } from 'react-native';
 
 describe('Tutorial', () => {
   let wrapper;
