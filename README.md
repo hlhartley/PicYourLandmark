@@ -28,12 +28,12 @@ Run `npm test` from the root directory of this front-end repo
 [Cross-pollination Project](http://frontend.turing.io/projects/capstone.html) project from Turing School of Software and Design  
 
 ### Contributors:
-[Matthew Foxwell (front end)](https://github.com/foxwellm)
-[Heather Hartley (front end)](https://github.com/hlhartley)  
-[Justin Clark(back end)](https://github.com/jpclark6)
+[Matthew Foxwell (front end)](https://github.com/foxwellm)  
+[Heather Hartley (front end)](https://github.com/hlhartley)   
+[Justin Clark(back end)](https://github.com/jpclark6)  
 
 ### Wireframes:
-![Wireframes]()
+![Wireframes](final-wireframes.png)
 
 ### Future Enhancements:
 - Add a splash page 
