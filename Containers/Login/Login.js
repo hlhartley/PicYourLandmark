@@ -1,52 +1,51 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { Icon } from 'react-native-elements';
-// import console = require('console');
 
 export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'matt10',
+      username: 'matt12',
       password: 'matt',
       confirmPassword: 'matt',
-      email: 'test85@gmail.com',
+      email: 'test87@gmail.com',
       isLoginPage: true
     }
   }
 
   createAccount = async () => {
     try {
-      const { username, password, confirmPassword, email } = this.state
+      const { username, password, confirmPassword, email } = this.state;
       const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?email=${email}&username=${username}&password=${password}&password_confirmation=${confirmPassword}`
-      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
-      const result = await response.json()
-      this.props.setUserLogin(result.id, result.username)
-      this.props.changeCurrentPage('User profile')
+      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } });
+      const result = await response.json();
+      this.props.setUserLogin(result.id, result.username);
+      this.props.changeCurrentPage('User profile');
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
 
   loginUser = () => {
     const { username, password } = this.state;
-    this.props.fetchUserInfo(username, password)
+    this.props.fetchUserInfo(username, password);
   }
 
   toggleLoginPage = () => {
-    this.setState({ isLoginPage: !this.state.isLoginPage })
+    this.setState({ isLoginPage: !this.state.isLoginPage });
   }
 
   handleUsernameText = (e) => {
-    this.setState({ username: e })
+    this.setState({ username: e });
   }
 
   handlePasswordText = (e) => {
-    this.setState({ password: e })
+    this.setState({ password: e });
   }
 
   handleConfirmPasswordText = (e) => {
-    this.setState({ confirmPassword: e })
+    this.setState({ confirmPassword: e });
   }
 
   render() {

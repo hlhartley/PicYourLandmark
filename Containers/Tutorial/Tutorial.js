@@ -25,7 +25,7 @@ export class Tutorial extends Component {
           <Text style={{ padding: 5}}>STEP 2: Go to the maps page to find the closest landmark to you or a landmark you'd like to visit</Text>
           <Icon color="#9c27b0" name="map-marker" type="font-awesome" size={28} />
           <Text style={{ padding: 5}}>STEP 3: Click on the map marker of that landmark</Text>
-          <Text style={{ padding: 5}}>STEP 4: Get within 1 mile of the selected landmark and click the 'Take Photo!' button in the banner</Text>
+          <Text style={{ padding: 5}}>STEP 4: Get within 1/2 mile of the selected landmark and click the 'Take Photo!' button in the banner</Text>
           <Text style={{ padding: 5}}>STEP 5: View your pictures on the Collected Landmarks page</Text>
           <Icon color="#4caf50" name="image" type="font-awesome" size={28} />
         </View>
