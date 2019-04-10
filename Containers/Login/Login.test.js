@@ -6,13 +6,13 @@ import renderer from 'react-test-renderer'
 
 describe('Login', () => {
   let wrapper;
-  let mockSetUserLoginId;
+  let mockSetUserLogin;
   let mockFetchUserInfo;
   
   beforeEach(() => {
-    mockSetUserLoginId = jest.fn()
+    mockSetUserLogin = jest.fn()
     mockFetchUserInfo = jest.fn()
-    wrapper = shallow(<Login currentUserId={1} setUserLoginId={mockSetUserLoginId} fetchUserInfo={mockFetchUserInfo}/>)
+    wrapper = shallow(<Login currentUserId={1} setUserLogin={mockSetUserLogin} fetchUserInfo={mockFetchUserInfo}/>)
   });
 
   it('should match the snapshot when the currentUserId is greater than or equal to 0', () => {
@@ -45,7 +45,7 @@ describe('Login', () => {
 
   it('logout button should call setUserLoginId when pressed', () => {
     wrapper.find(TouchableOpacity).at(0).simulate('press')
-    expect(mockSetUserLoginId).toHaveBeenCalledWith(-1)
+    expect(mockSetUserLogin).toHaveBeenCalledWith(-1, '')
   });
 
   it('login button should call this.loginUser when pressed', () => {
@@ -120,5 +120,11 @@ describe('Login', () => {
     const instanceOf = renderer.create(<Login isLoginPage={false} currentUserId={-1}/>).getInstance()
     instanceOf.handleConfirmPasswordText('confirmPassword1')
     expect(instanceOf.state.confirmPassword).toEqual('confirmPassword1')
+  });
+
+  it('should update the email on text input on create new account page', () => {
+    const instanceOf = renderer.create(<Login isLoginPage={false} currentUserId={-1}/>).getInstance()
+    instanceOf.handleEmailText('tester001@gmail.com')
+    expect(instanceOf.state.email).toEqual('tester001@gmail.com')
   });
 });

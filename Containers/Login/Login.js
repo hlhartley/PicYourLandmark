@@ -18,7 +18,7 @@ export class Login extends Component {
     try {
       const { username, password, confirmPassword, email } = this.state;
       const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?email=${email}&username=${username}&password=${password}&password_confirmation=${confirmPassword}`
-      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } });
+      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' }});
       const result = await response.json();
       this.props.setUserLogin(result.id, result.username);
       this.props.changeCurrentPage('User profile');
@@ -46,6 +46,10 @@ export class Login extends Component {
 
   handleConfirmPasswordText = (e) => {
     this.setState({ confirmPassword: e });
+  }
+
+  handleEmailText = (e) => {
+    this.setState({ email: e});
   }
 
   render() {
@@ -109,10 +113,16 @@ export class Login extends Component {
                 value={this.state.username}
               />
               <TextInput
+                placeholder='E-mail'
+                style={[styles.inputBox, { top: -20 }]}
+                onChangeText={(e) => this.handleEmailText(e)}
+                value={this.state.email}
+              />
+              <TextInput
                 placeholder='Password'
                 secureTextEntry={true}
                 password={true}
-                style={[styles.inputBox, { top: -20 }]}
+                style={[styles.inputBox, { top: -10 }]}
                 onChangeText={(e) => this.handlePasswordText(e)}
                 value={this.state.password}
               />
@@ -120,15 +130,15 @@ export class Login extends Component {
                 placeholder='Confirm Password'
                 secureTextEntry={true}
                 password={true}
-                style={[styles.inputBox, { top: -10 }]}
+                style={[styles.inputBox, { top: 0 }]}
                 onChangeText={(e) => this.handleConfirmPasswordText(e)}
                 value={this.state.confirmPassword}
               />
-              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: 5 }]} onPress={() => this.createAccount()}>
+              <TouchableOpacity style={[styles.button, { backgroundColor: '#e9e9e9', top: 10 }]} onPress={() => this.createAccount()}>
                 <Text style={styles.buttonText}>Create account</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.button} onPress={() => this.toggleLoginPage()}>
-                <Text style={[styles.buttonText, { color: 'white', top: 5 }]}>Already a member? Click here to log in</Text>
+                <Text style={[styles.buttonText, { color: 'white', top: 10 }]}>Already a member? Click here to log in</Text>
               </TouchableOpacity>
             </View>
           </ImageBackground>

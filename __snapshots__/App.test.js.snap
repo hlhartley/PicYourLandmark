@@ -134,6 +134,7 @@ exports[`App should match the snapshot when on the User profile page 1`] = `
     currentUserName=""
     profilePic=""
     takeProfilePic={[Function]}
+    visitedLocations={Array []}
   />
   <Footer
     changeCurrentPage={[Function]}

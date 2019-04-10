@@ -43,3 +43,4 @@ Run `npm test` from the root directory of this front-end repo
 - Allow users to view other peoples' profiles and pictures
 - Store pictures in AWS S3
 - Add OAuth for convenient user login
+- Password hashing/security
