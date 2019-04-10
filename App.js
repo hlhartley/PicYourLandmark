@@ -27,7 +27,8 @@ export class App extends Component {
       allLocations: [],
       visitedLocationIds: [],
       visitedLocations: [],
-      loggedOutMessage: ''
+      loggedOutMessage: '',
+      currentPhotoLocation: null
     }
   };
 
@@ -125,18 +126,35 @@ export class App extends Component {
 
   addLocationPhoto = (newPic) => {
     let currentPhotoLocation = this.state.currentPhotoLocation;
+    let currentVisitedLocationIds = this.state.visitedLocationIds;
     currentPhotoLocation.photo_url = newPic;
-    const visitedLocations = [currentPhotoLocation, ...this.state.visitedLocations];
-    const visitedLocationIds = [...this.state.visitedLocationIds, currentPhotoLocation.id];
-    this.setState({ visitedLocations, visitedLocationIds, cameraLoading: false, currentPage: 'Collected landmarks' });
-    this.storePhoto(currentPhotoLocation);
+    if (currentVisitedLocationIds.includes(currentPhotoLocation.landmark_id)) {
+      const visitedLocations = [currentPhotoLocation, ...this.state.visitedLocations.filter(location => location.landmark_id !== currentPhotoLocation.landmark_id)]
+      this.setState({ visitedLocations, cameraLoading: false, currentPage: 'Collected landmarks'})
+      this.storeEditedPhoto(currentPhotoLocation);
+    } else {
+      const visitedLocations = [currentPhotoLocation, ...this.state.visitedLocations];
+      const visitedLocationIds = [...this.state.visitedLocationIds, currentPhotoLocation.landmark_id];
+      this.setState({ visitedLocations, visitedLocationIds, cameraLoading: false, currentPage: 'Collected landmarks' });
+      this.storePhoto(currentPhotoLocation);
+    }
   }
 
   storePhoto = async (currentPhotoLocation) => {
     const photoURL = base64.encode(currentPhotoLocation.photo_url);
-    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks/?url=${photoURL}&location=${currentPhotoLocation.id}`;
+    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks/?url=${photoURL}&location=${currentPhotoLocation.landmark_id}`;
     try {
       await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  storeEditedPhoto = async (currentPhotoLocation) => {
+    const photoURL = base64.encode(currentPhotoLocation.photo_url);
+    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks/${currentPhotoLocation.landmark_id}/?photo_url=${photoURL}`;
+    try {
+      await fetch(url, { method: 'PATCH', headers: { 'Content-type': 'application/json' } });
     } catch (error) {
       console.log(error.message);
     }
@@ -148,7 +166,7 @@ export class App extends Component {
       description: selectedDescription,
       lat: selectedLatitude,
       lon: selectedLongitude,
-      id: selectedID,
+      landmark_id: selectedID,
       photo_url: ''
     };
     this.setState({ currentPhotoLocation, currentPage: "Camera" });
