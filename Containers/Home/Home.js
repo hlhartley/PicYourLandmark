@@ -46,9 +46,14 @@ export class Home extends Component {
   };
 
   sendLocationPhoto = () => {
-    const { selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID, selectedVisited } = this.state;
-    this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID, selectedVisited);
-  }
+    if(this.props.currentUserId >= 0) {
+      const { selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID, selectedVisited } = this.state;
+      this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID, selectedVisited);
+    } else {
+      this.props.setLoggedOutMessage('You need to be logged in to perform that action');
+      this.props.changeCurrentPage('Login');
+    }
+  };
 
   render() {
     const { currentLatDelta, currentLonDelta } = this.state.currentLocation;
