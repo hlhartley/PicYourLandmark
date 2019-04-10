@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login should match the snapshot when the currentUserId is greater than or equal to 0 1`] = `
+exports[`Login Login rendering should match the snapshot when the currentUserId is greater than or equal to 0 1`] = `
 <KeyboardAvoidingView
   behavior="padding"
   enabled={true}
@@ -69,7 +69,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
           }
         }
         underlineColorAndroid="transparent"
-        value="heather5"
+        value=""
       />
       <TextInput
         allowFontScaling={true}
@@ -96,7 +96,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
           ]
         }
         underlineColorAndroid="transparent"
-        value="matt"
+        value=""
       />
       <TouchableOpacity
         activeOpacity={0.2}
@@ -156,7 +156,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
 </KeyboardAvoidingView>
 `;
 
-exports[`Login should match the snapshot when the currentUserId is greater than or equal to 0 2`] = `
+exports[`Login Login rendering should match the snapshot when the currentUserId is greater than or equal to 0 2`] = `
 <Component
   style={
     Object {
@@ -215,9 +215,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
             "top": 55,
           }
         }
-      >
-        heather5
-      </Component>
+      />
     </Component>
     <TouchableOpacity
       activeOpacity={0.2}
@@ -250,7 +248,7 @@ exports[`Login should match the snapshot when the currentUserId is greater than 
 </Component>
 `;
 
-exports[`Login should match the snapshot when this.state.isLoginPage is false 1`] = `
+exports[`Login Login rendering should match the snapshot when this.state.isLoginPage is false 1`] = `
 <Component
   style={
     Object {
@@ -309,9 +307,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is false 1`
             "top": 55,
           }
         }
-      >
-        heather5
-      </Component>
+      />
     </Component>
     <TouchableOpacity
       activeOpacity={0.2}
@@ -344,7 +340,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is false 1`
 </Component>
 `;
 
-exports[`Login should match the snapshot when this.state.isLoginPage is true 1`] = `
+exports[`Login Login rendering should match the snapshot when this.state.isLoginPage is true 1`] = `
 <Component
   style={
     Object {
@@ -403,9 +399,7 @@ exports[`Login should match the snapshot when this.state.isLoginPage is true 1`]
             "top": 55,
           }
         }
-      >
-        heather5
-      </Component>
+      />
     </Component>
     <TouchableOpacity
       activeOpacity={0.2}
