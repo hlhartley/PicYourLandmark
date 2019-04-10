@@ -6,10 +6,10 @@ export class Login extends Component {
   constructor() {
     super()
     this.state = {
-      username: 'matt15',
+      username: 'matt22',
       password: 'matt',
       confirmPassword: 'matt',
-      email: 'test92@gmail.com',
+      email: 'test102@gmail.com',
       isLoginPage: true
     }
   }
@@ -18,7 +18,7 @@ export class Login extends Component {
     try {
       const { username, password, confirmPassword, email } = this.state;
       const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?email=${email}&username=${username}&password=${password}&password_confirmation=${confirmPassword}`
-      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } });
+      const response = await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' }});
       const result = await response.json();
       this.props.setUserLogin(result.id, result.username);
       this.props.changeCurrentPage('User profile');
