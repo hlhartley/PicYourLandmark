@@ -18,7 +18,8 @@ Run `npm start` to view on mobile device
 * React-Native-Expo (FE)
 * Django (BE)
 * Rest_framework (BE)
-* Postgresql (BE)
+* PostgreSQL (BE)
+* Heroku (BE)
 
 ### Front-end Testing:
 Jest and Enzyme for front-end testing  
