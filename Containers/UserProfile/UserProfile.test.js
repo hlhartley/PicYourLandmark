@@ -14,7 +14,7 @@ describe('UserProfile', () => {
     mockTakeProfilePic = jest.fn();
     mockProfilePic = 'stringURL';
     mockCurrentUserName = ''
-    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName}/>);
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName} visitedLocations={[]} points={0}/>);
   });
 
   it('should match the snapshot when the user has a profile picture', () => {
@@ -23,7 +23,19 @@ describe('UserProfile', () => {
 
   it('should match the snapshot when the user does not have a profile picture', () => {
     mockProfilePic = '';
-    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName}/>);
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName} visitedLocations={[]} points={0}/>);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the snapshot when there is a current user with no visited locations', () => {
+    mockCurrentUserName = 'tester';
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName} visitedLocations={[]} points={0}/>);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the snapshot when there is a current user with 1 or more visited locations', () => {
+    mockCurrentUserName = 'tester';
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName} visitedLocations={[{ name: 'Eiffel Tower' }]} points={0}/>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -34,7 +46,7 @@ describe('UserProfile', () => {
 
   it('should call takeProfilePic when user does not have a profile picture', () => {
     mockProfilePic = '';
-    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName}/>);
+    wrapper = shallow(<UserProfile profilePic={mockProfilePic} takeProfilePic={mockTakeProfilePic} currentUserName={mockCurrentUserName} visitedLocations={[]} points={0}/>);
     wrapper.find(TouchableOpacity).first().simulate('press');
     expect(mockTakeProfilePic).toHaveBeenCalled();
   });
