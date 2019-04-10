@@ -15,7 +15,9 @@ Run `npm start` to view on mobile device
 ![]()
 
 ### Primary Technologies Used:
+* Waffle (planning FE/BE)
 * React-Native-Expo (FE)
+* Travis CI (FE)
 * Django (BE)
 * Rest_framework (BE)
 * PostgreSQL (BE)
