@@ -103,27 +103,38 @@ export class App extends Component {
   savePicture = (newPic) => {
     if (this.state.takingProfilePic) {
       this.setState({ profilePic: newPic, cameraLoading: false, currentPage: 'User profile', takingProfilePic: false });
+      this.storeProfilePic(newPic)
     } else {
       this.addLocationPhoto(newPic);
     }
   };
 
+  storeProfilePic = async (newPic) => {
+    const photoURL = base64.encode(newPic);
+    const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/?profile_url=${photoURL}`;
+    try {
+      await fetch(url, { method: 'PATCH', headers: { 'Content-type': 'application/json' } });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   addLocationPhoto = (newPic) => {
     let currentPhotoLocation = this.state.currentPhotoLocation;
     currentPhotoLocation.photo_url = newPic;
-    const visitedLocations = [...this.state.visitedLocations, currentPhotoLocation];
+    const visitedLocations = [currentPhotoLocation, ...this.state.visitedLocations];
     const visitedLocationIds = [...this.state.visitedLocationIds, currentPhotoLocation.id];
     this.setState({ visitedLocations, visitedLocationIds, cameraLoading: false, currentPage: 'Collected landmarks' });
-    this.storePhoto(currentPhotoLocation)
+    this.storePhoto(currentPhotoLocation);
   }
 
   storePhoto = async (currentPhotoLocation) => {
     const photoURL = base64.encode(currentPhotoLocation.photo_url);
     const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/${this.state.currentUserId}/landmarks/?url=${photoURL}&location=${currentPhotoLocation.id}`;
     try {
-      await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } })
+      await fetch(url, { method: 'POST', headers: { 'Content-type': 'application/json' } });
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
 
@@ -135,33 +146,34 @@ export class App extends Component {
       lon: selectedLongitude,
       id: selectedID,
       photo_url: ''
-    }
+    };
     this.setState({ currentPhotoLocation, currentPage: "Camera" });
   }
 
   setCameraLoading = () => {
-    this.setState({ cameraLoading: true })
+    this.setState({ cameraLoading: true });
   }
 
   setUserLogin = (id, username) => {
-    this.setState({ currentUserId: id, currentUserName: username })
+    this.setState({ currentUserId: id, currentUserName: username });
   }
 
   fetchUserInfo = async (username, password) => {
     try {
-      const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=${username}&password=${password}`
-      const response = await fetch(url)
-      const result = await response.json()
-      const { user_id, user_locations } = result;
-      let visitedLocationIds = []
+      const url = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=${username}&password=${password}`;
+      const response = await fetch(url);
+      const result = await response.json();
+      const { user_id, user_locations, profile_url } = result;
+      const profilePic = base64.decode(profile_url);
+      let visitedLocationIds = [];
       let decodedLocations = user_locations.map(location => {
-        visitedLocationIds.push(location.landmark_id)
-        location.photo_url = base64.decode(location.photo_url)
+        visitedLocationIds.push(location.landmark_id);
+        location.photo_url = base64.decode(location.photo_url);
         return location;
       })
-      this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: decodedLocations, visitedLocationIds, currentPage: 'User profile' })
+      this.setState({ currentUserId: user_id, currentUserName: username, visitedLocations: decodedLocations, visitedLocationIds, currentPage: 'User profile', profilePic });
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
 

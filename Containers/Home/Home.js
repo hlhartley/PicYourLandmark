@@ -19,37 +19,11 @@ export class Home extends Component {
       currentLocation: {
         currentLatDelta: 0.015,
         currentLonDelta: 0.0121
-      },
-      locations: [
-        {
-          id: 1,
-          lat: 39.75302,
-          lon: -104.9965,
-          visited: false,
-          name: 'Summit',
-          description: 'example 1 description'
-        },
-        {
-          id: 2,
-          lat: 39.75023,
-          lon: -104.9965,
-          visited: true,
-          name: 'The Delectable Egg',
-          description: 'example 2 description'
-        },
-        {
-          id: 3,
-          lat: 39.77023,
-          lon: -104.9965,
-          visited: false,
-          name: 'Far away example',
-          description: 'over a mile away'
-        }
-      ]
-    }
-  }
+      }
+    };
+  };
 
-  calculateDistance = ({ lat: landmarkLatitude, lon: landmarkLongitude, name, visited, description, id }) => {
+  calculateDistance = ({ lat: landmarkLatitude, lon: landmarkLongitude, name, description, id }, pinColor) => {
     const earthRadiusMiles = 3958.8;
     const { currentLatitude, currentLongitude } = this.props;
     const deltaLatitude = (currentLatitude - landmarkLatitude) * Math.PI / 180;
@@ -63,83 +37,71 @@ export class Home extends Component {
       calculatedDistance,
       selectedID: id,
       selectedName: name,
-      selectedVisited: visited,
+      selectedVisited: pinColor === '#FFF000' ? true : false,
       selectedDescription: description,
       selectedLatitude: landmarkLatitude,
       selectedLongitude: landmarkLongitude,
       clickedLocation: true
-    })
-  }
+    });
+  };
 
   sendLocationPhoto = () => {
-    const { selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID } = this.state;
-    this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID)
+    const { selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID, selectedVisited } = this.state;
+    this.props.takeLocationPhoto(selectedName, selectedDescription, selectedLatitude, selectedLongitude, selectedID, selectedVisited);
   }
 
   render() {
     const { currentLatDelta, currentLonDelta } = this.state.currentLocation;
     const { currentLatitude, currentLongitude, allLocations, visitedLocationIds } = this.props;
-    const { locations, clickedLocation, selectedName, selectedVisited, selectedPoints, calculatedDistance } = this.state;
+    const { clickedLocation, selectedName, selectedVisited, selectedPoints, calculatedDistance } = this.state;
     return (
       <View style={styles.container}>
         {
-          clickedLocation && selectedVisited ? <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
-            <View style={styles.overlay} />
-            <View style={styles.flexRow}>
-              <Text style={styles.headerText}>{selectedName}</Text>
-            </View>
-            <View style={styles.flexRow}>
-              <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
-              <Text style={[styles.pointsText, { color: 'white' }]}>{selectedPoints} gems</Text>
-            </View>
-            <View style={styles.flexRow}>
-              <Icon color="#00bcd4" name="car" type="font-awesome" size={15} />
-              <Text style={[styles.pointsText, { color: 'white' }]}>{calculatedDistance} mi. away </Text>
-            </View>
-            {
-              calculatedDistance < 1 &&
+          clickedLocation ?
+            <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
+              <View style={styles.overlay} />
               <View style={styles.flexRow}>
-                <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                  <Icon color="#4caf50" name="camera" type="font-awesome" size={15} marginTop={15} />
-                  <Text style={[styles.pointsText, { color:'#c9c9c9', marginTop: 4}]}>Click to Retake Photo!</Text>
-                </TouchableOpacity>
+                <Text style={styles.headerText}>{selectedName}</Text>
               </View>
-            }
-          </ImageBackground>
-            : clickedLocation ?
-              <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
-                <View style={styles.overlay} />
-                <View style={styles.flexRow}>
-                  <Text style={styles.headerText}>{selectedName}</Text>
-                </View>
-                <View style={styles.flexRow}>
-                  <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
-                  <Text style={[styles.pointsText, { color: "white" }]}>{selectedPoints} gems</Text>
-                </View>
-                <View style={styles.flexRow}>
-                  <Icon color="#00bcd4" name="car" type="font-awesome" size={15} />
-                  <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
-                </View>
-                {
-                  calculatedDistance < 1 ?
+              <View style={styles.flexRow}>
+                <Icon color="#f44336" name="diamond" type="font-awesome" size={15} />
+                <Text style={[styles.pointsText, { color: "white" }]}>{selectedPoints} gems</Text>
+              </View>
+              <View style={styles.flexRow}>
+                <Icon color="#00bcd4" name="car" type="font-awesome" size={15} />
+                <Text style={styles.pointsText}>{calculatedDistance} mi. away</Text>
+              </View>
+              {
+                calculatedDistance < .5 && selectedVisited ?
+                  <View style={styles.flexRow}>
+                    <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
+                      <Icon color="#4caf50" name="camera" type="font-awesome" size={15} marginTop={15} />
+                      <Text style={[styles.pointsText, { color: '#c9c9c9', marginTop: 4 }]}>Click to Retake Photo!</Text>
+                    </TouchableOpacity>
+                  </View>
+                  : calculatedDistance < .5 ?
                     <View style={styles.flexRow}>
                       <TouchableOpacity style={styles.locationCamera} onPress={() => this.sendLocationPhoto()}>
-                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} marginTop={15}/>
-                        <Text style={[styles.pointsText, { color: '#c9c9c9', marginTop: 4}]}>Click to Take Photo!</Text>
+                        <Icon color="#4caf50" name="camera" type="font-awesome" size={15} marginTop={15} />
+                        <Text style={[styles.pointsText, { color: '#c9c9c9', marginTop: 4 }]}>Click to Take Photo!</Text>
                       </TouchableOpacity>
                     </View>
-                    :
-                    <View>
-                      <Text style={[styles.pointsText, { fontSize: 14, marginTop: 10, padding: 2, color: '#c9c9c9'}]}>Get within 1 mile of the landmark to take a photo and add it to your collection</Text>
-                    </View>
-                }
-              </ImageBackground>
-              :
-              <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
-                <View style={styles.overlay} />
-                <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
-                <Icon color="white" name="camera-retro" type="font-awesome" size={40} />
-              </ImageBackground>
+                    : selectedVisited ?
+                      <View>
+                        <Text style={[styles.pointsText, { fontSize: 14, marginTop: 10, padding: 2, color: '#c9c9c9' }]}>Get within 1/2 mile of the landmark if you want to retake photo</Text>
+                      </View>
+                      :
+                      <View>
+                        <Text style={[styles.pointsText, { fontSize: 14, marginTop: 10, padding: 2, color: '#c9c9c9' }]}>Get within 1/2 mile of the landmark to take a photo and add it to your collection</Text>
+                      </View>
+              }
+            </ImageBackground>
+            :
+            <ImageBackground source={require('../../assets/statueofliberty.jpg')} style={styles.imageBackground}>
+              <View style={styles.overlay} />
+              <Text style={styles.bannerText}>Earn gems by taking and uploading pics of you at various locations</Text>
+              <Icon color="white" name="camera-retro" type="font-awesome" size={40} />
+            </ImageBackground>
         }
         {
           currentLatitude ?
@@ -166,16 +128,12 @@ export class Home extends Component {
                       }}
                       pinColor={pinColor}
                       onPress={() => {
-                        this.calculateDistance(location);
+                        this.calculateDistance(location, pinColor);
                       }}
                     >
                       <Callout tooltip={true} >
                         <View style={styles.landmarkInfo}>
                           <Text style={{ fontWeight: 'bold' }}>{location.name}</Text>
-                          <Text style={{ fontStyle: 'italic' }}>{location.description}</Text>
-                          <Text>Distance away: mi</Text>
-                          <Text>Visited: no</Text>
-                          <Text>Link - takes to camera</Text>
                         </View>
                       </Callout>
                     </Marker>

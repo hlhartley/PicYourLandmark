@@ -167,7 +167,7 @@ exports[`Tutorial should match the snapshot with the correct data passed in when
         }
       }
     >
-      STEP 4: Get within 1 mile of the selected landmark and click the 'Take Photo!' button in the banner
+      STEP 4: Get within 1/2 mile of the selected landmark and click the 'Take Photo!' button in the banner
     </Component>
     <Component
       style={
