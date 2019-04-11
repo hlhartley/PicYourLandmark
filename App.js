@@ -10,7 +10,7 @@ import CameraPage from './Containers/Camera/Camera';
 import { StyleSheet, View } from 'react-native';
 import { Image } from 'react-native-elements';
 import { ScreenOrientation } from 'expo';
-import base64 from 'react-native-base64'
+import base64 from 'react-native-base64';
 
 export class App extends Component {
   constructor() {
