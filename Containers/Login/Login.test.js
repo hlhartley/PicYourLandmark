@@ -9,12 +9,14 @@ describe('Login', () => {
   let mockSetUserLogin;
   let mockFetchUserInfo;
   let mockChangeCurrrentPage;
+  let mockSetUserLogout;
 
   beforeEach(() => {
     mockSetUserLogin = jest.fn()
     mockFetchUserInfo = jest.fn()
     mockChangeCurrrentPage = jest.fn()
-    wrapper = shallow(<Login currentUserId={1} setUserLogin={mockSetUserLogin} changeCurrentPage={mockChangeCurrrentPage} fetchUserInfo={mockFetchUserInfo}/>)
+    mockSetUserLogout = jest.fn()
+    wrapper = shallow(<Login currentUserId={1} setUserLogin={mockSetUserLogin} setUserLogout={mockSetUserLogout} changeCurrentPage={mockChangeCurrrentPage} fetchUserInfo={mockFetchUserInfo}/>)
   });
 
   it('should have a proper default state', () => {
@@ -48,9 +50,9 @@ describe('Login', () => {
   });
 
   describe('Login buttons', () => {
-    it('logout button should call setUserLoginId when pressed', () => {
+    it('logout button should call setUserLogout when pressed', () => {
       wrapper.find(TouchableOpacity).at(0).simulate('press')
-      expect(mockSetUserLogin).toHaveBeenCalledWith(-1, '')
+      expect(mockSetUserLogout).toHaveBeenCalled()
     });
   
     it('login button should call this.loginUser when pressed', () => {
@@ -114,7 +116,6 @@ describe('Login', () => {
     }));
     await wrapper.instance().createAccount();
     expect(mockSetUserLogin).toHaveBeenCalled();
-    expect(mockChangeCurrrentPage).toHaveBeenCalled();
     });
   
     it('createAccount method should throw error if everything is not ok', async () => {
