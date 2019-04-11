@@ -58,7 +58,6 @@ exports[`App should match the snapshot when on the Collected landmarks page 1`] 
 >
   <Header />
   <CollectedLandmarksContainer
-    pics={Array []}
     visitedLocations={Array []}
   />
   <Footer
@@ -84,6 +83,8 @@ exports[`App should match the snapshot when on the Home page 1`] = `
     changeCurrentPage={[Function]}
     currentLatitude={null}
     currentLongitude={null}
+    currentUserId={-1}
+    setLoggedOutMessage={[Function]}
     takeLocationPhoto={[Function]}
     visitedLocationIds={Array []}
     visitedLocations={Array []}
@@ -110,7 +111,10 @@ exports[`App should match the snapshot when on the Login page 1`] = `
     changeCurrentPage={[Function]}
     currentUserId={-1}
     fetchUserInfo={[Function]}
+    loggedOutMessage=""
+    setLoggedOutMessage={[Function]}
     setUserLogin={[Function]}
+    setUserLogout={[Function]}
   />
   <Footer
     changeCurrentPage={[Function]}
@@ -131,8 +135,10 @@ exports[`App should match the snapshot when on the User profile page 1`] = `
 >
   <Header />
   <UserProfile
+    changeCurrentPage={[Function]}
     currentUserName=""
     profilePic=""
+    setLoggedOutMessage={[Function]}
     takeProfilePic={[Function]}
     visitedLocations={Array []}
   />
