@@ -125,15 +125,15 @@ describe('App', () => {
     });
   });
 
-  describe('fetchUserInfo method', () => {
-    it.skip('should make fetch call when fetchUserInfo is called', async () => {
+  describe.skip('fetchUserInfo method', () => {
+    it('should make fetch call when fetchUserInfo is called', async () => {
       window.fetch = jest.fn()
       await wrapper.instance().fetchUserInfo('tester', 'abc')
       let mockUrl = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=tester&password=abc`
       expect(window.fetch).toHaveBeenCalledWith(mockUrl)
     });
 
-    it.skip('should get the user info if everything is ok', async () => {
+    it('should get the user info if everything is ok', async () => {
       const expected = {
           user_id: 1,
           username: "joe55",
@@ -189,7 +189,7 @@ describe('App', () => {
       expect(wrapper.state('currentUserId')).toEqual(expected.user_id);
     });
 
-    it.skip('should return an error if everything is not ok', async () => {
+    it('should return an error if everything is not ok', async () => {
       const expected = Error('Error fetching data');
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: false,

@@ -96,8 +96,8 @@ describe('Login', () => {
     });
   });
 
-  describe.skip('createAccount method', () => {
-    it('createAccount method should make post request when createAccount is called', async () => {
+  describe('createAccount method', () => {
+    it.skip('createAccount method should make post request when createAccount is called', async () => {
       window.fetch = jest.fn()
       let email = 'tester01@gmail.com'
       let username = 'tester01'
