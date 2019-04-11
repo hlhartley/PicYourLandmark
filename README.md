@@ -12,7 +12,21 @@ Run `npm install` from the root directory
 Run `npm start` to view on mobile device  
 
 ### Preview:
-![]()
+#### Login:
+<img width="349" alt="Screen Shot 2019-04-11 at 8 15 43 AM" src="https://user-images.githubusercontent.com/34201608/55964876-b36e9600-5c32-11e9-960d-27a0877d5bbe.png">
+
+#### Maps:
+<img width="353" alt="Screen Shot 2019-04-11 at 8 16 00 AM" src="https://user-images.githubusercontent.com/34201608/55964883-b5d0f000-5c32-11e9-9ec6-cf219263fc22.png">
+
+
+#### Tutorial: 
+<img width="350" alt="Screen Shot 2019-04-11 at 8 16 38 AM" src="https://user-images.githubusercontent.com/34201608/55965043-08121100-5c33-11e9-8433-2ab9b5fb986b.png">
+
+#### Collected Landmarks:
+<img width="353" alt="Screen Shot 2019-04-11 at 8 17 02 AM" src="https://user-images.githubusercontent.com/34201608/55965128-31cb3800-5c33-11e9-8142-befa1103e037.png">
+
+#### Profile:
+<img width="352" alt="Screen Shot 2019-04-11 at 8 16 24 AM" src="https://user-images.githubusercontent.com/34201608/55965164-44457180-5c33-11e9-970a-a4e60e971abe.png">
 
 ### Primary Technologies Used:
 * Waffle (planning FE/BE)
