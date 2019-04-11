@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { Icon, Image } from 'react-native-elements';
-// import console = require('console');
 
 export class Home extends Component {
   constructor() {
@@ -23,7 +22,6 @@ export class Home extends Component {
       }
     };
   };
-
 
 
   calculateDistance = ({ lat: landmarkLatitude, lon: landmarkLongitude, name, description, id }, pinColor) => {
