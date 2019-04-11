@@ -16,7 +16,7 @@ describe('Login', () => {
     mockFetchUserInfo = jest.fn()
     mockChangeCurrrentPage = jest.fn()
     mockSetUserLogout = jest.fn()
-    wrapper = shallow(<Login currentUserId={1} setUserLogin={mockSetUserLogin} mockSetUserLogout={mockSetUserLogout} changeCurrentPage={mockChangeCurrrentPage} fetchUserInfo={mockFetchUserInfo}/>)
+    wrapper = shallow(<Login currentUserId={1} setUserLogin={mockSetUserLogin} setUserLogout={mockSetUserLogout} changeCurrentPage={mockChangeCurrrentPage} fetchUserInfo={mockFetchUserInfo}/>)
   });
 
   it('should have a proper default state', () => {
@@ -52,7 +52,7 @@ describe('Login', () => {
   describe('Login buttons', () => {
     it('logout button should call setUserLogout when pressed', () => {
       wrapper.find(TouchableOpacity).at(0).simulate('press')
-      expect(mockSetUserLogout).toHaveBeenCalledWith(-1, '')
+      expect(mockSetUserLogout).toHaveBeenCalled()
     });
   
     it('login button should call this.loginUser when pressed', () => {
