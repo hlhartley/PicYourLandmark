@@ -12,7 +12,7 @@ Run `npm install` from the root directory
 Run `npm start` to view on mobile device  
 
 ### Preview:
-![User Profile](userprofile.gif)
+![]()
 
 ### Primary Technologies Used:
 * Waffle (planning FE/BE)
