@@ -1,10 +1,12 @@
 language: node_js
 node_js:
-- node
+  - node
 notifications:
   email: false
 before_script:
-- npm run test
+  - npm install -g npm@latest
+script:
+ - npm run test
 deploy:
   provider: heroku,
   api_key:
