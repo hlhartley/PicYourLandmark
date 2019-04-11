@@ -43,6 +43,18 @@ exports[`Login Login rendering should match the snapshot when the currentUserId 
         }
       }
     />
+    <Component
+      style={
+        Array [
+          Object {
+            "textAlign": "center",
+          },
+          Object {
+            "color": "yellow",
+          },
+        ]
+      }
+    />
     <Themed.Icon
       color="white"
       name="user-circle"
