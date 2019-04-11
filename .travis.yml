@@ -7,9 +7,3 @@ before_script:
   - npm install -g npm@latest
 script:
  - npm run test
-deploy:
-  provider: heroku,
-  api_key:
-    secure: syVWCJ+G8qRXAzO13ncp5sNf7FqYhyB47iCAzk9iw805t5yz2Wo1Ua7d6yXQOgU3BrqDJtVXG9ooyaHUo/PmG7Jy1PvPq2rIuzHquVf163GxS9aDXYj8utHWY498CRyNSNM1KD9PoTT2r9Sl6nMbNOqnzx0OGv45IExewFrS9uaeq4SUgAJtTR4HRUYeg9I7I0RAKaqPBJIRrlXu+nwfCbzQiDNwWLM/DsNikRcmICmZJ8dxQDqHxfB5jHqHX62EUoWHksR1K+FE0DVqgF92A3KsU+T2ILo1RzcJvZ1ZIIjSGiZ7pRpFxRPY+UHabaWsNu+LvkEOF3/qcxV0nV3ddx1UFU3+3tFwH90OOWtYFjYmVDw+iukDV1I61/4dWXbVP1aX+07PLFvncnOyJH/uGcpRHs9q5oOQ/2VJUDfV6Og58mYHz1ODFLGUmo20aT1E7+h1nfSgX2k9Oh8kEMQhXPWBIsmEHDTBLUoXzOxxgQGZrvxrSbptVhnlm/NCWi5n2KRD7XTcuwfyi4x/D7o8GCSsFts9LpE7In1FxM2upFVD0LBHhVi2zYAGsIDZxaLtnBnmHWqBO5fUfIhmEDDknsOoEMpxwlFcFXxoerBow/kKB+g8VF33ilIGpFVdsNtCvuJWa/zsRGj78q4VlTy2vORFWDVhK9tH2z/h6uJDxdc=
-    app: pic-your-landmark
-    skip_cleanup: true
