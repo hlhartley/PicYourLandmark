@@ -124,8 +124,6 @@ describe('Home', () => {
     });
   });
 
- 
-
   describe('when a user clicks on a marker location but has not visited the location', () => {
     it('should match the snapshot if they are close enough to take a photo', () => {
       wrapper.instance().sendLocationPhoto = jest.fn();
@@ -139,8 +137,6 @@ describe('Home', () => {
       expect(wrapper).toMatchSnapshot();
     });
   })
-
-
 
   describe('calculateDistance method', () => {
     const mockLat = 39.77;
@@ -177,12 +173,10 @@ describe('Home', () => {
       expect(wrapper.state('selectedDescription')).toEqual(mockDescription);
       expect(wrapper.state('clickedLocation')).toEqual(true);
     })
-
   })
 
   describe('sendLocationPhoto', () => {
     // wrapper.setProps({currentUserId: -1})
-
     it('should', () => {
       wrapper.instance().sendLocationPhoto()
       expect(mockTakeLocationPhoto).toHaveBeenCalled();
@@ -192,7 +186,6 @@ describe('Home', () => {
       wrapper.instance().sendLocationPhoto()
       expect(mockSetLoggedOutMessage).toHaveBeenCalledWith('You need to be logged in to perform that action');
       expect(mockChangeCurrentPage).toHaveBeenCalledWith('Login');
-    })
-  })
-
+    });
+  });
 });
