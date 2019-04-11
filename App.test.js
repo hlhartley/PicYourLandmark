@@ -41,9 +41,17 @@ describe('App', () => {
 
   describe('changeCurrentPage method', () => {
     it('should change state to what was passed as an argument', () => {
-      wrapper.setState({ currentPage: 'Home' });
+      expect(wrapper.state('currentPage')).toEqual('Login');
       wrapper.instance().changeCurrentPage('Camera')
       expect(wrapper.state('currentPage')).toEqual('Camera');
+    });
+  });
+
+  describe('setLoggedOutMessage method', () => {
+    it('should change state to what was passed as an argument', () => {
+      expect(wrapper.state('loggedOutMessage')).toEqual('');
+      wrapper.instance().setLoggedOutMessage('Cannot do that')
+      expect(wrapper.state('loggedOutMessage')).toEqual('Cannot do that');
     });
   });
 
@@ -57,19 +65,23 @@ describe('App', () => {
 
   describe('savePicture method', () => {
     it('should change state to what was passed as an argument if takingProfilePic is true', () => {
+      const newPic = 'newPicURL';
+      wrapper.instance().storeProfilePic = jest.fn()
       wrapper.setState({ takingProfilePic: true });
-      wrapper.instance().savePicture('newPic')
-      expect(wrapper.state('profilePic')).toEqual('newPic');
+      wrapper.instance().savePicture(newPic)
+      expect(wrapper.state('profilePic')).toEqual(newPic);
       expect(wrapper.state('cameraLoading')).toEqual(false);
       expect(wrapper.state('currentPage')).toEqual('User profile');
       expect(wrapper.state('takingProfilePic')).toEqual(false)
+      expect(wrapper.instance().storeProfilePic).toHaveBeenCalledWith(newPic)
     });
 
-    it.skip('should call addLocationPhoto if takingProfilePic is false', () => {
-      wrapper.setState({ takingProfilePic: false, currentPhotoLocation: ''});
-      wrapper.instance().savePicture('newPic')
+    it('should call addLocationPhoto if takingProfilePic is false', () => {
+      const newPic = 'newPicURL';
       wrapper.instance().addLocationPhoto = jest.fn()
-      expect(wrapper.instance().addLocationPhoto).toHaveBeenCalled()
+      wrapper.setState({ takingProfilePic: false});
+      wrapper.instance().savePicture(newPic)
+      expect(wrapper.instance().addLocationPhoto).toHaveBeenCalledWith(newPic)
     });
   });
 
@@ -105,8 +117,16 @@ describe('App', () => {
     });
   });
 
+  describe('changeCurrentPage method', () => {
+    it('should change state to what was passed as an argument', () => {
+      expect(wrapper.state('currentPage')).toEqual('Login');
+      wrapper.instance().changeCurrentPage('Home')
+      expect(wrapper.state('currentPage')).toEqual('Home');
+    });
+  });
+
   describe('fetchUserInfo method', () => {
-    it('should make fetch call when fetchUserInfo is called', async () => {
+    it.skip('should make fetch call when fetchUserInfo is called', async () => {
       window.fetch = jest.fn()
       await wrapper.instance().fetchUserInfo('tester', 'abc')
       let mockUrl = `https://pic-landmark-api.herokuapp.com/api/v1/users/?username=tester&password=abc`
@@ -169,7 +189,7 @@ describe('App', () => {
       expect(wrapper.state('currentUserId')).toEqual(expected.user_id);
     });
 
-    it('should return an error if everything is not ok', async () => {
+    it.skip('should return an error if everything is not ok', async () => {
       const expected = Error('Error fetching data');
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: false,
