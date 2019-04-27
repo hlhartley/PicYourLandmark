@@ -23,6 +23,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.heatherandmatt.picyourlandmark",
       "supportsTablet": false,
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Allow Expo experiences to use your location.",
@@ -30,6 +31,9 @@
         "NSPhotoLibraryAddUsageDescription": "This app uses the camera to scan barcodes on event tickets.",
         "NSPhotoLibraryUsageDescription": "This app uses the camera to scan barcodes on event tickets."
       }
+    },
+    "android": {
+      "package": "com.heatherandmatt.picyourlandmark"
     }
   }
 }
