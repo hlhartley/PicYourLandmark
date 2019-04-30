@@ -38,7 +38,7 @@ export class App extends Component {
 
   componentDidMount = async () => {
     const { Permissions } = Expo;
-    const { status } = await Permissions.askAsync(Permissions.LOCATION);
+    const { status } = await Permissions.askAsync(Permissions.LOCATION, Permissions.CAMERA, Permissions.CAMERA_ROLL);
     if (status === 'granted') {
       this.getStartLocation();
       this.startLocationTracking();
