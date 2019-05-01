@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, CameraRoll } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, CameraRoll } from 'react-native';
 import { Camera, ScreenOrientation } from 'expo';
 import { Icon } from 'react-native-elements';
 
@@ -11,7 +11,7 @@ export class CameraWindow extends Component {
     }
   };
 
-  componentWillMount = () => {
+  componentWillMount = async () => {
     ScreenOrientation.allowAsync(ScreenOrientation.Orientation.LANDSCAPE);
   };
 

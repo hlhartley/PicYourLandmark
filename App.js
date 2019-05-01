@@ -7,9 +7,9 @@ import UserProfile from './Containers/UserProfile/UserProfile';
 import Tutorial from './Containers/Tutorial/Tutorial';
 import CollectedLandmarksContainer from './Containers/CollectedLandmarksContainer/CollectedLandmarksContainer';
 import CameraPage from './Containers/Camera/Camera';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import { Image } from 'react-native-elements';
-import { ScreenOrientation } from 'expo';
+import { ScreenOrientation, Permissions } from 'expo';
 import base64 from 'react-native-base64';
 
 export class App extends Component {
@@ -32,18 +32,19 @@ export class App extends Component {
     }
   };
 
-  componentWillMount = () => {
+  componentWillMount = async () => {
     ScreenOrientation.allowAsync(ScreenOrientation.Orientation.PORTRAIT);
-  };
-
-  componentDidMount = async () => {
-    const { Permissions } = Expo;
-    const { status } = await Permissions.askAsync(Permissions.LOCATION, Permissions.CAMERA, Permissions.CAMERA_ROLL);
-    if (status === 'granted') {
+    if (Platform.OS === 'android') {
+      const { status } = await Permissions.askAsync(Permissions.LOCATION, Permissions.CAMERA, Permissions.CAMERA_ROLL);
+      if (status === 'granted') {
+        this.getStartLocation();
+        this.startLocationTracking();
+      } else {
+        throw new Error('Location permission not granted');
+      }
+    } else {
       this.getStartLocation();
       this.startLocationTracking();
-    } else {
-      throw new Error('Location permission not granted');
     }
   };
 
