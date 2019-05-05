@@ -2,6 +2,9 @@
 
 Pic Your Landmark is a native app based on the famous game 'Pokemon Go' - except our users can 'collect' famous landmarks! When a user visits a landmark, they can take and store their picture in our app. Users gain points/gems based on how many landmarks they have 'collected'. They can show off their status as well as collection of photos to their friends and family. 
 
+### Deployed Mobile App (currently Android only):
+[Google Play Store](https://play.google.com/store/apps/details?id=com.heatherandmatt.picyourlandmark)
+
 ### Set-Up:
 **Back end**  
 [Back-end repo](https://github.com/jpclark6/PicYourLandmarkAPI)  
