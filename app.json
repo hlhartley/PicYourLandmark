@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "1.1.72",
+    "version": "1.1.73",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -35,7 +35,7 @@
     "android": {
       "package": "com.heatherandmatt.picyourlandmark",
       "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE" ],
-      "versionCode": 11
+      "versionCode": 12
     }
   }
 }
