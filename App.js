@@ -43,8 +43,11 @@ export class App extends Component {
         throw new Error('Location permission not granted');
       }
     } else {
+      const { status } = await Permissions.askAsync(Permissions.LOCATION)
+      if (status === 'granted') {
       this.getStartLocation();
       this.startLocationTracking();
+      }
     }
   };
 
